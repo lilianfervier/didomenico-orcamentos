@@ -61,11 +61,11 @@ function toggleApresentacao() {
 
 function gerarPDF() {
   document.body.classList.add("apresentacao");
-
   setTimeout(() => {
-    html2pdf()
-      .from(document.querySelector(".container"))
-      .save("orcamento.pdf");
+    html2pdf().from(document.querySelector(".container")).save("orcamento.pdf");
   }, 300);
 }
 </script>
+
+</body>
+</html>
