@@ -274,8 +274,6 @@ const secoes = [
       ["Toxina capilar", 1890],
       ["MMP- sessão", 770],
       ["MMP CAPILAR + EXOSSOMOS", 1200],
-      ["MMP- sessão", 770],
-      ["MMP- sessão", 770],
       ["Eletroderme Capilar", 1750],
     ]
   }
