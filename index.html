@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dra. Emi Di Domenico De Leon – Dermatologista</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,8 +15,6 @@
   </h1>
 
   <section id="procedimentos"></section>
-  <section id="selecionados" class="selecionados"></section>
-
 
   <section class="resultado">
     <h2>Resumo do Orçamento</h2>
@@ -24,6 +22,11 @@
     <div class="acoes">
       <button onclick="toggleApresentacao()">Modo apresentação</button>
       <button onclick="gerarPDF()">Gerar PDF</button>
+    </div>
+
+    <div class="selecionados">
+      <h3>Procedimentos selecionados</h3>
+      <div id="selecionados"></div>
     </div>
 
     <div class="linha">
@@ -49,7 +52,6 @@
 </main>
 
 <script src="script.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
@@ -57,20 +59,4 @@ function toggleApresentacao() {
   document.body.classList.toggle("apresentacao");
 }
 
-function gerarPDF() {
-  const elemento = document.querySelector(".container");
-
-  const opt = {
-    margin: 10,
-    filename: 'orcamento-clinica-di-domenico.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  };
-
-  html2pdf().set(opt).from(elemento).save();
-}
-</script>
-
-</body>
-</html>
+function gerar
