@@ -282,6 +282,8 @@ const secoes = [
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
+let selecionados = [];
+
 secoes.forEach(secao => {
   const details = document.createElement("details");
   details.open = true;
@@ -295,8 +297,12 @@ secoes.forEach(secao => {
     const checkbox = document.createElement("input");
 
     checkbox.type = "checkbox";
-    checkbox.value = item[1];
     checkbox.dataset.nome = item[0];
+    checkbox.dataset.valor = item[1];
+
+    checkbox.addEventListener("change", () => {
+      atualizarSelecionados();
+    });
 
     label.appendChild(checkbox);
     label.append(
@@ -312,16 +318,29 @@ secoes.forEach(secao => {
   container.appendChild(details);
 });
 
-function calcular() {
+function atualizarSelecionados() {
+  selecionados = [];
+  selecionadosDiv.innerHTML = "";
+
+  document.querySelectorAll("#procedimentos input:checked").forEach(i => {
+    selecionados.push({
+      nome: i.dataset.nome,
+      valor: Number(i.dataset.valor)
+    });
+  });
+
+  renderResumo();
+}
+
+function renderResumo() {
   let total = 0;
   selecionadosDiv.innerHTML = "";
 
-  document.querySelectorAll("input:checked").forEach(i => {
-    const valor = Number(i.value);
-    total += valor;
+  selecionados.forEach(item => {
+    total += item.valor;
 
     const linha = document.createElement("div");
-    linha.textContent = `${i.dataset.nome} — ${valor.toLocaleString("pt-BR", {
+    linha.textContent = `${item.nome} — ${item.valor.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL"
     })}`;
@@ -345,5 +364,3 @@ function calcular() {
   document.getElementById("parcelado").textContent =
     parcela.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
-
-document.addEventListener("change", calcular);
