@@ -120,4 +120,24 @@ label {
     font-size: 0.9rem;
   }
 }
+body.apresentacao details,
+body.apresentacao label,
+body.apresentacao input {
+  display: none;
+}
+
+body.apresentacao {
+  background: white;
+}
+
+body.apresentacao h1 {
+  font-size: 26px;
+  text-align: center;
+}
+
+body.apresentacao #total {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
 
