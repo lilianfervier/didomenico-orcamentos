@@ -288,6 +288,8 @@ const selecionadosDiv = document.getElementById("selecionados");
 
 secoes.forEach(secao => {
   const details = document.createElement("details");
+  details.open = true;
+
   const summary = document.createElement("summary");
   summary.textContent = secao.titulo;
   details.appendChild(summary);
@@ -301,10 +303,12 @@ secoes.forEach(secao => {
     checkbox.dataset.nome = item[0];
 
     label.appendChild(checkbox);
-    label.append(` ${item[0]} — ${item[1].toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    })}`);
+    label.append(
+      ` ${item[0]} — ${item[1].toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      })}`
+    );
 
     details.appendChild(label);
   });
@@ -333,10 +337,17 @@ function calcular() {
   const economia = total - avista;
   const parcela = total / 6;
 
-  document.getElementById("total").textContent = total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-  document.getElementById("avista").textContent = avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-  document.getElementById("economia").textContent = economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-  document.getElementById("parcelado").textContent = parcela.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  document.getElementById("total").textContent =
+    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+  document.getElementById("avista").textContent =
+    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+  document.getElementById("economia").textContent =
+    economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+  document.getElementById("parcelado").textContent =
+    parcela.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
 document.addEventListener("change", calcular);
