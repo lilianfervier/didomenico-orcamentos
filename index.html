@@ -20,8 +20,8 @@
     <h2>Resumo do Orçamento</h2>
 
     <div class="acoes">
-      <button onclick="toggleApresentacao()">Modo apresentação</button>
-      <button onclick="gerarPDF()">Gerar PDF</button>
+      <button id="btnApresentacao">Modo apresentação</button>
+      <button id="btnPDF">Gerar PDF</button>
     </div>
 
     <div class="selecionados">
@@ -35,7 +35,7 @@
     </div>
 
     <div class="linha destaque">
-      <span>À vista (OFF)</span>
+      <span>Pagamento em dinheiro (OFF)</span>
       <strong id="avista">R$ 0,00</strong>
     </div>
 
@@ -51,27 +51,7 @@
   </section>
 </main>
 
-<script src="script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<script>
-function toggleApresentacao() {
-  document.body.classList.toggle("apresentacao");
-}
-
-function gerarPDF() {
-  document.body.classList.add("apresentacao");
-
-  setTimeout(() => {
-    html2pdf()
-      .from(document.querySelector(".container"))
-      .save("orcamento.pdf");
-
-    document.body.classList.remove("apresentacao");
-  }, 400);
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
