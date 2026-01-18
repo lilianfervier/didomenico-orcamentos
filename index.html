@@ -2,48 +2,50 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Orçamento – Clínica</title>
+  <title>Dra. Emi Di Domenico De Leon – Dermatologista</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f2f2f2;
       margin: 0;
       padding: 20px;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      font-weight: 500;
+      margin-bottom: 30px;
     }
 
     details {
-      background: #fff;
-      border-radius: 8px;
-      padding: 10px 15px;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      background: #ffffffdd;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     summary {
-      font-weight: bold;
-      cursor: pointer;
       font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     label {
       display: block;
       margin: 6px 0;
+      font-size: 15px;
       cursor: pointer;
     }
 
     .resultado {
       background: #fff;
-      border-radius: 8px;
-      padding: 15px;
-      margin-top: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .resultado p {
@@ -51,8 +53,8 @@
       font-size: 16px;
     }
 
-    .total {
-      font-size: 20px;
+    .resultado .total {
+      font-size: 22px;
       font-weight: bold;
     }
   </style>
@@ -60,19 +62,20 @@
 
 <body>
 
-  <h1>Orçamento de Procedimentos</h1>
+<h1>
+  Dra. Emi Di Domenico De Leon – Dermatologista<br>
+  Clínica Médica Di Domenico – Advanced Medicine
+</h1>
 
-  <!-- Procedimentos gerados pelo JS -->
-  <div id="procedimentos"></div>
+<div id="procedimentos"></div>
 
-  <!-- Resultado -->
-  <div class="resultado">
-    <p class="total">Total: <span id="total">R$ 0,00</span></p>
-    <p>À vista (3% OFF): <span id="avista">R$ 0,00</span></p>
-    <p>Economia: <span id="economia">R$ 0,00</span></p>
-    <p>6x no cartão: <span id="parcelado">R$ 0,00</span></p>
-  </div>
+<div class="resultado">
+  <p class="total">Total: <span id="total">R$ 0,00</span></p>
+  <p>À vista (3% OFF): <span id="avista">R$ 0,00</span></p>
+  <p>Economia: <span id="economia">R$ 0,00</span></p>
+  <p>6x no cartão: <span id="parcelado">R$ 0,00</span></p>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
