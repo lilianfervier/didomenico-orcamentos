@@ -1,89 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Di Domenico | Orçamento</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Orçamento</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-  <h1 class="titulo">
-    Dra. Emi Di Domenico De Leon
-    <span>|Dermatologista|</span>
-  </h1>
-  <p class="subtitulo">
-    Clínica Médica Di Domenico | Advanced Medicine
-  </p>
-</header>
+<h1 class="titulo">
+  Dra. Emi Di Domenico De Leon – Dermatologista<br>
+  Clínica Médica Di Domenico – Advanced Medicine
+</h1>
 
+<div class="container" id="procedimentos"></div>
 
-  <main class="container">
+<div class="total">
+  <p>Total: <strong id="total">R$ 0,00</strong></p>
+  <p>À vista: <strong id="avista">R$ 0,00</strong></p>
+  <p>Economia: <strong id="economia">R$ 0,00</strong></p>
+  <p>6x de: <strong id="parcelado">R$ 0,00</strong></p>
+</div>
 
-    <!-- INJETÁVEIS -->
-    <details open>
-      <summary>Injetáveis</summary>
-      <label><input type="checkbox" value="1800"> Hialuronidase – R$ 1.800,00</label>
-      <label><input type="checkbox" value="2100"> Preenchimento Labial – R$ 2.100,00</label>
-      <label><input type="checkbox" value="1400"> Retoque (produto) – R$ 1.400,00</label>
-      <label><input type="checkbox" value="3200"> Profhilo – R$ 3.200,00</label>
-      <label><input type="checkbox" value="3000"> HarmonyCa – R$ 3.000,00</label>
-      <label><input type="checkbox" value="2650"> Rinomodelação – R$ 2.650,00</label>
-      <label><input type="checkbox" value="3150"> Sculptra (1) – R$ 3.150,00</label>
-      <label><input type="checkbox" value="5900"> Sculptra (2) – R$ 5.900,00</label>
-      <label><input type="checkbox" value="2100"> Skinvive – R$ 2.100,00</label>
-    </details>
-
-    <!-- TOXINA -->
-    <details>
-      <summary>Toxina Botulínica</summary>
-      <label><input type="checkbox" value="2080"> Full Face Feminino – R$ 2.080</label>
-      <label><input type="checkbox" value="2310"> Full Face Masculino – R$ 2.310</label>
-      <label><input type="checkbox" value="2520"> Face + Masseter – R$ 2.520</label>
-      <label><input type="checkbox" value="940"> Olhos – R$ 940</label>
-      <label><input type="checkbox" value="1360"> Glabela – R$ 1.360</label>
-      <label><input type="checkbox" value="1680"> Glabela + Testa – R$ 1.680</label>
-      <label><input type="checkbox" value="1370"> Masseter/Bruxismo – R$ 1.370</label>
-    </details>
-
-    <!-- APARELHOS -->
-    <details>
-      <summary>Aparelhos</summary>
-      <label><input type="checkbox" value="5720"> Atria 2 – Face – R$ 5.720</label>
-      <label><input type="checkbox" value="7590"> Morpheus – Face + Pescoço – R$ 7.590</label>
-      <label><input type="checkbox" value="6710"> Ultraformer MPT – Face – R$ 6.710</label>
-      <label><input type="checkbox" value="11100"> Volnewmer – Face – R$ 11.100</label>
-      <label><input type="checkbox" value="19800"> Volformer – Face + Pescoço – R$ 19.800</label>
-    </details>
-
-    <!-- LASER -->
-    <details>
-      <summary>Laser</summary>
-      <label><input type="checkbox" value="3200"> Fotona Starwalker – R$ 3.200</label>
-      <label><input type="checkbox" value="3000"> Laser CO2 – Face – R$ 3.000</label>
-      <label><input type="checkbox" value="2090"> Laser Íntimo – R$ 2.090</label>
-      <label><input type="checkbox" value="1650"> NDYAG – R$ 1.650</label>
-    </details>
-
-    <!-- PROTOCOLOS -->
-    <details>
-      <summary>Técnicas e Protocolos</summary>
-      <label><input type="checkbox" value="4850"> Glow Up – R$ 4.850</label>
-      <label><input type="checkbox" value="7480"> Beautiful Mommy – R$ 7.480</label>
-      <label><input type="checkbox" value="17600"> Praia Brava Plus – R$ 17.600</label>
-      <label><input type="checkbox" value="2980"> BoosterBotox – R$ 2.980</label>
-    </details>
-
-    <!-- RESULTADO -->
-    <section class="resultado">
-      <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
-      <p><strong>À vista (OFF):</strong> R$ <span id="avista">0,00</span></p>
-      <p><strong>6x no cartão:</strong> R$ <span id="parcelado">0,00</span></p>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
+<script src="procedimentos.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
