@@ -317,7 +317,7 @@ function calcular() {
   });
 
   const avista = total * 0.97;
-  const economia = total - avista;
+  const economia = total - avista; 
   const parcela = total / 6;
 
   document.getElementById("total").textContent =
