@@ -100,3 +100,22 @@ button:hover {
     padding: 20px;
   }
 }
+
+<script>
+function toggleApresentacao() {
+  document.body.classList.toggle("apresentacao");
+}
+
+function gerarPDF() {
+  document.body.classList.add("apresentacao");
+
+  setTimeout(() => {
+    html2pdf()
+      .from(document.querySelector(".container"))
+      .save("orcamento.pdf");
+
+    document.body.classList.remove("apresentacao");
+  }, 400);
+}
+</script>
+
