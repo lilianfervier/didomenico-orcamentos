@@ -19,6 +19,8 @@
     <section class="resultado">
       <h2>Resumo do Orçamento</h2>
 
+      <button onclick="toggleApresentacao()">Modo apresentação</button>
+
       <div class="linha">
         <span>Total</span>
         <strong id="total">R$ 0,00</strong>
@@ -42,5 +44,10 @@
   </main>
 
   <script src="script.js"></script>
+  <script>
+function toggleApresentacao() {
+  document.body.classList.toggle("apresentacao");
+}
+</script>
 </body>
 </html>
