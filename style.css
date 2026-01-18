@@ -1,143 +1,23 @@
-* {
-  box-sizing: border-box; 
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 40px;
-  background: #f5f6f8;
-  color: #222;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-h1 {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 40px;
-  font-weight: 600;
-}
-
-h1 span {
-  display: block;
-  font-size: 15px;
-  font-weight: 400;
-  color: #666;
-  margin-top: 6px;
-}
-
-details {
-  margin-bottom: 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px 14px;
-}
-
-summary {
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-label {
-  display: block;
-  margin: 8px 0;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-input[type="checkbox"] {
-  margin-right: 8px;
-}
-
-.resultado {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 2px solid #eee;
-}
-
-.resultado h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.linha {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-.destaque {
-  font-size: 18px;
-  color: #0a7c5a;
-  font-weight: 600;
-}
-
-.economia {
-  color: #b00020;
-  font-size: 14px;
-}
-
-body {
-  max-width: 800px;
-  margin: auto;
+.selecionados {
+  margin-top: 20px;
   padding: 16px;
+  border-radius: 12px;
+  background: #f7f7f7;
 }
 
-details {
-  margin-bottom: 12px;
-}
-
-summary {
-  font-size: 1.1rem;
-}
-
-label {
-  display: block;
-  padding: 8px 0;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  summary {
-    font-size: 1rem;
-  }
-
-  label {
-    font-size: 0.9rem;
-  }
-}
-body.apresentacao details,
-body.apresentacao label,
-body.apresentacao input {
+.apresentacao #procedimentos {
   display: none;
 }
 
-body.apresentacao {
-  background: white;
+.apresentacao .selecionados {
+  display: block;
 }
 
-body.apresentacao h1 {
-  font-size: 26px;
-  text-align: center;
-}
-
-body.apresentacao #total {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
+.linha-selecionado {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
 }
 
