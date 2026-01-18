@@ -281,8 +281,6 @@ const secoes = [
   }
 ];
 
-];
-
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
