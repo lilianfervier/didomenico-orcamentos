@@ -4,12 +4,13 @@
 }
 
 /* =========================
-   MODO APRESENTAÇÃO
+   MODO APRESENTAÇÃO (CORRETO)
 ========================= */
 
-.apresentacao details,
-.apresentacao summary,
-.apresentacao label,
+.apresentacao details {
+  display: none;
+}
+
 .apresentacao .acoes {
   display: none;
 }
@@ -19,6 +20,7 @@
 }
 
 .apresentacao #selecionados div {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-size: 15px;
+  line-height: 1.4;
 }
