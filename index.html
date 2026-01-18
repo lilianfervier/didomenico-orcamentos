@@ -8,46 +8,67 @@
 </head>
 <body>
 
-  <main class="container">
-    <h1>
-      Dra. Emi Di Domenico De Leon – Dermatologista<br>
-      <span>Clínica Médica Di Domenico – Advanced Medicine</span>
-    </h1>
+<main class="container">
+  <h1>
+    Dra. Emi Di Domenico De Leon – Dermatologista<br>
+    <span>Clínica Médica Di Domenico – Advanced Medicine</span>
+  </h1>
 
-    <section id="procedimentos"></section>
+  <section id="procedimentos"></section>
 
-    <section class="resultado">
-      <h2>Resumo do Orçamento</h2>
+  <section class="resultado">
+    <h2>Resumo do Orçamento</h2>
 
+    <div class="acoes">
       <button onclick="toggleApresentacao()">Modo apresentação</button>
+      <button onclick="gerarPDF()">Gerar PDF</button>
+    </div>
 
-      <div class="linha">
-        <span>Total</span>
-        <strong id="total">R$ 0,00</strong>
-      </div>
+    <div class="linha">
+      <span>Total</span>
+      <strong id="total">R$ 0,00</strong>
+    </div>
 
-      <div class="linha destaque">
-        <span>À vista (3% OFF)</span>
-        <strong id="avista">R$ 0,00</strong>
-      </div>
+    <div class="linha destaque">
+      <span>À vista (3% OFF)</span>
+      <strong id="avista">R$ 0,00</strong>
+    </div>
 
-      <div class="linha economia">
-        <span>Economia</span>
-        <strong id="economia">R$ 0,00</strong>
-      </div>
+    <div class="linha economia">
+      <span>Economia</span>
+      <strong id="economia">R$ 0,00</strong>
+    </div>
 
-      <div class="linha">
-        <span>6x no cartão</span>
-        <strong id="parcelado">R$ 0,00</strong>
-      </div>
-    </section>
-  </main>
+    <div class="linha">
+      <span>6x no cartão</span>
+      <strong id="parcelado">R$ 0,00</strong>
+    </div>
+  </section>
+</main>
 
-  <script src="script.js"></script>
-  <script>
+<script src="script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
 function toggleApresentacao() {
   document.body.classList.toggle("apresentacao");
 }
+
+function gerarPDF() {
+  const elemento = document.querySelector(".container");
+
+  const opt = {
+    margin: 10,
+    filename: 'orcamento-clinica-di-domenico.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(elemento).save();
+}
 </script>
+
 </body>
 </html>
