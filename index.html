@@ -3,79 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Dra. Emi Di Domenico De Leon – Dermatologista</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f2f2f2;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      font-weight: 500;
-      margin-bottom: 30px;
-    }
-
-    details {
-      background: #ffffffdd;
-      border-radius: 10px;
-      padding: 12px 16px;
-      margin-bottom: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    summary {
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    label {
-      display: block;
-      margin: 6px 0;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    .resultado {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .resultado p {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .resultado .total {
-      font-size: 22px;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>
-  Dra. Emi Di Domenico De Leon – Dermatologista<br>
-  Clínica Médica Di Domenico – Advanced Medicine
-</h1>
+  <main class="container">
+    <h1>
+      Dra. Emi Di Domenico De Leon – Dermatologista<br>
+      <span>Clínica Médica Di Domenico – Advanced Medicine</span>
+    </h1>
 
-<div id="procedimentos"></div>
+    <section id="procedimentos"></section>
 
-<div class="resultado">
-  <p class="total">Total: <span id="total">R$ 0,00</span></p>
-  <p>À vista (3% OFF): <span id="avista">R$ 0,00</span></p>
-  <p>Economia: <span id="economia">R$ 0,00</span></p>
-  <p>6x no cartão: <span id="parcelado">R$ 0,00</span></p>
-</div>
+    <section class="resultado">
+      <h2>Resumo do Orçamento</h2>
 
-<script src="script.js"></script>
+      <div class="linha">
+        <span>Total</span>
+        <strong id="total">R$ 0,00</strong>
+      </div>
+
+      <div class="linha destaque">
+        <span>À vista (3% OFF)</span>
+        <strong id="avista">R$ 0,00</strong>
+      </div>
+
+      <div class="linha economia">
+        <span>Economia</span>
+        <strong id="economia">R$ 0,00</strong>
+      </div>
+
+      <div class="linha">
+        <span>6x no cartão</span>
+        <strong id="parcelado">R$ 0,00</strong>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
