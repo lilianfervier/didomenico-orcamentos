@@ -281,8 +281,10 @@ const secoes = [
   }
 ];
 
+];
+
 const container = document.getElementById("procedimentos");
-const listaSelecionados = document.getElementById("selecionados");
+const selecionadosDiv = document.getElementById("selecionados");
 
 secoes.forEach(secao => {
   const details = document.createElement("details");
@@ -293,9 +295,10 @@ secoes.forEach(secao => {
   secao.itens.forEach(item => {
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
+
     checkbox.type = "checkbox";
-    checkbox.dataset.nome = item[0];
     checkbox.value = item[1];
+    checkbox.dataset.nome = item[0];
 
     label.appendChild(checkbox);
     label.append(` ${item[0]} — ${item[1].toLocaleString("pt-BR", {
@@ -311,79 +314,29 @@ secoes.forEach(secao => {
 
 function calcular() {
   let total = 0;
-  listaSelecionados.innerHTML = "";
-
-  document.querySelectorAll("input:checked").forEach(i => {
-    total += Number(i.value);
-
-    const div = document.createElement("div");
-    div.className = "linha-selecionado";
-    div.innerHTML = `
-      <span>${i.dataset.nome}</span>
-      <strong>${Number(i.value).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}</strong>
-    `;
-    listaSelecionados.appendChild(div);
-  });
-
-  const avista = total * 0.97;
-  const economia = total - avista;
-  const parcela = total / 6;
-
-  document.getElementById("total").textContent = total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-  document.getElementById("avista").textContent = avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-  document.getElementById("economia").textContent = economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-  document.getElementById("parcelado").textContent = parcela.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-}
-
-document.addEventListener("change", calcular);
-      ` ${item[0]} — ${item[1].toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      })}`
-    );
-
-    details.appendChild(label);
-  });
-
-  container.appendChild(details);
-});
-
-function calcular() {
-  let total = 0;
-  selecionadosContainer.innerHTML = "";
+  selecionadosDiv.innerHTML = "";
 
   document.querySelectorAll("input:checked").forEach(i => {
     const valor = Number(i.value);
     total += valor;
 
     const linha = document.createElement("div");
-    linha.className = "linha-selecionado";
-    linha.innerHTML = `
-      <span>${i.dataset.nome}</span>
-      <strong>${valor.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      })}</strong>
-    `;
-    selecionadosContainer.appendChild(linha);
+    linha.textContent = `${i.dataset.nome} — ${valor.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    })}`;
+
+    selecionadosDiv.appendChild(linha);
   });
 
   const avista = total * 0.97;
   const economia = total - avista;
   const parcela = total / 6;
 
-  document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-  document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-  document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-  document.getElementById("parcelado").textContent =
-    parcela.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  document.getElementById("total").textContent = total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  document.getElementById("avista").textContent = avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  document.getElementById("economia").textContent = economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  document.getElementById("parcelado").textContent = parcela.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
 document.addEventListener("change", calcular);
-
