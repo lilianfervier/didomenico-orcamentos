@@ -282,6 +282,7 @@ const secoes = [
 ];
 
 const container = document.getElementById("procedimentos");
+const selecionadosContainer = document.getElementById("selecionados");
 
 secoes.forEach(secao => {
   const details = document.createElement("details");
@@ -295,6 +296,7 @@ secoes.forEach(secao => {
 
     checkbox.type = "checkbox";
     checkbox.value = item[1];
+    checkbox.dataset.nome = item[0];
 
     label.appendChild(checkbox);
     label.append(
@@ -312,12 +314,26 @@ secoes.forEach(secao => {
 
 function calcular() {
   let total = 0;
+  selecionadosContainer.innerHTML = "";
+
   document.querySelectorAll("input:checked").forEach(i => {
-    total += Number(i.value);
+    const valor = Number(i.value);
+    total += valor;
+
+    const linha = document.createElement("div");
+    linha.className = "linha-selecionado";
+    linha.innerHTML = `
+      <span>${i.dataset.nome}</span>
+      <strong>${valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      })}</strong>
+    `;
+    selecionadosContainer.appendChild(linha);
   });
 
   const avista = total * 0.97;
-  const economia = total - avista; 
+  const economia = total - avista;
   const parcela = total / 6;
 
   document.getElementById("total").textContent =
@@ -334,5 +350,4 @@ function calcular() {
 }
 
 document.addEventListener("change", calcular);
-
 
