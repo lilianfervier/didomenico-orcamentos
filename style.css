@@ -5,13 +5,16 @@
 }
 
 /* =========================
-   BASE
+   FUNDO COM LOGO
 ========================= */
 
 body {
   margin: 0;
   padding: 20px;
-  background: #f3efe9;
+  background: 
+    linear-gradient(rgba(243,239,233,0.92), rgba(243,239,233,0.92)),
+    url("background.png") no-repeat center center fixed;
+  background-size: contain;
   font-family: 'Inter', sans-serif;
 }
 
@@ -22,7 +25,7 @@ body {
 .container {
   max-width: 900px;
   margin: auto;
-  background: #fffaf5;
+  background: rgba(255, 250, 245, 0.96);
   padding: 30px;
   border-radius: 12px;
   border: 1px solid #d6c3b2;
@@ -50,7 +53,7 @@ h1 span {
 }
 
 /* =========================
-   LISTA DE PROCEDIMENTOS
+   LISTAS
 ========================= */
 
 details {
@@ -147,11 +150,6 @@ button:hover {
 
 .apresentacao .selecionados {
   display: block;
-}
-
-.apresentacao #selecionados div {
-  margin-bottom: 6px;
-  font-size: 15px;
 }
 
 /* =========================
