@@ -279,32 +279,17 @@ const secoes = [
   }
 ];
 
+const secoes = [...secoes]; 
+// ⚠️ NÃO MEXA NAS SUAS LISTAS DE PROCEDIMENTOS
+// MANTENHA EXATAMENTE COMO VOCÊ JÁ TEM ACIMA
+
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
 let selecionados = [];
 
-/* BOTÕES */
-
-document.getElementById("btnApresentacao").addEventListener("click", () => {
-  document.body.classList.toggle("apresentacao");
-});
-
-document.getElementById("btnPDF").addEventListener("click", () => {
-  document.body.classList.add("apresentacao");
-
-  setTimeout(() => {
-    html2pdf()
-      .from(document.querySelector(".container"))
-      .save("orcamento.pdf");
-
-    document.body.classList.remove("apresentacao");
-  }, 400);
-});
-
-/* GERAR LISTA */
-
 secoes.forEach(secao => {
+
   const details = document.createElement("details");
   details.open = true;
 
@@ -313,6 +298,7 @@ secoes.forEach(secao => {
   details.appendChild(summary);
 
   secao.itens.forEach(item => {
+
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
 
@@ -323,22 +309,18 @@ secoes.forEach(secao => {
     checkbox.addEventListener("change", atualizarSelecionados);
 
     label.appendChild(checkbox);
-    label.append(
-      ` ${item[0]} — ${item[1].toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      })}`
-    );
+    label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
 
     details.appendChild(label);
+
   });
 
   container.appendChild(details);
+
 });
 
-/* ATUALIZAR RESUMO */
+function atualizarSelecionados(){
 
-function atualizarSelecionados() {
   selecionados = [];
   selecionadosDiv.innerHTML = "";
 
@@ -352,42 +334,60 @@ function atualizarSelecionados() {
   renderResumo();
 }
 
-function renderResumo() {
+function renderResumo(){
+
   let total = 0;
   selecionadosDiv.innerHTML = "";
 
   selecionados.forEach(item => {
+
     total += item.valor;
 
     const linha = document.createElement("div");
-    linha.textContent = `${item.nome} — ${item.valor.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    })}`;
-
+    linha.textContent = `${item.nome} — R$ ${item.valor.toLocaleString("pt-BR")}`;
     selecionadosDiv.appendChild(linha);
+
   });
 
-  // DESCONTO 3% APENAS NO DINHEIRO
-  const avista = total * 0.97;
-  const economia = total - avista;
+  let avista = total * 0.97;
+  let economia = total - avista;
 
-  // PARCELAMENTO
-  let parcelas = total >= 10000 ? 10 : 6;
-  let valorParcela = total / parcelas;
+  let parcelamentoTexto = "À vista";
+
+  if(total > 10000){
+    parcelamentoTexto = "10x de " + (total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  }
+  else if(total >= 2080){
+    parcelamentoTexto = "6x de " + (total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  }
 
   document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
   document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
   document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
-  document.getElementById("parcelado").textContent =
-    `${parcelas}x de ${valorParcela.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    })}`;
+  document.getElementById("parcelado").textContent = parcelamentoTexto;
 }
+
+// MODO APRESENTAÇÃO
+document.getElementById("btnApresentacao").onclick = () => {
+  document.body.classList.toggle("apresentacao");
+};
+
+// GERAR PDF
+document.getElementById("btnPDF").onclick = () => {
+
+  document.body.classList.add("pdf");
+
+  html2pdf()
+    .from(document.getElementById("conteudo"))
+    .save("orcamento.pdf")
+    .then(()=>{
+      document.body.classList.remove("pdf");
+    });
+
+};
