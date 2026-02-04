@@ -284,6 +284,26 @@ const selecionadosDiv = document.getElementById("selecionados");
 
 let selecionados = [];
 
+/* BOTÕES */
+
+document.getElementById("btnApresentacao").addEventListener("click", () => {
+  document.body.classList.toggle("apresentacao");
+});
+
+document.getElementById("btnPDF").addEventListener("click", () => {
+  document.body.classList.add("apresentacao");
+
+  setTimeout(() => {
+    html2pdf()
+      .from(document.querySelector(".container"))
+      .save("orcamento.pdf");
+
+    document.body.classList.remove("apresentacao");
+  }, 400);
+});
+
+/* GERAR LISTA */
+
 secoes.forEach(secao => {
   const details = document.createElement("details");
   details.open = true;
@@ -300,9 +320,7 @@ secoes.forEach(secao => {
     checkbox.dataset.nome = item[0];
     checkbox.dataset.valor = item[1];
 
-    checkbox.addEventListener("change", () => {
-      atualizarSelecionados();
-    });
+    checkbox.addEventListener("change", atualizarSelecionados);
 
     label.appendChild(checkbox);
     label.append(
@@ -317,6 +335,8 @@ secoes.forEach(secao => {
 
   container.appendChild(details);
 });
+
+/* ATUALIZAR RESUMO */
 
 function atualizarSelecionados() {
   selecionados = [];
@@ -348,9 +368,13 @@ function renderResumo() {
     selecionadosDiv.appendChild(linha);
   });
 
+  // DESCONTO 3% APENAS NO DINHEIRO
   const avista = total * 0.97;
   const economia = total - avista;
-  const parcela = total / 6;
+
+  // PARCELAMENTO
+  let parcelas = total >= 10000 ? 10 : 6;
+  let valorParcela = total / parcelas;
 
   document.getElementById("total").textContent =
     total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -362,5 +386,8 @@ function renderResumo() {
     economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   document.getElementById("parcelado").textContent =
-    parcela.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    `${parcelas}x de ${valorParcela.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    })}`;
 }
