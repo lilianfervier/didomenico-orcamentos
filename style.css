@@ -161,3 +161,25 @@ button:hover {
     padding: 20px;
   }
 }
+
+/* LOGO NO CANTO */
+.logo-canto{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  opacity: 0.9;
+}
+
+/* FUNDO COM MARCA D'ÁGUA */
+body{
+  background: url("background.png") center center no-repeat fixed;
+  background-size: cover;
+}
+
+/* ESCONDER LOGO E BOTÕES NO PDF */
+.pdf .logo-canto,
+.pdf .acoes{
+  display: none;
+}
+
