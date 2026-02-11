@@ -287,6 +287,7 @@ const secoes = [
   }
 ];
 
+
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
@@ -308,31 +309,8 @@ secoes.forEach(secao => {
   secao.itens.forEach(item => {
 
     const label = document.createElement("label");
+
     const checkbox = document.createElement("input");
-checkbox.type = "checkbox";
-
-checkbox.onchange = () => {
-  if (checkbox.checked) {
-    selecionados.push({
-      categoria: bloco.titulo,
-      nome: item[0],
-      valor: item[1]
-    });
-  } else {
-    selecionados = selecionados.filter(i => i.nome !== item[0]);
-  }
-
-  render();
-};
-
-label.appendChild(checkbox);
-
-label.innerHTML += `
-  <strong class="procedimento-nome">${item[0]}</strong>
-  — R$ ${item[1].toLocaleString("pt-BR")}
-`;
-    const checkbox = document.createElement("input");
-
     checkbox.type = "checkbox";
     checkbox.dataset.categoria = secao.titulo;
     checkbox.dataset.nome = item[0];
@@ -341,12 +319,9 @@ label.innerHTML += `
     checkbox.addEventListener("change", atualizar);
 
     label.appendChild(checkbox);
-    label.innerHTML = `
-  <strong class="procedimento-nome">${item[0]}</strong>
-  — R$ ${item[1].toLocaleString("pt-BR")}
-`;
-
-
+    label.innerHTML += `
+      <strong>${item[0]}</strong> — R$ ${item[1].toLocaleString("pt-BR")}
+    `;
 
     details.appendChild(label);
 
@@ -374,29 +349,10 @@ function atualizar(){
     });
 
   render();
-
 }
 
 /***********************
- PARCELAMENTO
-************************/
-
-function calcularParcelamento(total){
-
-  if(total > 10000){
-    return `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-  }
-  else if(total >= 2080){
-    return `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-  }
-  else{
-    return "À vista";
-  }
-
-}
-
-/***********************
- ATUALIZAR TOTAIS
+ TOTAIS
 ************************/
 
 function atualizarTotais(total){
@@ -414,12 +370,13 @@ function atualizarTotais(total){
     economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
   document.getElementById("parcelado").textContent =
-    calcularParcelamento(total);
-
+    total > 10000
+      ? `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`
+      : `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
 }
 
 /***********************
- RENDER ORÇAMENTO
+ RENDER
 ************************/
 
 function render(){
@@ -436,11 +393,9 @@ function render(){
       `${item.categoria} – ${item.nome} — R$ ${item.valor.toLocaleString("pt-BR")}`;
 
     selecionadosDiv.appendChild(div);
-
   });
 
   atualizarTotais(total);
-
 }
 
 /***********************
@@ -457,17 +412,16 @@ document.getElementById("btnPDF").onclick = () => {
 
   setTimeout(()=>{
     html2pdf()
-      .from(document.getElementById("conteudo"))
+      .from(document.querySelector(".container"))
       .save("orcamento.pdf")
       .then(()=>{
         document.body.classList.remove("apresentacao");
       });
   },300);
-
 };
 
 /***********************
- FECHAR SEÇÕES AO CARREGAR
+ FECHAR SEÇÕES
 ************************/
 
 window.onload = () => {
