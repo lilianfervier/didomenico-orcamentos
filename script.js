@@ -443,24 +443,24 @@ function render(){
 
 function atualizarTotais(total){
 
-  const avista=total*0.97;
-  const economia=total-avista;
+  const avista = total * 0.97;
+  const economia = total - avista;
 
-const totalEl = total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const avistaEl = avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const economiaEl = economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  document.getElementById("total").textContent =
+    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
-document.getElementById("total").textContent = totalEl;
-document.getElementById("avista").textContent = avistaEl;
-document.getElementById("economia").textContent = economiaEl;
+  document.getElementById("avista").textContent =
+    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
+  document.getElementById("economia").textContent =
+    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
-
-  document.getElementById("parcelado").textContent=
-    total>10000
-    ? `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`
-    : `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+  document.getElementById("parcelado").textContent =
+    total > 10000
+      ? `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`
+      : `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
 }
+
 
 /*************** BOTÕES ****************/
 
