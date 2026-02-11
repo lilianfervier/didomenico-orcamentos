@@ -387,3 +387,10 @@ function render(){
     economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
 }
+
+window.onload = () => {
+  document.querySelectorAll("details").forEach(d => {
+    d.open = false;
+  });
+};
+
