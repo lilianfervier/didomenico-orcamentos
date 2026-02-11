@@ -303,7 +303,7 @@ let selecionados = [];
 secoes.forEach(secao => {
 
   const details = document.createElement("details");
-  details.open = false;
+details.open = false;
 
   const summary = document.createElement("summary");
   summary.textContent = secao.titulo;
