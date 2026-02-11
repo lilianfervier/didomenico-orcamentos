@@ -1,85 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>Orçamento Estético</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<style>
-body{
-  font-family: Arial, sans-serif;
-  background:#f5f5f5;
-}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  background:#fff;
-  padding:20px;
-  border-radius:8px;
-}
-
-details{
-  margin-bottom:10px;
-  border:1px solid #ddd;
-  padding:10px;
-  border-radius:6px;
-}
-
-label{
-  display:block;
-  padding:6px;
-  cursor:pointer;
-}
-
-.resumo{
-  margin-top:20px;
-  border-top:2px solid #000;
-  padding-top:15px;
-}
-
-.total{
-  font-size:20px;
-  font-weight:bold;
-}
-
-button{
-  padding:10px 15px;
-  margin:5px;
-  cursor:pointer;
-}
-
-.apresentacao details{
-  display:none;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>Gerador de Orçamento</h1>
-
-<div id="procedimentos"></div>
-
-<div class="resumo">
-<h2>Selecionados</h2>
-<div id="selecionados"></div>
-
-<p class="total">Total: <span id="total">R$ 0,00</span></p>
-<p>À vista (3% off): <span id="avista">R$ 0,00</span></p>
-<p>Economia: <span id="economia">R$ 0,00</span></p>
-<p>Parcelado: <span id="parcelado">-</span></p>
-
-<button id="btnApresentacao">Modo Apresentação</button>
-<button id="btnPDF">Gerar PDF</button>
-</div>
-
-</div>
-
-<script>
 const secoes = [
   {
     titulo: "Taxas e anestesias",
@@ -369,33 +288,35 @@ const secoes = [
   }
 ];
 
-
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
 let selecionados = [];
 
-secoes.forEach(secao=>{
 
-  const details=document.createElement("details");
-  const summary=document.createElement("summary");
-  summary.textContent=secao.titulo;
+/*************** CRIAR CHECKLIST ****************/
+
+secoes.forEach(secao => {
+
+  const details = document.createElement("details");
+  const summary = document.createElement("summary");
+
+  summary.textContent = secao.titulo;
   details.appendChild(summary);
 
-  secao.itens.forEach(item=>{
+  secao.itens.forEach(item => {
 
-    const label=document.createElement("label");
+    const label = document.createElement("label");
 
-    label.innerHTML=`
+    label.innerHTML = `
       <input type="checkbox"
         data-categoria="${secao.titulo}"
         data-nome="${item[0]}"
         data-valor="${item[1]}">
-      ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}
+      ${item[0]} — ${item[1].toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
     `;
 
-    label.querySelector("input")
-      .addEventListener("change",atualizar);
+    label.querySelector("input").addEventListener("change", atualizar);
 
     details.appendChild(label);
   });
@@ -403,85 +324,84 @@ secoes.forEach(secao=>{
   container.appendChild(details);
 });
 
+
 /*************** ATUALIZAR ****************/
 
-function atualizar(){
+function atualizar() {
 
-  selecionados=[];
+  selecionados = [];
 
-  document.querySelectorAll("input:checked")
-  .forEach(i=>{
+  document.querySelectorAll("input:checked").forEach(i => {
     selecionados.push({
-      categoria:i.dataset.categoria,
-      nome:i.dataset.nome,
-      valor:Number(i.dataset.valor)
+      categoria: i.dataset.categoria,
+      nome: i.dataset.nome,
+      valor: Number(i.dataset.valor)
     });
   });
 
   render();
 }
 
+
 /*************** RENDER ****************/
 
-function render(){
+function render() {
 
-  let total=0;
-  selecionadosDiv.innerHTML="";
+  let total = 0;
+  selecionadosDiv.innerHTML = "";
 
-  selecionados.forEach(item=>{
-    total+=item.valor;
+  selecionados.forEach(item => {
 
-    const div=document.createElement("div");
-    div.textContent=`${item.categoria} - ${item.nome} - R$ ${item.valor.toLocaleString("pt-BR")}`;
+    total += item.valor;
+
+    const div = document.createElement("div");
+    div.textContent = `${item.categoria} - ${item.nome} - ${item.valor.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+
     selecionadosDiv.appendChild(div);
   });
 
   atualizarTotais(total);
 }
 
+
 /*************** TOTAIS ****************/
 
-function atualizarTotais(total){
+function atualizarTotais(total) {
 
   const avista = total * 0.97;
   const economia = total - avista;
 
   document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+    economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   document.getElementById("parcelado").textContent =
     total > 10000
-      ? `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`
-      : `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+      ? `10x de ${(total / 10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`
+      : `6x de ${(total / 6).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`;
 }
 
 
 /*************** BOTÕES ****************/
 
-document.getElementById("btnApresentacao").onclick=()=>{
+document.getElementById("btnApresentacao").onclick = () => {
   document.body.classList.toggle("apresentacao");
 };
 
-document.getElementById("btnPDF").onclick=()=>{
+document.getElementById("btnPDF").onclick = () => {
 
   document.body.classList.add("apresentacao");
 
-  setTimeout(()=>{
+  setTimeout(() => {
     html2pdf()
       .from(document.querySelector(".container"))
       .save("orcamento.pdf")
-      .then(()=>{
+      .then(() => {
         document.body.classList.remove("apresentacao");
       });
-  },300);
-};
-</script>
-
-</body>
-</html>
+  }, 300);
