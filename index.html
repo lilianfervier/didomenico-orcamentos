@@ -4,18 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dra. Emi Di Domenico De Leon</title>
-<link rel="stylesheet" href="./style.css">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+}
+
+.logo-canto{
+  max-width:180px;
+  display:block;
+  margin:0 auto 10px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+}
+
+details{
+  margin-bottom:10px;
+  border:1px solid #ddd;
+  padding:10px;
+  border-radius:6px;
+}
+
+label{
+  display:block;
+  padding:6px;
+  cursor:pointer;
+}
+
+.resultado{
+  margin-top:20px;
+  border-top:2px solid #000;
+  padding-top:15px;
+}
+
+.linha{
+  display:flex;
+  justify-content:space-between;
+  margin:5px 0;
+}
+
+.destaque{
+  font-size:18px;
+  font-weight:bold;
+}
+
+button{
+  padding:10px 15px;
+  margin:5px;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
 <img src="logo.png" class="logo-canto">
 
-<main class="container" id="conteudo">
+<main class="container">
 
 <h1>
 Dra. Emi Di Domenico De Leon 
-<span>Clínica Médica Di Domenico – Advanced Medicine</span>
+<br>
+<small>Clínica Médica Di Domenico – Advanced Medicine</small>
 </h1>
 
 <section id="procedimentos"></section>
@@ -24,15 +81,9 @@ Dra. Emi Di Domenico De Leon
 
 <h2>Orçamento</h2>
 
-<div class="acoes">
-<button id="btnApresentacao">Gerar orçamento</button>
 <button id="btnPDF">Gerar PDF</button>
-</div>
 
-<div class="selecionados">
-<h3>Procedimentos selecionados</h3>
 <div id="selecionados"></div>
-</div>
 
 <div class="linha">
 <span>Total</span>
@@ -44,14 +95,14 @@ Dra. Emi Di Domenico De Leon
 <strong id="avista">R$ 0,00</strong>
 </div>
 
-<div class="linha economia">
+<div class="linha">
 <span>Economia</span>
 <strong id="economia">R$ 0,00</strong>
 </div>
 
 <div class="linha">
-<span>Parcelamento</span>
-<strong id="parcelado">R$ 0,00</strong>
+<span>Parcelado</span>
+<strong id="parcelado">-</strong>
 </div>
 
 </section>
@@ -59,71 +110,52 @@ Dra. Emi Di Domenico De Leon
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="./script.js"></script>
-
-  Perfeito. Isso já explica 100% do problema.
-
-👉 Seu index.html NÃO está chamando nenhum JavaScript externo.
-Ou seja: todo aquele código enorme que você me mandou antes está só no HTML local, mas não está no site online.
-
-Vamos resolver da forma mais simples e impossível de quebrar:
-
-SOLUÇÃO DEFINITIVA (arquivo único)
-
-Você NÃO vai usar script.js separado.
-Vamos colocar TODO o JavaScript dentro do próprio index.html.
-
-Assim:
-
-✔ Sem erro de caminho
-✔ Sem arquivo faltando
-✔ Abre em qualquer tablet
-✔ Funciona offline se quiser
-
-O QUE VOCÊ VAI FAZER AGORA
-
-Abra:
-
-👉 https://github.com/lilianfervier/didomenico-orcamentos
-
-Clique em index.html
-
-Clique no ✏️ lápis (editar)
-
-Role até antes desta linha:
-
-</body>
-
-
-Cole TODO este bloco:
 
 <script>
-alert("JS CARREGADO");
 
 const secoes = [
-  { titulo:"Taxas e anestesias", itens:[
-    ["Taxa de Sala",550],
-    ["Consulta",880]
-  ]}
+  {
+    titulo:"Taxas e anestesias",
+    itens:[
+      ["Taxa de Sala",550],
+      ["Consulta",880],
+      ["Carbox (sessão)",715]
+    ]
+  },
+  {
+    titulo:"Cirúrgicos",
+    itens:[
+      ["Hialuronidase",1800],
+      ["Exérese de Lesão",1900],
+      ["Subcisão",3300]
+    ]
+  }
 ];
 
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
+
 let selecionados=[];
 
 secoes.forEach(secao=>{
+
   const details=document.createElement("details");
   const summary=document.createElement("summary");
   summary.textContent=secao.titulo;
   details.appendChild(summary);
 
   secao.itens.forEach(item=>{
+
     const label=document.createElement("label");
+
     label.innerHTML=`
       <input type="checkbox" data-nome="${item[0]}" data-valor="${item[1]}">
-      ${item[0]} - R$ ${item[1]}
+      ${item[0]} — R$ ${item[1]}
     `;
-    label.querySelector("input").addEventListener("change",atualizar);
+
+    label.querySelector("input")
+      .addEventListener("change",atualizar);
+
     details.appendChild(label);
   });
 
@@ -131,7 +163,9 @@ secoes.forEach(secao=>{
 });
 
 function atualizar(){
+
   selecionados=[];
+
   document.querySelectorAll("input:checked")
   .forEach(i=>{
     selecionados.push({
@@ -139,22 +173,46 @@ function atualizar(){
       valor:Number(i.dataset.valor)
     });
   });
+
   render();
 }
 
 function render(){
+
   let total=0;
   selecionadosDiv.innerHTML="";
-  selecionados.forEach(i=>{
-    total+=i.valor;
+
+  selecionados.forEach(item=>{
+    total+=item.valor;
     const d=document.createElement("div");
-    d.textContent=`${i.nome} - R$ ${i.valor}`;
+    d.textContent=`${item.nome} - R$ ${item.valor}`;
     selecionadosDiv.appendChild(d);
   });
-  document.getElementById("total").textContent=
+
+  const avista = total * 0.97;
+  const economia = total - avista;
+
+  document.getElementById("total").textContent =
     total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("avista").textContent =
+    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("economia").textContent =
+    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("parcelado").textContent =
+    total > 10000
+      ? `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`
+      : `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
 }
+
+document.getElementById("btnPDF").onclick=()=>{
+  html2pdf().from(document.body).save("orcamento.pdf");
+};
+
 </script>
+
 </body>
 </html>
 
