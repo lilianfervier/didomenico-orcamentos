@@ -1,4 +1,10 @@
-const secoes = [
+const secoes = [...secoes]; // mantém seu array grande exatamente como está
+
+const container = document.getElementById("procedimentos");
+const selecionadosDiv = document.getElementById("selecionados");
+
+let selecionados = [];
+
   {
     titulo: "Taxas e anestesias",
     itens: [
@@ -287,108 +293,133 @@ const secoes = [
   }
 ];
 
-// ----------------------------
-
-const container = document.getElementById("procedimentos");
-const selecionadosDiv = document.getElementById("selecionados");
-
-let selecionados = [];
-
-// MONTA LISTA
 secoes.forEach(secao => {
 
-const details = document.createElement("details");
-details.open = true;
+  const details = document.createElement("details");
+  details.open = true;
 
-const summary = document.createElement("summary");
-summary.textContent = secao.titulo;
-details.appendChild(summary);
+  const summary = document.createElement("summary");
+  summary.textContent = secao.titulo;
+  details.appendChild(summary);
 
-secao.itens.forEach(item => {
+  secao.itens.forEach(item => {
 
-const label = document.createElement("label");
-const checkbox = document.createElement("input");
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
 
-checkbox.type="checkbox";
-checkbox.dataset.nome=item[0];
-checkbox.dataset.valor=item[1];
-checkbox.onchange = atualizarSelecionados;
+    checkbox.type = "checkbox";
+    checkbox.dataset.nome = item[0];
+    checkbox.dataset.categoria = secao.titulo;
+    checkbox.dataset.valor = item[1];
 
-label.appendChild(checkbox);
-label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
+    checkbox.onchange = atualizarSelecionados;
 
-details.appendChild(label);
+    label.appendChild(checkbox);
+    label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
 
+    details.appendChild(label);
+  });
+
+  container.appendChild(details);
 });
 
-container.appendChild(details);
-
-});
-
-// ----------------------------
+/* =========================
+   ATUALIZAR
+========================= */
 
 function atualizarSelecionados(){
 
-selecionados=[];
-selecionadosDiv.innerHTML="";
+  selecionados = [];
+  selecionadosDiv.innerHTML = "";
 
-document.querySelectorAll("#procedimentos input:checked")
-.forEach(i=>{
-selecionados.push({
-nome:i.dataset.nome,
-valor:Number(i.dataset.valor)
-});
-});
+  document.querySelectorAll("#procedimentos input:checked")
+  .forEach(i=>{
+    selecionados.push({
+      categoria: i.dataset.categoria,
+      nome: i.dataset.nome,
+      valor: Number(i.dataset.valor)
+    });
+  });
 
-renderResumo();
+  renderResumo();
 }
 
-// ----------------------------
+/* =========================
+   RENDER
+========================= */
 
 function renderResumo(){
 
-let total=0;
-selecionadosDiv.innerHTML="";
+  let total = 0;
+  selecionadosDiv.innerHTML = "";
 
-selecionados.forEach(item=>{
-total+=item.valor;
-const div=document.createElement("div");
-div.textContent=`${item.nome} — R$ ${item.valor.toLocaleString("pt-BR")}`;
-selecionadosDiv.appendChild(div);
-});
+  selecionados.forEach(item=>{
 
-// DESCONTO DINHEIRO
-const avista = total * 0.97;
-const economia = total - avista;
+    total += item.valor;
 
-// PARCELAMENTO
-let parcelamento="À vista";
+    const div = document.createElement("div");
+    div.textContent =
+      `${item.categoria} – ${item.nome} — R$ ${item.valor.toLocaleString("pt-BR")}`;
 
-if(total>10000){
-parcelamento=`10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+    selecionadosDiv.appendChild(div);
+
+  });
+
+  // DESCONTO DINHEIRO (3%)
+  const avista = total * 0.97;
+  const economia = total - avista;
+
+  // PARCELAMENTO
+  let parcelamento = "À vista";
+
+  if(total > 10000){
+    parcelamento = `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+  }
+  else if(total >= 2080){
+    parcelamento = `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+  }
+
+  document.getElementById("total").textContent =
+    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("avista").textContent =
+    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("economia").textContent =
+    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("parcelado").textContent = parcelamento;
 }
-else if(total>=2080){
-parcelamento=`6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-}
 
-document.getElementById("total").textContent =
-total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-document.getElementById("avista").textContent =
-avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-document.getElementById("economia").textContent =
-economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-document.getElementById("parcelado").textContent = parcelamento;
-
-}
-
-// ----------------------------
-// BOTÕES
+/* =========================
+   BOTÕES
+========================= */
 
 document.getElementById("btnApresentacao").onclick = ()=>{
-document.body.classList.toggle("apresentacao");
+  document.body.classList.toggle("apresentacao");
+};
+
+document.getElementById("btnPDF").onclick = ()=>{
+
+  document.body.classList.add("apresentacao");
+  document.body.classList.add("pdf");
+
+  setTimeout(()=>{
+
+    html2pdf({
+      margin: 10,
+      filename: "orcamento.pdf",
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+    })
+    .from(document.getElementById("conteudo"))
+    .save();
+
+    document.body.classList.remove("apresentacao");
+    document.body.classList.remove("pdf");
+
+  },300);
+
 };
 
 document.getElementById("btnPDF").onclick = ()=>{
