@@ -309,6 +309,29 @@ secoes.forEach(secao => {
 
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
+checkbox.type = "checkbox";
+
+checkbox.onchange = () => {
+  if (checkbox.checked) {
+    selecionados.push({
+      categoria: bloco.titulo,
+      nome: item[0],
+      valor: item[1]
+    });
+  } else {
+    selecionados = selecionados.filter(i => i.nome !== item[0]);
+  }
+
+  render();
+};
+
+label.appendChild(checkbox);
+
+label.innerHTML += `
+  <strong class="procedimento-nome">${item[0]}</strong>
+  — R$ ${item[1].toLocaleString("pt-BR")}
+`;
+    const checkbox = document.createElement("input");
 
     checkbox.type = "checkbox";
     checkbox.dataset.categoria = secao.titulo;
