@@ -103,20 +103,20 @@ const secoes = [
   {
     titulo: "ATRIA 2",
     itens: [
-      ["Face", 5720],
-      ["Papada / Pescoço / Colo", 3630],
-      ["Face + Pescoço", 6600],
-      ["Face + Pescoço + Papada", 7260],
-      ["Pálpebra", 2860],
-      ["Peitoral Masc / Braços", 4235],
-      ["Bananinha / Coxas / Culotes / Costas / Flancos", 4235],
-      ["Meia Coxa", 3000],
-      ["Joelho – Flacidez", 2420],
-      ["Joelho – Gordura", 3190],
-      ["Infraxilar – frente", 2420],
-      ["Infraxilar – frente e atrás", 3520],
-      ["Abdômen 1 – Flacidez", 4300],
-      ["Abdômen 2 – Gordura", 4500],
+      ["ATRIA Face", 5720],
+      ["ATRIA Papada / Pescoço / Colo", 3630],
+      ["ATRIA Face + Pescoço", 6600],
+      ["ATRIA Face + Pescoço + Papada", 7260],
+      ["ATRIA Pálpebra", 2860],
+      ["ATRIA Peitoral Masc / Braços", 4235],
+      ["ATRIA Bananinha / Coxas / Culotes / Costas / Flancos", 4235],
+      ["ATRIA Meia Coxa", 3000],
+      ["ATRIA Joelho – Flacidez", 2420],
+      ["ATRIA Joelho – Gordura", 3190],
+      ["ATRIA Infraxilar – frente", 2420],
+      ["ATRIA Infraxilar – frente e atrás", 3520],
+      ["ATRIA Abdômen 1 – Flacidez", 4300],
+      ["ATRIA Abdômen 2 – Gordura", 4500],
     ]
   },
 
@@ -134,86 +134,86 @@ const secoes = [
   {
     titulo: "MORPHEUS + ATRIA",
     itens: [
-      ["Região", 8800],
-      ["Adicional + 1 região", 2200],
+      ["MORPHEUS + ATRIA Região", 8800],
+      ["MORPHEUS + ATRIA Adicional + 1 região", 2200],
     ]
   },
 
   {
     titulo: "ULTRAFORMER MPT",
     itens: [
-      ["Face / Lateral Coxa / Flancos / Costas", 6710],
-      ["Abdômen / Bananinha / Braços", 5110],
-      ["Papada e/ou Pescoço / Colo", 3630],
-      ["Joelho / Infraxilar", 3790],
-      ["Pálpebra", 2750],
-      ["Face + Papada + Pescoço", 7700],
+      ["ULTRAFORMER MPT Face / Lateral Coxa / Flancos / Costas", 6710],
+      ["ULTRAFORMER MPT Abdômen / Bananinha / Braços", 5110],
+      ["ULTRAFORMER MPT Papada e/ou Pescoço / Colo", 3630],
+      ["ULTRAFORMER MPT Joelho / Infraxilar", 3790],
+      ["ULTRAFORMER MPT Pálpebra", 2750],
+      ["ULTRAFORMER MPT Face + Papada + Pescoço", 7700],
     ]
   },
 
   {
     titulo: "VOLNEWMER",
     itens: [
-      ["Face", 11100],
-      ["Pescoço", 5170],
-      ["Olhos 1", 3300],
-      ["Olhos 2", 3740],
-      ["Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
-      ["Terço Médio – Pálpebras + Lateral Olhos", 4290],
-      ["Testa", 1980],
-      ["Código de Barras – (40) Jovem", 2090],
-      ["Código de Barras – (150) Maduro", 3300],
-      ["Terço Inferior – Contorno", 6600],
-      ["Terço Inferior – Lateral Boca", 4950],
-      ["Gordura Pescoço", 2200],
-      ["Joelho – Flacidez", 7150],
-      ["Abdômen / Braços – Flacidez", 5900],
+      ["VOLNEWMER Face", 11100],
+      ["VOLNEWMER Pescoço", 5170],
+      ["VOLNEWMER Olhos 1", 3300],
+      ["VOLNEWMER Olhos 2", 3740],
+      ["VOLNEWMER Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
+      ["VOLNEWMER Terço Médio – Pálpebras + Lateral Olhos", 4290],
+      ["VOLNEWMER Testa", 1980],
+      ["VOLNEWMER Código de Barras – (40) Jovem", 2090],
+      ["VOLNEWMER Código de Barras – (150) Maduro", 3300],
+      ["VOLNEWMER Terço Inferior – Contorno", 6600],
+      ["VOLNEWMER Terço Inferior – Lateral Boca", 4950],
+      ["VOLNEWMER Gordura Pescoço", 2200],
+      ["VOLNEWMER Joelho – Flacidez", 7150],
+      ["VOLNEWMER Abdômen / Braços – Flacidez", 5900],
     ]
   },
 
   {
     titulo: "VOLFORMER",
     itens: [
-      ["Face + Pescoço", 19800],
-      ["Face", 15400],
-      ["Olhos", 4950],
-      ["Pescoço", 7700],
+      ["VOLFORMER Face + Pescoço", 19800],
+      ["VOLFORMER Face", 15400],
+      ["VOLFORMER Olhos", 4950],
+      ["VOLFORMER Pescoço", 7700],
     ]
   },
 
   {
     titulo: "FOTONA STARWALKER",
     itens: [
-      ["Vasos / Acne / Código de Barras / Tatuagem / Cicatriz / Rosácea / Melanoses / Olheiras", 3200],
-      ["Estrias", 3500],
-      ["Clareamento Corporal (Axilas e Virilhas)", 3300],
-      ["Melasma / Rejuvenescimento Facial + Exossomos", 4290],
-      ["Manchas das Mãos", 2300],
-      ["Rejuvenescimento Face + Pescoço", 4950],
-      ["Rejuvenescimento Pescoço + Colo", 4400],
-      ["Rejuvenescimento Face + Pescoço + Colo", 5500],
+      ["FOTONA Vasos / Acne / Código de Barras / Tatuagem / Cicatriz / Rosácea / Melanoses / Olheiras", 3200],
+      ["FOTONA Estrias", 3500],
+      ["FOTONA Clareamento Corporal (Axilas e Virilhas)", 3300],
+      ["FOTONA Melasma / Rejuvenescimento Facial + Exossomos", 4290],
+      ["FOTONA Manchas das Mãos", 2300],
+      ["FOTONA Rejuvenescimento Face + Pescoço", 4950],
+      ["FOTONA Rejuvenescimento Pescoço + Colo", 4400],
+      ["FOTONA Rejuvenescimento Face + Pescoço + Colo", 5500],
     ]
   },
 
   {
     titulo: "ELETRODERME",
     itens: [
-      ["Região", 2750],
-      ["Região + PDRN", 3300],
-      ["Região + Exossomos", 3850],
+      ["ELETRODERME", 2750],
+      ["ELETRODERME + PDRN", 3300],
+      ["ELETRODERME + Exossomos", 3850],
     ]
   },
 
   {
     titulo: "LASER CO2 FRACIONADO",
     itens: [
-      ["Face / Colo / Pescoço", 3000],
-      ["Face + Pescoço", 3150],
-      ["Face + Pescoço + Colo", 4070],
-      ["Face + Pescoço + Colo + Mãos", 3900],
-      ["Mãos", 2090],
-      ["Estria / Cicatriz – Grande Quantidade", 2200],
-      ["Estria / Cicatriz – Pequena Quantidade", 1850],
+      ["LASER Face / Colo / Pescoço", 3000],
+      ["LASER Face + Pescoço", 3150],
+      ["LASER Face + Pescoço + Colo", 4070],
+      ["LASER Face + Pescoço + Colo + Mãos", 3900],
+      ["LASER Mãos", 2090],
+      ["LASER Estrias / Cicatriz – Grande Quantidade", 2200],
+      ["LASER Estrias / Cicatriz – Pequena Quantidade", 1850],
     ]
   },
 
@@ -239,7 +239,7 @@ const secoes = [
       ["LIP – Face / Colo / Pescoço", 2300],
       ["LIP – Face + Colo", 2640],
       ["Laser NDYAG – Face Vasos", 1650],
-      ["Adicional NDYAG ou 1 vasinho", 820],
+      ["NDYAG (1 vasinho)", 820],
       ["Laser Pixel – Face", 3080],
       ["Laser Pixel – Colo", 2530],
       ["Laser Pixel – Face + Colo", 3630],
