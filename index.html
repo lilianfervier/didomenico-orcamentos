@@ -1,59 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Emi Di Domenico De Leon</title>
-
-  <link rel="stylesheet" href="style.css" />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento Di Domenico</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="container">
+    <h1>Orçamento Di Domenico</h1>
 
-  <img src="logo.png" class="logo-canto" alt="Logo">
+    <div id="procedimentos"></div>
 
-  <main class="container">
+    <h2>Selecionados</h2>
+    <div id="selecionados"></div>
 
-    <h1>
-      Dra. Emi Di Domenico De Leon
-      <small>Clínica Médica Di Domenico – Advanced Medicine</small>
-    </h1>
+    <h3>Totais</h3>
+    <div>Total: <span id="total">R$0,00</span></div>
+    <div>À vista (3% off): <span id="avista">R$0,00</span></div>
+    <div>Economia: <span id="economia">R$0,00</span></div>
+    <div>Parcelado: <span id="parcelado">R$0,00</span></div>
 
-    <section id="procedimentos"></section>
+    <button id="btnApresentacao">Apresentação</button>
+    <button id="btnPDF">Gerar PDF</button>
+  </div>
 
-    <section class="resultado">
-      <h2>Orçamento</h2>
-
-      <div class="acoes">
-        <button id="btnApresentacao">Modo Apresentação</button>
-        <button id="btnPDF">Gerar PDF</button>
-      </div>
-
-      <div id="selecionados" class="selecionados"></div>
-
-      <div class="linha">
-        <span>Total</span><strong id="total">R$ 0,00</strong>
-      </div>
-
-      <div class="linha destaque">
-        <span>À vista</span><strong id="avista">R$ 0,00</strong>
-      </div>
-
-      <div class="linha economia">
-        <span>Economia</span><strong id="economia">R$ 0,00</strong>
-      </div>
-
-      <div class="linha">
-        <span>Parcelado</span><strong id="parcelado">-</strong>
-      </div>
-
-    </section>
-
-  </main>
-
+  <!-- html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Seu script JS -->
   <script src="script.js"></script>
-
 </body>
 </html>
