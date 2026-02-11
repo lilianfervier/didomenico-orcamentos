@@ -279,115 +279,111 @@ const secoes = [
   }
 ];
 
-const secoes = [...secoes]; 
-// ⚠️ NÃO MEXA NAS SUAS LISTAS DE PROCEDIMENTOS
-// MANTENHA EXATAMENTE COMO VOCÊ JÁ TEM ACIMA
+// ----------------------------
 
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
 let selecionados = [];
 
+// MONTA LISTA
 secoes.forEach(secao => {
 
-  const details = document.createElement("details");
-  details.open = true;
+const details = document.createElement("details");
+details.open = true;
 
-  const summary = document.createElement("summary");
-  summary.textContent = secao.titulo;
-  details.appendChild(summary);
+const summary = document.createElement("summary");
+summary.textContent = secao.titulo;
+details.appendChild(summary);
 
-  secao.itens.forEach(item => {
+secao.itens.forEach(item => {
 
-    const label = document.createElement("label");
-    const checkbox = document.createElement("input");
+const label = document.createElement("label");
+const checkbox = document.createElement("input");
 
-    checkbox.type = "checkbox";
-    checkbox.dataset.nome = item[0];
-    checkbox.dataset.valor = item[1];
+checkbox.type="checkbox";
+checkbox.dataset.nome=item[0];
+checkbox.dataset.valor=item[1];
+checkbox.onchange = atualizarSelecionados;
 
-    checkbox.addEventListener("change", atualizarSelecionados);
+label.appendChild(checkbox);
+label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
 
-    label.appendChild(checkbox);
-    label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
-
-    details.appendChild(label);
-
-  });
-
-  container.appendChild(details);
+details.appendChild(label);
 
 });
 
+container.appendChild(details);
+
+});
+
+// ----------------------------
+
 function atualizarSelecionados(){
 
-  selecionados = [];
-  selecionadosDiv.innerHTML = "";
+selecionados=[];
+selecionadosDiv.innerHTML="";
 
-  document.querySelectorAll("#procedimentos input:checked").forEach(i => {
-    selecionados.push({
-      nome: i.dataset.nome,
-      valor: Number(i.dataset.valor)
-    });
-  });
+document.querySelectorAll("#procedimentos input:checked")
+.forEach(i=>{
+selecionados.push({
+nome:i.dataset.nome,
+valor:Number(i.dataset.valor)
+});
+});
 
-  renderResumo();
+renderResumo();
 }
+
+// ----------------------------
 
 function renderResumo(){
 
-  let total = 0;
-  selecionadosDiv.innerHTML = "";
+let total=0;
+selecionadosDiv.innerHTML="";
 
-  selecionados.forEach(item => {
+selecionados.forEach(item=>{
+total+=item.valor;
+const div=document.createElement("div");
+div.textContent=`${item.nome} — R$ ${item.valor.toLocaleString("pt-BR")}`;
+selecionadosDiv.appendChild(div);
+});
 
-    total += item.valor;
+// DESCONTO DINHEIRO
+const avista = total * 0.97;
+const economia = total - avista;
 
-    const linha = document.createElement("div");
-    linha.textContent = `${item.nome} — R$ ${item.valor.toLocaleString("pt-BR")}`;
-    selecionadosDiv.appendChild(linha);
+// PARCELAMENTO
+let parcelamento="À vista";
 
-  });
-
-  let avista = total * 0.97;
-  let economia = total - avista;
-
-  let parcelamentoTexto = "À vista";
-
-  if(total > 10000){
-    parcelamentoTexto = "10x de " + (total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-  }
-  else if(total >= 2080){
-    parcelamentoTexto = "6x de " + (total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-  }
-
-  document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("parcelado").textContent = parcelamentoTexto;
+if(total>10000){
+parcelamento=`10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+}
+else if(total>=2080){
+parcelamento=`6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
 }
 
-// MODO APRESENTAÇÃO
-document.getElementById("btnApresentacao").onclick = () => {
-  document.body.classList.toggle("apresentacao");
+document.getElementById("total").textContent =
+total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+document.getElementById("avista").textContent =
+avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+document.getElementById("economia").textContent =
+economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+document.getElementById("parcelado").textContent = parcelamento;
+
+}
+
+// ----------------------------
+// BOTÕES
+
+document.getElementById("btnApresentacao").onclick = ()=>{
+document.body.classList.toggle("apresentacao");
 };
 
-// GERAR PDF
-document.getElementById("btnPDF").onclick = () => {
-
-  document.body.classList.add("pdf");
-
-  html2pdf()
-    .from(document.getElementById("conteudo"))
-    .save("orcamento.pdf")
-    .then(()=>{
-      document.body.classList.remove("pdf");
-    });
-
+document.getElementById("btnPDF").onclick = ()=>{
+html2pdf().from(document.getElementById("conteudo")).save("orcamento.pdf");
 };
+
