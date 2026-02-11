@@ -1,10 +1,4 @@
-const secoes = [...secoes]; // mantém seu array grande exatamente como está
-
-const container = document.getElementById("procedimentos");
-const selecionadosDiv = document.getElementById("selecionados");
-
-let selecionados = [];
-
+const secoes = [
   {
     titulo: "Taxas e anestesias",
     itens: [
