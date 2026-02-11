@@ -1,173 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap');
 
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box;}
+
+body{
+margin:0;
+padding:20px;
+background:#f4eee8;
+font-family:'Inter',sans-serif;
 }
 
-/* =========================
-   BASE
-========================= */
-
-body {
-  margin: 0;
-  padding: 20px;
-  background: #f4eee8; /* bege sutil elegante */
-  font-family: 'Inter', sans-serif;
+.container{
+max-width:900px;
+margin:auto;
+background:#fffaf5;
+padding:30px;
+border-radius:12px;
+border:1px solid #d6c3b2;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  background: #fffaf5;
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #d6c3b2;
+/* LOGO */
+.logo-canto{
+position:fixed;
+top:20px;
+right:20px;
+width:80px;
+opacity:.9;
 }
 
-/* =========================
-   LOGO NO CANTO
-========================= */
+/* TITULO */
 
-.logo-canto {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 90px;
-  opacity: 0.9;
-  z-index: 10;
+h1{
+text-align:center;
+font-family:'Playfair Display',serif;
+color:#6b4f3f;
 }
 
-/* =========================
-   TÍTULO
-========================= */
-
-h1 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  color: #6b4f3f;
-  font-weight: 600;
-  margin-bottom: 25px;
+h1 span{
+display:block;
+margin-top:6px;
+font-size:15px;
+color:#8a6a55;
 }
 
-h1 span {
-  display: block;
-  margin-top: 6px;
-  font-size: 15px;
-  font-family: 'Inter', sans-serif;
-  color: #8a6a55;
-  letter-spacing: 0.5px;
+/* LISTAS */
+
+details{
+margin-bottom:10px;
+border-left:4px solid #c2a78f;
+padding-left:10px;
 }
 
-/* =========================
-   LISTA DE PROCEDIMENTOS
-========================= */
-
-details {
-  margin-bottom: 10px;
-  border-left: 4px solid #c2a78f;
-  padding-left: 10px;
+summary{
+padding:10px;
+background:#e6d6c9;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
 }
 
-summary {
-  font-weight: 600;
-  cursor: pointer;
-  padding: 10px;
-  background: #e6d6c9;
-  border-radius: 6px;
-  color: #5a3e2b;
+label{
+display:block;
+padding:6px 0;
 }
 
-label {
-  display: block;
-  padding: 6px 0;
-  font-size: 14px;
+/* RESUMO */
+
+.resultado{
+margin-top:30px;
+border-top:1px solid #d6c3b2;
+padding-top:20px;
 }
 
-/* =========================
-   RESUMO
-========================= */
-
-.resultado {
-  margin-top: 30px;
-  border-top: 1px solid #d6c3b2;
-  padding-top: 20px;
+.linha{
+display:flex;
+justify-content:space-between;
+margin:8px 0;
 }
 
-.linha {
-  display: flex;
-  justify-content: space-between;
-  margin: 8px 0;
-  font-size: 15px;
+.linha.destaque span{color:#b00020;}
+.linha.economia span{color:#1b7f3a;}
+
+/* BOTÕES */
+
+.acoes{
+display:flex;
+gap:10px;
+margin-bottom:15px;
 }
 
-.linha.destaque span {
-  color: #b00020;
-  font-weight: 600;
+button{
+padding:10px 15px;
+border:none;
+border-radius:6px;
+background:#6b4f3f;
+color:white;
+cursor:pointer;
 }
 
-.linha.economia span {
-  color: #1b7f3a;
-  font-weight: 600;
-}
+button:hover{opacity:.9;}
 
-/* =========================
-   SELECIONADOS
-========================= */
-
-.selecionados {
-  margin: 15px 0;
-  font-size: 14px;
-}
-
-/* =========================
-   BOTÕES
-========================= */
-
-.acoes {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #6b4f3f, #9c7c5c);
-  color: white;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-/* =========================
-   MODO APRESENTAÇÃO
-========================= */
+/* APRESENTAÇÃO */
 
 .apresentacao details,
 .apresentacao summary,
 .apresentacao label,
-.apresentacao .acoes {
-  display: none;
+.apresentacao .acoes{
+display:none;
 }
 
-.apresentacao .selecionados {
-  display: block;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-  .container {
-    padding: 20px;
-  }
+.apresentacao .selecionados{
+display:block;
 }
