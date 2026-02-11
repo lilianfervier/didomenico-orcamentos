@@ -60,6 +60,101 @@ Dra. Emi Di Domenico De Leon
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="./script.js"></script>
+
+  Perfeito. Isso já explica 100% do problema.
+
+👉 Seu index.html NÃO está chamando nenhum JavaScript externo.
+Ou seja: todo aquele código enorme que você me mandou antes está só no HTML local, mas não está no site online.
+
+Vamos resolver da forma mais simples e impossível de quebrar:
+
+SOLUÇÃO DEFINITIVA (arquivo único)
+
+Você NÃO vai usar script.js separado.
+Vamos colocar TODO o JavaScript dentro do próprio index.html.
+
+Assim:
+
+✔ Sem erro de caminho
+✔ Sem arquivo faltando
+✔ Abre em qualquer tablet
+✔ Funciona offline se quiser
+
+O QUE VOCÊ VAI FAZER AGORA
+
+Abra:
+
+👉 https://github.com/lilianfervier/didomenico-orcamentos
+
+Clique em index.html
+
+Clique no ✏️ lápis (editar)
+
+Role até antes desta linha:
+
+</body>
+
+
+Cole TODO este bloco:
+
+<script>
+alert("JS CARREGADO");
+
+const secoes = [
+  { titulo:"Taxas e anestesias", itens:[
+    ["Taxa de Sala",550],
+    ["Consulta",880]
+  ]}
+];
+
+const container = document.getElementById("procedimentos");
+const selecionadosDiv = document.getElementById("selecionados");
+let selecionados=[];
+
+secoes.forEach(secao=>{
+  const details=document.createElement("details");
+  const summary=document.createElement("summary");
+  summary.textContent=secao.titulo;
+  details.appendChild(summary);
+
+  secao.itens.forEach(item=>{
+    const label=document.createElement("label");
+    label.innerHTML=`
+      <input type="checkbox" data-nome="${item[0]}" data-valor="${item[1]}">
+      ${item[0]} - R$ ${item[1]}
+    `;
+    label.querySelector("input").addEventListener("change",atualizar);
+    details.appendChild(label);
+  });
+
+  container.appendChild(details);
+});
+
+function atualizar(){
+  selecionados=[];
+  document.querySelectorAll("input:checked")
+  .forEach(i=>{
+    selecionados.push({
+      nome:i.dataset.nome,
+      valor:Number(i.dataset.valor)
+    });
+  });
+  render();
+}
+
+function render(){
+  let total=0;
+  selecionadosDiv.innerHTML="";
+  selecionados.forEach(i=>{
+    total+=i.valor;
+    const d=document.createElement("div");
+    d.textContent=`${i.nome} - R$ ${i.valor}`;
+    selecionadosDiv.appendChild(d);
+  });
+  document.getElementById("total").textContent=
+    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+}
+</script>
 </body>
 </html>
 
