@@ -287,14 +287,18 @@ const secoes = [
   }
 ];
 
+/***********************
+  VARIÁVEIS
+************************/
+
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
 let selecionados = [];
 
-/* =========================
-   MONTAR LISTA
-========================= */
+/***********************
+  MONTAR LISTA
+************************/
 
 secoes.forEach(secao => {
 
@@ -311,47 +315,49 @@ secoes.forEach(secao => {
     const checkbox = document.createElement("input");
 
     checkbox.type = "checkbox";
-    checkbox.dataset.nome = item[0];
     checkbox.dataset.categoria = secao.titulo;
+    checkbox.dataset.nome = item[0];
     checkbox.dataset.valor = item[1];
 
-    checkbox.onchange = atualizarSelecionados;
+    checkbox.addEventListener("change", atualizar);
 
     label.appendChild(checkbox);
     label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
 
     details.appendChild(label);
+
   });
 
   container.appendChild(details);
+
 });
 
-/* =========================
-   ATUALIZAR
-========================= */
+/***********************
+  ATUALIZAR
+************************/
 
-function atualizarSelecionados(){
+function atualizar(){
 
   selecionados = [];
   selecionadosDiv.innerHTML = "";
 
   document.querySelectorAll("#procedimentos input:checked")
-  .forEach(i=>{
-    selecionados.push({
-      categoria: i.dataset.categoria,
-      nome: i.dataset.nome,
-      valor: Number(i.dataset.valor)
+    .forEach(i=>{
+      selecionados.push({
+        categoria: i.dataset.categoria,
+        nome: i.dataset.nome,
+        valor: Number(i.dataset.valor)
+      });
     });
-  });
 
-  renderResumo();
+  render();
 }
 
-/* =========================
-   RENDER
-========================= */
+/***********************
+  RENDER
+************************/
 
-function renderResumo(){
+function render(){
 
   let total = 0;
   selecionadosDiv.innerHTML = "";
@@ -371,15 +377,6 @@ function renderResumo(){
   const avista = total * 0.97;
   const economia = total - avista;
 
-  let parcelamento = "À vista";
-
-  if(total > 10000){
-    parcelamento = `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-  }
-  else if(total >= 2080){
-    parcelamento = `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-  }
-
   document.getElementById("total").textContent =
     total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
@@ -389,5 +386,4 @@ function renderResumo(){
   document.getElementById("economia").textContent =
     economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
-  document.getElementById("parcelado").textContent = parcelamento;
 }
