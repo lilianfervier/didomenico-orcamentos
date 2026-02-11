@@ -23,7 +23,7 @@ const secoes = [
   },
 
   {
-    titulo: "Fios",
+    titulo: "Fios de tração e PDO",
     itens: [
       ["Fios PDO Eye Bag (2 pacotes)", 2900],
       ["Fios PDO Eye Bag (1 pacote)", 1450],
@@ -32,7 +32,7 @@ const secoes = [
       ["Fios de Tração (4 fios)", 4500],
       ["Fios de Tração (6 fios)", 5335],
       ["Fios de Tração (8 fios)", 6600],
-      ["Fios Aptos (caixa fechada)", 11000],
+      ["Fios Aptos (caixa)", 11000],
     ]
   },
 
@@ -46,6 +46,14 @@ const secoes = [
       ["MD Codes 5", 9900],
       ["MD Codes 6", 11770],
       ["MD Codes 7 ou + (cada)", 1936],
+      ["Preenchimento labial", 2100],
+      ["Produto / RETOQUE", 1400],
+    ]
+  },
+
+  {
+    titulo: "Procedimentos Injetáveis Avançados",
+    itens: [
       ["Profhilo", 3200],
       ["Preenchimento labial", 2100],
       ["Produto / RETOQUE", 1400],
@@ -88,12 +96,12 @@ const secoes = [
       ["Masseter / Bruxismo", 1370],
       ["Buço", 950],
       ["Mãos", 2620],
-      ["Rosáceas", 1160],
+      ["Rosácea", 1160],
     ]
   },
 
   {
-    titulo: "APARELHOS – ATRIA 2",
+    titulo: "ATRIA 2",
     itens: [
       ["Face", 5720],
       ["Papada / Pescoço / Colo", 3630],
@@ -210,7 +218,7 @@ const secoes = [
   },
 
   {
-    titulo: "LASER Intimo",
+    titulo: "LASER INTIMO",
     itens: [
       ["Laser Íntimo (1 sessão)", 2090],
       ["Laser Íntimo (2 sessões)", 3630],
@@ -241,7 +249,7 @@ const secoes = [
   },
 
   {
-    titulo: "Protocolos",
+    titulo: "PROTOCOLOS",
     itens: [
       ["Beautiful Mommy", 7480],
       ["Glow Up", 4850],
