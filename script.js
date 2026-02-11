@@ -287,23 +287,19 @@ const secoes = [
   }
 ];
 
-/***********************
-  VARIÁVEIS
-************************/
-
 const container = document.getElementById("procedimentos");
 const selecionadosDiv = document.getElementById("selecionados");
 
 let selecionados = [];
 
 /***********************
-  MONTAR LISTA
+ MONTAR LISTA
 ************************/
 
 secoes.forEach(secao => {
 
   const details = document.createElement("details");
-details.open = false;
+  details.open = false;
 
   const summary = document.createElement("summary");
   summary.textContent = secao.titulo;
@@ -333,13 +329,12 @@ details.open = false;
 });
 
 /***********************
-  ATUALIZAR
+ ATUALIZAR SELEÇÃO
 ************************/
 
 function atualizar(){
 
   selecionados = [];
-  selecionadosDiv.innerHTML = "";
 
   document.querySelectorAll("#procedimentos input:checked")
     .forEach(i=>{
@@ -351,6 +346,9 @@ function atualizar(){
     });
 
   render();
+
+}
+
 /***********************
  PARCELAMENTO
 ************************/
@@ -370,7 +368,7 @@ function calcularParcelamento(total){
 }
 
 /***********************
- ATUALIZA TOTAIS
+ ATUALIZAR TOTAIS
 ************************/
 
 function atualizarTotais(total){
@@ -389,10 +387,11 @@ function atualizarTotais(total){
 
   document.getElementById("parcelado").textContent =
     calcularParcelamento(total);
+
 }
 
 /***********************
- RENDER (SUBSTITUI O SEU)
+ RENDER ORÇAMENTO
 ************************/
 
 function render(){
@@ -413,6 +412,7 @@ function render(){
   });
 
   atualizarTotais(total);
+
 }
 
 /***********************
@@ -425,18 +425,15 @@ document.getElementById("btnApresentacao").onclick = () => {
 
 document.getElementById("btnPDF").onclick = () => {
 
-  // força modo apresentação
   document.body.classList.add("apresentacao");
 
   setTimeout(()=>{
-
     html2pdf()
       .from(document.getElementById("conteudo"))
       .save("orcamento.pdf")
       .then(()=>{
         document.body.classList.remove("apresentacao");
       });
-
   },300);
 
 };
