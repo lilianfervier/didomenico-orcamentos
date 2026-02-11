@@ -287,6 +287,15 @@ const secoes = [
   }
 ];
 
+const container = document.getElementById("procedimentos");
+const selecionadosDiv = document.getElementById("selecionados");
+
+let selecionados = [];
+
+/* =========================
+   MONTAR LISTA
+========================= */
+
 secoes.forEach(secao => {
 
   const details = document.createElement("details");
@@ -359,11 +368,9 @@ function renderResumo(){
 
   });
 
-  // DESCONTO DINHEIRO (3%)
   const avista = total * 0.97;
   const economia = total - avista;
 
-  // PARCELAMENTO
   let parcelamento = "À vista";
 
   if(total > 10000){
@@ -384,39 +391,3 @@ function renderResumo(){
 
   document.getElementById("parcelado").textContent = parcelamento;
 }
-
-/* =========================
-   BOTÕES
-========================= */
-
-document.getElementById("btnApresentacao").onclick = ()=>{
-  document.body.classList.toggle("apresentacao");
-};
-
-document.getElementById("btnPDF").onclick = ()=>{
-
-  document.body.classList.add("apresentacao");
-  document.body.classList.add("pdf");
-
-  setTimeout(()=>{
-
-    html2pdf({
-      margin: 10,
-      filename: "orcamento.pdf",
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-    })
-    .from(document.getElementById("conteudo"))
-    .save();
-
-    document.body.classList.remove("apresentacao");
-    document.body.classList.remove("pdf");
-
-  },300);
-
-};
-
-document.getElementById("btnPDF").onclick = ()=>{
-html2pdf().from(document.getElementById("conteudo")).save("orcamento.pdf");
-};
-
