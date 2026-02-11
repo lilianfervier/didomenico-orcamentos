@@ -446,13 +446,15 @@ function atualizarTotais(total){
   const avista=total*0.97;
   const economia=total-avista;
 
-  totalEl=total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-  avistaEl=avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-  economiaEl=economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const totalEl = total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const avistaEl = avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const economiaEl = economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
-  document.getElementById("total").textContent=totalEl;
-  document.getElementById("avista").textContent=avistaEl;
-  document.getElementId("economia").textContent=economiaEl;
+document.getElementById("total").textContent = totalEl;
+document.getElementById("avista").textContent = avistaEl;
+document.getElementById("economia").textContent = economiaEl;
+
+
 
   document.getElementById("parcelado").textContent=
     total>10000
