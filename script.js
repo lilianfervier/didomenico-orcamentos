@@ -1,4 +1,4 @@
-
+window.onload = () => {
 const secoes = [
   {
     titulo: "Taxas e anestesias",
@@ -289,119 +289,101 @@ const secoes = [
 ];
 
 const container = document.getElementById("procedimentos");
-const selecionadosDiv = document.getElementById("selecionados");
+  const selecionadosDiv = document.getElementById("selecionados");
 
-let selecionados = [];
+  let selecionados = [];
 
+  /*************** CRIAR CHECKLIST ****************/
+  secoes.forEach(secao => {
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = secao.titulo;
+    details.appendChild(summary);
 
-/*************** CRIAR CHECKLIST ****************/
-
-secoes.forEach(secao => {
-
-  const details = document.createElement("details");
-  const summary = document.createElement("summary");
-
-  summary.textContent = secao.titulo;
-  details.appendChild(summary);
-
-  secao.itens.forEach(item => {
-
-    const label = document.createElement("label");
-
-    label.innerHTML = `
-      <input type="checkbox"
-        data-categoria="${secao.titulo}"
-        data-nome="${item[0]}"
-        data-valor="${item[1]}">
-      ${item[0]} — ${item[1].toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
-    `;
-
-    label.querySelector("input").addEventListener("change", atualizar);
-
-    details.appendChild(label);
-  });
-
-  container.appendChild(details);
-});
-
-
-/*************** ATUALIZAR ****************/
-
-function atualizar() {
-
-  selecionados = [];
-
-  document.querySelectorAll("input:checked").forEach(i => {
-    selecionados.push({
-      categoria: i.dataset.categoria,
-      nome: i.dataset.nome,
-      valor: Number(i.dataset.valor)
+    secao.itens.forEach(item => {
+      const label = document.createElement("label");
+      label.innerHTML = `
+        <input type="checkbox"
+          data-categoria="${secao.titulo}"
+          data-nome="${item[0]}"
+          data-valor="${item[1]}">
+        ${item[0]} — ${item[1].toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
+      `;
+      label.querySelector("input").addEventListener("change", atualizar);
+      details.appendChild(label);
     });
+
+    container.appendChild(details);
   });
 
-  render();
-}
-
-
-/*************** RENDER ****************/
-
-function render() {
-
-  let total = 0;
-  selecionadosDiv.innerHTML = "";
-
-  selecionados.forEach(item => {
-
-    total += item.valor;
-
-    const div = document.createElement("div");
-    div.textContent = `${item.categoria} - ${item.nome} - ${item.valor.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-
-    selecionadosDiv.appendChild(div);
-  });
-
-  atualizarTotais(total);
-}
-
-
-/*************** TOTAIS ****************/
-
-function atualizarTotais(total) {
-
-  const avista = total * 0.97;
-  const economia = total - avista;
-
-  document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-  document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-  document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-  document.getElementById("parcelado").textContent =
-    total > 10000
-      ? `10x de ${(total / 10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`
-      : `6x de ${(total / 6).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`;
-}
-
-
-/*************** BOTÕES ****************/
-
-document.getElementById("btnApresentacao").onclick = () => {
-  document.body.classList.toggle("apresentacao");
-};
-
-document.getElementById("btnPDF").onclick = () => {
-
-  document.body.classList.add("apresentacao");
-
-  setTimeout(() => {
-    html2pdf()
-      .from(document.querySelector(".container"))
-      .save("orcamento.pdf")
-      .then(() => {
-        document.body.classList.remove("apresentacao");
+  /*************** ATUALIZAR ****************/
+  function atualizar() {
+    selecionados = [];
+    document.querySelectorAll("input:checked").forEach(i => {
+      selecionados.push({
+        categoria: i.dataset.categoria,
+        nome: i.dataset.nome,
+        valor: Number(i.dataset.valor)
       });
-  }, 300);
+    });
+    render();
+  }
+
+  /*************** RENDER ****************/
+  function render() {
+    let total = 0;
+    selecionadosDiv.innerHTML = "";
+
+    selecionados.forEach(item => {
+      total += item.valor;
+      const div = document.createElement("div");
+      div.textContent = `${item.categoria} - ${item.nome} - ${item.valor.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+      selecionadosDiv.appendChild(div);
+    });
+
+    atualizarTotais(total);
+  }
+
+  /*************** TOTAIS ****************/
+  function atualizarTotais(total) {
+    const avista = total * 0.97;
+    const economia = total - avista;
+
+    document.getElementById("total").textContent =
+      total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+    document.getElementById("avista").textContent =
+      avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+    document.getElementById("economia").textContent =
+      economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+    document.getElementById("parcelado").textContent =
+      total > 10000
+        ? `10x de ${(total / 10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`
+        : `6x de ${(total / 6).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`;
+  }
+
+  /*************** BOTÕES ****************/
+  document.getElementById("btnApresentacao").onclick = () => {
+    document.body.classList.toggle("apresentacao");
+  };
+
+  document.getElementById("btnPDF").onclick = () => {
+    const containerPDF = document.querySelector(".container");
+    if (!containerPDF) return alert("Container não encontrado!");
+
+    document.body.classList.add("apresentacao");
+
+    setTimeout(() => {
+      html2pdf()
+        .set({ margin: 0.5, filename: 'orcamento.pdf', html2canvas: { scale: 2 } })
+        .from(containerPDF)
+        .save()
+        .then(() => {
+          document.body.classList.remove("apresentacao");
+        });
+    }, 300);
+  };
+
+};
