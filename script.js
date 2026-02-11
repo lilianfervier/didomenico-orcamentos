@@ -351,10 +351,48 @@ function atualizar(){
     });
 
   render();
+/***********************
+ PARCELAMENTO
+************************/
+
+function calcularParcelamento(total){
+
+  if(total > 10000){
+    return `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+  }
+  else if(total >= 2080){
+    return `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+  }
+  else{
+    return "À vista";
+  }
+
 }
 
 /***********************
-  RENDER
+ ATUALIZA TOTAIS
+************************/
+
+function atualizarTotais(total){
+
+  const avista = total * 0.97;
+  const economia = total - avista;
+
+  document.getElementById("total").textContent =
+    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("avista").textContent =
+    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("economia").textContent =
+    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("parcelado").textContent =
+    calcularParcelamento(total);
+}
+
+/***********************
+ RENDER (SUBSTITUI O SEU)
 ************************/
 
 function render(){
@@ -374,23 +412,39 @@ function render(){
 
   });
 
-  const avista = total * 0.97;
-  const economia = total - avista;
-
-  document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
+  atualizarTotais(total);
 }
 
-window.onload = () => {
-  document.querySelectorAll("details").forEach(d => {
-    d.open = false;
-  });
+/***********************
+ BOTÕES
+************************/
+
+document.getElementById("btnApresentacao").onclick = () => {
+  document.body.classList.toggle("apresentacao");
 };
 
+document.getElementById("btnPDF").onclick = () => {
+
+  // força modo apresentação
+  document.body.classList.add("apresentacao");
+
+  setTimeout(()=>{
+
+    html2pdf()
+      .from(document.getElementById("conteudo"))
+      .save("orcamento.pdf")
+      .then(()=>{
+        document.body.classList.remove("apresentacao");
+      });
+
+  },300);
+
+};
+
+/***********************
+ FECHAR SEÇÕES AO CARREGAR
+************************/
+
+window.onload = () => {
+  document.querySelectorAll("details").forEach(d => d.open = false);
+};
