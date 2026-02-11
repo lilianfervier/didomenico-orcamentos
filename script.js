@@ -1,3 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Orçamento Estético</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+}
+
+details{
+  margin-bottom:10px;
+  border:1px solid #ddd;
+  padding:10px;
+  border-radius:6px;
+}
+
+label{
+  display:block;
+  padding:6px;
+  cursor:pointer;
+}
+
+.resumo{
+  margin-top:20px;
+  border-top:2px solid #000;
+  padding-top:15px;
+}
+
+.total{
+  font-size:20px;
+  font-weight:bold;
+}
+
+button{
+  padding:10px 15px;
+  margin:5px;
+  cursor:pointer;
+}
+
+.apresentacao details{
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Gerador de Orçamento</h1>
+
+<div id="procedimentos"></div>
+
+<div class="resumo">
+<h2>Selecionados</h2>
+<div id="selecionados"></div>
+
+<p class="total">Total: <span id="total">R$ 0,00</span></p>
+<p>À vista (3% off): <span id="avista">R$ 0,00</span></p>
+<p>Economia: <span id="economia">R$ 0,00</span></p>
+<p>Parcelado: <span id="parcelado">-</span></p>
+
+<button id="btnApresentacao">Modo Apresentação</button>
+<button id="btnPDF">Gerar PDF</button>
+</div>
+
+</div>
+
+<script>
 const secoes = [
   {
     titulo: "Taxas e anestesias",
@@ -293,120 +375,98 @@ const selecionadosDiv = document.getElementById("selecionados");
 
 let selecionados = [];
 
-/***********************
- MONTAR LISTA
-************************/
+secoes.forEach(secao=>{
 
-secoes.forEach(secao => {
-
-  const details = document.createElement("details");
-  details.open = false;
-
-  const summary = document.createElement("summary");
-  summary.textContent = secao.titulo;
+  const details=document.createElement("details");
+  const summary=document.createElement("summary");
+  summary.textContent=secao.titulo;
   details.appendChild(summary);
 
-  secao.itens.forEach(item => {
+  secao.itens.forEach(item=>{
 
-    const label = document.createElement("label");
+    const label=document.createElement("label");
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.dataset.categoria = secao.titulo;
-    checkbox.dataset.nome = item[0];
-    checkbox.dataset.valor = item[1];
-
-    checkbox.addEventListener("change", atualizar);
-
-    label.appendChild(checkbox);
-    label.innerHTML += `
-      <strong>${item[0]}</strong> — R$ ${item[1].toLocaleString("pt-BR")}
+    label.innerHTML=`
+      <input type="checkbox"
+        data-categoria="${secao.titulo}"
+        data-nome="${item[0]}"
+        data-valor="${item[1]}">
+      ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}
     `;
 
-    details.appendChild(label);
+    label.querySelector("input")
+      .addEventListener("change",atualizar);
 
+    details.appendChild(label);
   });
 
   container.appendChild(details);
-
 });
 
-/***********************
- ATUALIZAR SELEÇÃO
-************************/
+/*************** ATUALIZAR ****************/
 
 function atualizar(){
 
-  selecionados = [];
+  selecionados=[];
 
-  document.querySelectorAll("#procedimentos input:checked")
-    .forEach(i=>{
-      selecionados.push({
-        categoria: i.dataset.categoria,
-        nome: i.dataset.nome,
-        valor: Number(i.dataset.valor)
-      });
+  document.querySelectorAll("input:checked")
+  .forEach(i=>{
+    selecionados.push({
+      categoria:i.dataset.categoria,
+      nome:i.dataset.nome,
+      valor:Number(i.dataset.valor)
     });
+  });
 
   render();
 }
 
-/***********************
- TOTAIS
-************************/
-
-function atualizarTotais(total){
-
-  const avista = total * 0.97;
-  const economia = total - avista;
-
-  document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-
-  document.getElementById("parcelado").textContent =
-    total > 10000
-      ? `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`
-      : `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-}
-
-/***********************
- RENDER
-************************/
+/*************** RENDER ****************/
 
 function render(){
 
-  let total = 0;
-  selecionadosDiv.innerHTML = "";
+  let total=0;
+  selecionadosDiv.innerHTML="";
 
   selecionados.forEach(item=>{
+    total+=item.valor;
 
-    total += item.valor;
-
-    const div = document.createElement("div");
-    div.textContent =
-      `${item.categoria} – ${item.nome} — R$ ${item.valor.toLocaleString("pt-BR")}`;
-
+    const div=document.createElement("div");
+    div.textContent=`${item.categoria} - ${item.nome} - R$ ${item.valor.toLocaleString("pt-BR")}`;
     selecionadosDiv.appendChild(div);
   });
 
   atualizarTotais(total);
 }
 
-/***********************
- BOTÕES
-************************/
+/*************** TOTAIS ****************/
 
-document.getElementById("btnApresentacao").onclick = () => {
+function atualizarTotais(total){
+
+  const avista=total*0.97;
+  const economia=total-avista;
+
+  totalEl=total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  avistaEl=avista.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  economiaEl=economia.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+
+  document.getElementById("total").textContent=totalEl;
+  document.getElementById("avista").textContent=avistaEl;
+  document.getElementId("economia").textContent=economiaEl;
+
+  document.getElementById("parcelado").textContent=
+    total>10000
+    ? `10x de ${(total/10).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`
+    : `6x de ${(total/6).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
+}
+
+/*************** BOTÕES ****************/
+
+document.getElementById("btnApresentacao").onclick=()=>{
   document.body.classList.toggle("apresentacao");
 };
 
-document.getElementById("btnPDF").onclick = () => {
+document.getElementById("btnPDF").onclick=()=>{
 
   document.body.classList.add("apresentacao");
 
@@ -419,11 +479,7 @@ document.getElementById("btnPDF").onclick = () => {
       });
   },300);
 };
+</script>
 
-/***********************
- FECHAR SEÇÕES
-************************/
-
-window.onload = () => {
-  document.querySelectorAll("details").forEach(d => d.open = false);
-};
+</body>
+</html>
