@@ -318,7 +318,7 @@ secoes.forEach(secao => {
     checkbox.addEventListener("change", atualizar);
 
     label.appendChild(checkbox);
-  label.innerHTML = `
+    label.innerHTML = `
   <strong class="procedimento-nome">${item[0]}</strong>
   — R$ ${item[1].toLocaleString("pt-BR")}
 `;
