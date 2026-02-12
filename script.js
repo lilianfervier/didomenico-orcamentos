@@ -351,8 +351,7 @@ function renderResumo() {
   });
 
   let avista = total * 0.97;
-  let economia = total - avista;
-
+ 
   let parcelamentoTexto = "À vista";
 
   if (total > 10000) {
