@@ -1,4 +1,3 @@
-window.onload = () => {
 const secoes = [
   {
     titulo: "Taxas e anestesias",
@@ -288,102 +287,114 @@ const secoes = [
   }
 ];
 
+
 const container = document.getElementById("procedimentos");
-  const selecionadosDiv = document.getElementById("selecionados");
+const selecionadosDiv = document.getElementById("selecionados");
 
-  let selecionados = [];
+let selecionados = [];
 
-  /*************** CRIAR CHECKLIST ****************/
-  secoes.forEach(secao => {
-    const details = document.createElement("details");
-    const summary = document.createElement("summary");
-    summary.textContent = secao.titulo;
-    details.appendChild(summary);
+secoes.forEach(secao => {
+  const details = document.createElement("details");
+  details.open = true;
 
-    secao.itens.forEach(item => {
-      const label = document.createElement("label");
-      label.innerHTML = `
-        <input type="checkbox"
-          data-categoria="${secao.titulo}"
-          data-nome="${item[0]}"
-          data-valor="${item[1]}">
-        ${item[0]} — ${item[1].toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
-      `;
-      label.querySelector("input").addEventListener("change", atualizar);
-      details.appendChild(label);
-    });
+  const summary = document.createElement("summary");
+  summary.textContent = secao.titulo;
+  details.appendChild(summary);
 
-    container.appendChild(details);
+  secao.itens.forEach(item => {
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+
+    checkbox.type = "checkbox";
+    checkbox.dataset.nome = item[0];
+    checkbox.dataset.valor = item[1];
+
+    checkbox.addEventListener("change", atualizarSelecionados);
+
+    label.appendChild(checkbox);
+    label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
+
+    details.appendChild(label);
   });
 
-  /*************** ATUALIZAR ****************/
-  function atualizar() {
-    selecionados = [];
-    document.querySelectorAll("input:checked").forEach(i => {
-      selecionados.push({
-        categoria: i.dataset.categoria,
-        nome: i.dataset.nome,
-        valor: Number(i.dataset.valor)
-      });
+  container.appendChild(details);
+});
+
+function atualizarSelecionados() {
+  selecionados = [];
+  selecionadosDiv.innerHTML = "";
+
+  document.querySelectorAll("#procedimentos input:checked").forEach(i => {
+    selecionados.push({
+      nome: i.dataset.nome,
+      valor: Number(i.dataset.valor)
     });
-    render();
+  });
+
+  renderResumo();
+}
+
+function renderResumo() {
+  let total = 0;
+  selecionadosDiv.innerHTML = "";
+
+  selecionados.forEach(item => {
+    total += item.valor;
+
+    const linha = document.createElement("div");
+    linha.textContent = `${item.nome} — ${item.valor.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    })}`;
+
+    selecionadosDiv.appendChild(linha);
+  });
+
+  let avista = total * 0.97;
+  let economia = total - avista;
+
+  let parcelamentoTexto = "À vista";
+
+  if (total > 10000) {
+    parcelamentoTexto =
+      "10x de " + (total / 10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  } else if (total >= 2080) {
+    parcelamentoTexto =
+      "6x de " + (total / 6).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   }
 
-  /*************** RENDER ****************/
-  function render() {
-    let total = 0;
-    selecionadosDiv.innerHTML = "";
+  document.getElementById("total").textContent =
+    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-    selecionados.forEach(item => {
-      total += item.valor;
-      const div = document.createElement("div");
-      div.textContent = `${item.categoria} - ${item.nome} - ${item.valor.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}`;
-      selecionadosDiv.appendChild(div);
-    });
+  document.getElementById("avista").textContent =
+    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-    atualizarTotais(total);
-  }
+  document.getElementById("economia").textContent =
+    economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-  /*************** TOTAIS ****************/
-  function atualizarTotais(total) {
-    const avista = total * 0.97;
-    const economia = total - avista;
+  document.getElementById("parcelado").textContent = parcelamentoTexto;
+}
 
-    document.getElementById("total").textContent =
-      total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+// MODO APRESENTAÇÃO
+document.getElementById("btnApresentacao").onclick = () => {
+  document.body.classList.toggle("apresentacao");
+};
 
-    document.getElementById("avista").textContent =
-      avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+// GERAR PDF
+document.getElementById("btnPDF").onclick = () => {
+  document.body.classList.add("pdf");
 
-    document.getElementById("economia").textContent =
-      economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  const element = document.getElementById("conteudo");
 
-    document.getElementById("parcelado").textContent =
-      total > 10000
-        ? `10x de ${(total / 10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`
-        : `6x de ${(total / 6).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`;
-  }
-
-  /*************** BOTÕES ****************/
-  document.getElementById("btnApresentacao").onclick = () => {
-    document.body.classList.toggle("apresentacao");
+  const opt = {
+    margin: 0.5,
+    filename: "orcamento.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
   };
 
-  document.getElementById("btnPDF").onclick = () => {
-    const containerPDF = document.querySelector(".container");
-    if (!containerPDF) return alert("Container não encontrado!");
-
-    document.body.classList.add("apresentacao");
-
-    setTimeout(() => {
-      html2pdf()
-        .set({ margin: 0.5, filename: 'orcamento.pdf', html2canvas: { scale: 2 } })
-        .from(containerPDF)
-        .save()
-        .then(() => {
-          document.body.classList.remove("apresentacao");
-        });
-    }, 300);
-  };
-
+  html2pdf().set(opt).from(element).save().then(() => {
+    document.body.classList.remove("pdf");
+  });
 };
