@@ -22,24 +22,6 @@ body {
 }
 
 /* =========================
-   LOGO NO CANTO
-========================= */
-
-.logo-canto {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 90px;
-  opacity: 0.9;
-  z-index: 10;
-}
-
-/* Quando gerar PDF, evita bug */
-body.pdf .logo-canto {
-  position: absolute;
-}
-
-/* =========================
    TÍTULO
 ========================= */
 
@@ -187,12 +169,9 @@ button:hover {
     padding: 20px;
   }
 
-  .logo-canto {
-    width: 70px;
-  }
-
   .acoes {
     flex-direction: column;
   }
 }
+
 
