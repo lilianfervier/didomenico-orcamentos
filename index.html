@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orçamento Di Domenico</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Emi Di Domenico De Leon – Dermatologista</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="container">
-    <h1>Orçamento Di Domenico</h1>
 
-    <div id="procedimentos"></div>
+  <img src="logo.png" class="logo-canto" alt="Logo da Clínica">
 
-    <h2>Selecionados</h2>
-    <div id="selecionados"></div>
+  <main class="container" id="conteudo">
 
-    <h3>Totais</h3>
-    <div>Total: <span id="total">R$0,00</span></div>
-    <div>À vista (3% off): <span id="avista">R$0,00</span></div>
-    <div>Economia: <span id="economia">R$0,00</span></div>
-    <div>Parcelado: <span id="parcelado">R$0,00</span></div>
+    <h1>
+      Dra. Emi Di Domenico De Leon – Dermatologista<br>
+      <span>Clínica Médica Di Domenico – Advanced Medicine</span>
+    </h1>
 
-    <button id="btnApresentacao">Apresentação</button>
-    <button id="btnPDF">Gerar PDF</button>
-  </div>
+    <section id="procedimentos"></section>
 
-  <!-- html2pdf -->
+    <section class="resultado">
+
+      <h2>Resumo do Orçamento</h2>
+
+      <div class="acoes">
+        <button id="btnApresentacao">Modo apresentação</button>
+        <button id="btnPDF">Gerar PDF</button>
+      </div>
+
+      <div class="selecionados">
+        <h3>Procedimentos selecionados</h3>
+        <div id="selecionados"></div>
+      </div>
+
+      <div class="linha">
+        <span>Total</span>
+        <strong id="total">R$ 0,00</strong>
+      </div>
+
+      <div class="linha destaque">
+        <span>À vista (3% OFF)</span>
+        <strong id="avista">R$ 0,00</strong>
+      </div>
+
+      <div class="linha economia">
+        <span>Economia</span>
+        <strong id="economia">R$ 0,00</strong>
+      </div>
+
+      <div class="linha">
+        <span id="parcelamentoLabel">Parcelamento</span>
+        <strong id="parcelado">R$ 0,00</strong>
+      </div>
+
+    </section>
+
+  </main>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <!-- Seu script JS -->
   <script src="script.js"></script>
+
 </body>
 </html>
+
