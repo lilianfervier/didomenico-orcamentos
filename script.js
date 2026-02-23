@@ -326,7 +326,7 @@ let selecionados = [];
 
 secoes.forEach(secao => {
   const details = document.createElement("details");
-  details.open = false; 
+  details.open = false;
 
   const summary = document.createElement("summary");
   summary.textContent = secao.titulo;
@@ -341,16 +341,16 @@ secoes.forEach(secao => {
     checkbox.dataset.valor = item[1];
 
     checkbox.addEventListener("change", () => {
-  const marcadosNaSecao = details.querySelectorAll("input:checked").length;
+      const marcadosNaSecao = details.querySelectorAll("input:checked").length;
 
-  if (marcadosNaSecao > 0) {
-    details.open = true;
-  } else {
-    details.open = false;
-  }
+      if (marcadosNaSecao > 0) {
+        details.open = true;
+      } else {
+        details.open = false;
+      }
 
-  atualizarSelecionados();
-});
+      atualizarSelecionados();
+    });
 
     label.appendChild(checkbox);
     label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
@@ -392,24 +392,32 @@ function renderResumo() {
   });
 
   let avista = total * 0.97;
- 
-  let parcelamentoTexto = "À vista";
 
-  if (total > 10000) {
+  let parcelamentoTexto = "Somente à vista";
+
+  if (total >= 11000) {
     parcelamentoTexto =
-      "10x de " + (total / 10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-  } else if (total >= 2080) {
+      "10x de " +
+      (total / 10).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+  } else if (total > 2000) {
     parcelamentoTexto =
-      "6x de " + (total / 6).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      "6x de " +
+      (total / 6).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
   }
 
   document.getElementById("total").textContent =
-  total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-document.getElementById("avista").textContent =
-  avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  document.getElementById("avista").textContent =
+    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-document.getElementById("parcelado").textContent = parcelamentoTexto;
+  document.getElementById("parcelado").textContent = parcelamentoTexto;
 }
 
 // MODO APRESENTAÇÃO
@@ -418,7 +426,7 @@ document.getElementById("btnApresentacao").onclick = () => {
 };
 
 // GERAR PDF
-document.getElementById("btnPDF").onclick = () => {
+document.getElementById("btnPDF")?.addEventListener("click", () => {
   document.body.classList.add("pdf");
 
   const element = document.getElementById("conteudo");
@@ -434,4 +442,7 @@ document.getElementById("btnPDF").onclick = () => {
   html2pdf().set(opt).from(element).save().then(() => {
     document.body.classList.remove("pdf");
   });
-};
+});
+
+// inicializa valores ao abrir a página
+renderResumo();
