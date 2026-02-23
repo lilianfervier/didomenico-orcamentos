@@ -417,23 +417,34 @@ document.getElementById("btnApresentacao").onclick = () => {
 };
 
 document.getElementById("btnPDF").onclick = () => {
-
   document.body.classList.add("apresentacao");
+  document.body.classList.add("pdf");
 
   const element = document.getElementById("conteudo");
 
   const opt = {
-  margin: 0.5,
-  filename: "orcamento.pdf",
-  image: { type: "jpeg", quality: 0.98 },
-  html2canvas: { scale: 2, scrollY: 0 },
-  pagebreak: { mode: ["avoid-all", "css", "legacy"] },
-  jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
-};
+    margin: 10,
+    filename: "orcamento.pdf",
+    image: { type: "jpeg", quality: 1 },
+    html2canvas: {
+      scale: 2,
+      scrollY: 0,
+      windowHeight: document.body.scrollHeight
+    },
+    pagebreak: { mode: ["css", "legacy"] },
+    jsPDF: {
+      unit: "mm",
+      format: "a4",
+      orientation: "portrait"
+    }
+  };
 
-  html2pdf().set(opt).from(element).save().then(() => {
-    document.body.classList.remove("apresentacao");
-  });
+  setTimeout(() => {
+    html2pdf().set(opt).from(element).save().then(() => {
+      document.body.classList.remove("pdf");
+      document.body.classList.remove("apresentacao");
+    });
+  }, 300);
 };
 
 renderResumo();
