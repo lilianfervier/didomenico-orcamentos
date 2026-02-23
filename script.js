@@ -341,21 +341,13 @@ secoes.forEach(secao => {
     checkbox.dataset.valor = item[1];
 
     checkbox.addEventListener("change", () => {
-
-      const marcadosNaSecao = details.querySelectorAll("input:checked").length;
-
-      if (marcadosNaSecao > 0) {
-        details.open = true;
-      } else {
-        details.open = false;
-      }
-
+      const marcados = details.querySelectorAll("input:checked").length;
+      details.open = marcados > 0;
       atualizarSelecionados();
     });
 
     label.appendChild(checkbox);
     label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
-
     details.appendChild(label);
   });
 
@@ -377,7 +369,6 @@ function atualizarSelecionados() {
 }
 
 function renderResumo() {
-
   let total = 0;
   selecionadosDiv.innerHTML = "";
 
@@ -394,15 +385,22 @@ function renderResumo() {
   });
 
   let avista = total * 0.97;
+  let parcelamentoTexto = "Somente à vista";
 
-  let parcelamentoTexto = "À vista";
-
-  if (total > 10000) {
+  if (total >= 11000) {
     parcelamentoTexto =
-      "10x de " + (total / 10).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-  } else if (total >= 2080) {
+      "10x de " +
+      (total / 10).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+  } else if (total > 2000) {
     parcelamentoTexto =
-      "6x de " + (total / 6).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      "6x de " +
+      (total / 6).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
   }
 
   document.getElementById("total").textContent =
@@ -414,39 +412,27 @@ function renderResumo() {
   document.getElementById("parcelado").textContent = parcelamentoTexto;
 }
 
-
-// modo apresentação
 document.getElementById("btnApresentacao").onclick = () => {
   document.body.classList.toggle("apresentacao");
 };
 
-
-// gerar PDF
 document.getElementById("btnPDF").onclick = () => {
 
-  if (selecionados.length === 0) {
-    alert("Selecione pelo menos um procedimento.");
-    return;
-  }
-
-  document.body.classList.add("pdf");
-
-  document.querySelectorAll("#procedimentos details").forEach(d => {
-    d.open = true;
-  });
+  document.body.classList.add("apresentacao");
 
   const element = document.getElementById("conteudo");
 
   const opt = {
-    margin: 0.4,
-    filename: "orcamento-clinica.pdf",
-    image: { type: "jpeg", quality: 1 },
+    margin: 0.5,
+    filename: "orcamento.pdf",
+    image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
   };
 
   html2pdf().set(opt).from(element).save().then(() => {
-    document.body.classList.remove("pdf");
+    document.body.classList.remove("apresentacao");
   });
-
 };
+
+renderResumo();
