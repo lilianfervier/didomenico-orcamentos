@@ -190,3 +190,24 @@ button:hover {
 .pdf #selecionados div {
   padding: 8px 0;
 }
+
+.pdf .container {
+  height: auto !important;
+}
+
+/* CORRIGE CORTE DE CONTEÚDO NO PDF */
+.pdf .container {
+  height: auto !important;
+}
+
+.pdf #conteudo {
+  height: auto !important;
+}
+
+.pdf .resultado {
+  page-break-inside: avoid;
+}
+
+.pdf #selecionados div {
+  page-break-inside: avoid;
+}
