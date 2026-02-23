@@ -326,7 +326,7 @@ let selecionados = [];
 
 secoes.forEach(secao => {
   const details = document.createElement("details");
-  details.open = true;
+  details.open = false; 
 
   const summary = document.createElement("summary");
   summary.textContent = secao.titulo;
@@ -340,7 +340,17 @@ secoes.forEach(secao => {
     checkbox.dataset.nome = item[0];
     checkbox.dataset.valor = item[1];
 
-    checkbox.addEventListener("change", atualizarSelecionados);
+    checkbox.addEventListener("change", () => {
+  const marcadosNaSecao = details.querySelectorAll("input:checked").length;
+
+  if (marcadosNaSecao > 0) {
+    details.open = true;
+  } else {
+    details.open = false;
+  }
+
+  atualizarSelecionados();
+});
 
     label.appendChild(checkbox);
     label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
