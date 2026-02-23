@@ -404,15 +404,12 @@ function renderResumo() {
   }
 
   document.getElementById("total").textContent =
-    total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-  document.getElementById("avista").textContent =
-    avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+document.getElementById("avista").textContent =
+  avista.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-  document.getElementById("economia").textContent =
-    economia.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-  document.getElementById("parcelado").textContent = parcelamentoTexto;
+document.getElementById("parcelado").textContent = parcelamentoTexto;
 }
 
 // MODO APRESENTAÇÃO
