@@ -173,3 +173,20 @@ button:hover {
     flex-direction: column;
   }
 }
+
+/* MELHORIA VISUAL DO PDF */
+.pdf h2 {
+  font-size: 26px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d6c3b2;
+  padding-bottom: 8px;
+}
+
+.pdf .linha {
+  font-size: 16px;
+}
+
+.pdf #selecionados div {
+  padding: 8px 0;
+}
