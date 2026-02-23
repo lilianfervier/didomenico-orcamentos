@@ -423,12 +423,13 @@ document.getElementById("btnPDF").onclick = () => {
   const element = document.getElementById("conteudo");
 
   const opt = {
-    margin: 0.5,
-    filename: "orcamento.pdf",
-    image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
-  };
+  margin: 0.5,
+  filename: "orcamento.pdf",
+  image: { type: "jpeg", quality: 0.98 },
+  html2canvas: { scale: 2, scrollY: 0 },
+  pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+  jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+};
 
   html2pdf().set(opt).from(element).save().then(() => {
     document.body.classList.remove("apresentacao");
