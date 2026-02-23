@@ -48,6 +48,7 @@ const secoes = [
       ["MD Codes 7 ou + (cada)", 1936],
       ["Preenchimento labial", 2100],
       ["Produto / RETOQUE", 1400],
+      ["SOFT LIFT Botox + Preenchedor", 5470],
     ]
   },
 
@@ -59,6 +60,7 @@ const secoes = [
       ["Produto / RETOQUE", 1400],
       ["Rinomodelação", 2650],
       ["Skinvive / Skinbooster", 2100],
+      ["BoosterBotox", 2980],
       ["MESO CORPORAL", 820],
     ]
   },
@@ -76,160 +78,148 @@ const secoes = [
       ["Radiesse Prime Blend Face", 4000],
       ["Sculptra (1 frasco)", 3150],
       ["Sculptra (2 frascos)", 5900],
+      ["PROTOCOLO 40+ - 4 Radiesse", 11400],
+      ["V Lift", 11680],
+      ["Beautiful Mommy", 7480],
+      ["LIFT UP Radiesse Plus + Duo", 5820],
     ]
   },
 
   {
     titulo: "Toxina Botulínica",
     itens: [
-      ["Full Face Feminino", 2080],
-      ["Full Face Masculino", 2310],
-      ["Face + Masseter (F)", 2520],
-      ["Face + Masseter (M)", 2630],
-      ["Olhos (F)", 940],
-      ["Olhos (M)", 990],
-      ["Glabela", 1360],
-      ["Glabela + Testa", 1680],
-      ["Glabela + Olhos", 1580],
-      ["Axila", 2730],
-      ["Pescoço / Nefertiti", 1940],
-      ["Masseter / Bruxismo", 1370],
-      ["Buço", 950],
-      ["Mãos", 2620],
-      ["Rosácea", 1160],
+      ["Toxina Botulínica Full Face Feminino", 2080],
+      ["Toxina Botulínica Full Face Masculino", 2310],
+      ["Toxina Botulínica Face + Masseter (F)", 2520],
+      ["Toxina Botulínica Face + Masseter (M)", 2630],
+      ["Toxina Botulínica Olhos (F)", 940],
+      ["Toxina Botulínica Olhos (M)", 990],
+      ["Toxina Botulínica Glabela", 1360],
+      ["Toxina Botulínica Glabela + Testa", 1680],
+      ["Toxina Botulínica Glabela + Olhos", 1580],
+      ["Toxina Botulínica Axila", 2730],
+      ["Toxina Botulínica Pescoço / Nefertiti", 1940],
+      ["Toxina Botulínica Masseter / Bruxismo", 1370],
+      ["Toxina Botulínica Buço", 950],
+      ["Toxina Botulínica Mãos", 2620],
+      ["Toxina Botulínica Rosácea", 1160],
+      ["SOFT LIFT Botox + Preenchedor", 5470],
+      ["BoosterBotox", 2980],
     ]
   },
 
   {
     titulo: "ATRIA 2",
     itens: [
-      ["Face", 5720],
-      ["Papada / Pescoço / Colo", 3630],
-      ["Face + Pescoço", 6600],
-      ["Face + Pescoço + Papada", 7260],
-      ["Pálpebra", 2860],
-      ["Peitoral Masc / Braços", 4235],
-      ["Bananinha / Coxas / Culotes / Costas / Flancos", 4235],
-      ["Meia Coxa", 3000],
-      ["Joelho – Flacidez", 2420],
-      ["Joelho – Gordura", 3190],
-      ["Infraxilar – frente", 2420],
-      ["Infraxilar – frente e atrás", 3520],
-      ["Abdômen 1 – Flacidez", 4300],
-      ["Abdômen 2 – Gordura", 4500],
+      ["ATRIA 2 Face", 5720],
+      ["ATRIA 2 Papada / Pescoço / Colo", 3630],
+      ["ATRIA 2 Face + Pescoço", 6600],
+      ["ATRIA 2 Face + Pescoço + Papada", 7260],
+      ["ATRIA 2 Pálpebra", 2860],
+      ["ATRIA 2 Peitoral Masc / Braços", 4235],
+      ["ATRIA 2 Bananinha / Coxas / Culotes / Costas / Flancos", 4235],
+      ["ATRIA 2 Meia Coxa", 3000],
+      ["ATRIA 2 Joelho – Flacidez", 2420],
+      ["ATRIA 2 Joelho – Gordura", 3190],
+      ["ATRIA 2 Infraxilar – frente", 2420],
+      ["ATRIA 2 Infraxilar – frente e atrás", 3520],
+      ["ATRIA 2 Abdômen 1 – Flacidez", 4300],
+      ["ATRIA 2 Abdômen 2 – Gordura", 4500],
     ]
   },
 
   {
     titulo: "MORPHEUS",
     itens: [
-      ["Face + Pescoço", 7590],
-      ["Face / Lateral de Coxa / Flancos / Abdômen / Costas", 7150],
-      ["Braço / Infraxilar / Bananinha / Joelho / Pescoço ou Papada", 4950],
-      ["Adicional + 1 região", 2750],
-      ["2ª sessão (até 3 meses-ESTERELIZAR PONTEIRA)", 4400],
+      ["MORPHEUS Face + Pescoço", 7590],
+      ["MORPHEUS Face / Lateral de Coxa / Flancos / Abdômen / Costas", 7150],
+      ["MORPHEUS Braço / Infraxilar / Bananinha / Joelho / Pescoço ou Papada", 4950],
+      ["MORPHEUS Adicional + 1 região", 2750],
+      ["MORPHEUS 2ª sessão (até 3 meses-ESTERELIZAR PONTEIRA)", 4400],
     ]
   },
 
   {
     titulo: "MORPHEUS + ATRIA",
     itens: [
-      ["Região", 8800],
-      ["Adicional + 1 região", 2200],
+      ["MORPHEUS + ATRIA- Região", 8800],
+      ["MORPHEUS + ATRIA - Adicional + 1 região", 2200],
     ]
   },
 
   {
     titulo: "ULTRAFORMER MPT",
     itens: [
-      ["Face / Lateral Coxa / Flancos / Costas", 6710],
-      ["Abdômen / Bananinha / Braços", 5110],
-      ["Papada e/ou Pescoço / Colo", 3630],
-      ["Joelho / Infraxilar", 3790],
-      ["Pálpebra", 2750],
-      ["Face + Papada + Pescoço", 7700],
+      ["ULTRAFORMER MPT - Face / Lateral Coxa / Flancos / Costas", 6710],
+      ["ULTRAFORMER MPT - Abdômen / Bananinha / Braços", 5110],
+      ["ULTRAFORMER MPT- Papada e/ou Pescoço / Colo", 3630],
+      ["ULTRAFORMER MPT - Joelho / Infraxilar", 3790],
+      ["ULTRAFORMER MPT- Pálpebras", 2750],
+      ["ULTRAFORMER MPT- Face + Papada + Pescoço", 7700],
     ]
   },
 
   {
     titulo: "VOLNEWMER",
     itens: [
-      ["Face", 11100],
-      ["Pescoço", 5170],
-      ["Olhos 1", 3300],
-      ["Olhos 2", 3740],
-      ["Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
-      ["Terço Médio – Pálpebras + Lateral Olhos", 4290],
-      ["Testa", 1980],
-      ["Código de Barras – (40) Jovem", 2090],
-      ["Código de Barras – (150) Maduro", 3300],
-      ["Terço Inferior – Contorno", 6600],
-      ["Terço Inferior – Lateral Boca", 4950],
-      ["Gordura Pescoço", 2200],
-      ["Joelho – Flacidez", 7150],
-      ["Abdômen / Braços – Flacidez", 5900],
+      ["VOLNEWMER Face", 11100],
+      ["VOLNEWMER Pescoço", 5170],
+      ["VOLNEWMER Olhos 1", 3300],
+      ["VOLNEWMER Olhos 2", 3740],
+      ["VOLNEWMER Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
+      ["VOLNEWMER Terço Médio – Pálpebras + Lateral Olhos", 4290],
+      ["VOLNEWMER Testa", 1980],
+      ["VOLNEWMER Código de Barras – (40) Jovem", 2090],
+      ["VOLNEWMER Código de Barras – (150) Maduro", 3300],
+      ["RESURFACING LIPS JOVEM (40) — Volnewmer + Intra-oral + Resurfacing + Volumizador", 2590],
+      ["RESURFACING LIPS MADURO (150)— Volnewmer + Intra-oral + Resurfacing + Volumizador", 3800],
+      ["VOLNEWMER Terço Inferior – Contorno", 6600],
+      ["VOLNEWMER Terço Inferior – Lateral Boca", 4950],
+      ["VOLNEWMER- Submento", 2200],
+      ["VOLNEWMER Joelho – Flacidez", 7150],
+      ["VOLNEWMER Abdômen / Braços – Flacidez", 5900],
     ]
   },
 
   {
     titulo: "VOLFORMER",
     itens: [
-      ["Face + Pescoço", 19800],
-      ["Face", 15400],
-      ["Olhos", 4950],
-      ["Pescoço", 7700],
+      ["VOLFORMER Face + Pescoço", 19800],
+      ["VOLFORMER Face", 15400],
+      ["VOLFORMER Olhos", 4950],
+      ["VOLFORMER Pescoço", 7700],
     ]
   },
 
   {
     titulo: "FOTONA STARWALKER",
     itens: [
-      ["Vasos / Acne / Código de Barras / Tatuagem / Cicatriz / Rosácea / Melanoses / Olheiras", 3200],
-      ["Estrias", 3500],
-      ["Clareamento Corporal (Axilas e Virilhas)", 3300],
-      ["Melasma / Rejuvenescimento Facial + Exossomos", 4290],
-      ["Manchas das Mãos", 2300],
-      ["Rejuvenescimento Face + Pescoço", 4950],
-      ["Rejuvenescimento Pescoço + Colo", 4400],
-      ["Rejuvenescimento Face + Pescoço + Colo", 5500],
+      ["FOTONA - Vasos / Acne / Código de Barras / Tatuagem / Cicatriz / Rosácea / Melanoses / Olheiras", 3200],
+      ["FOTONA- Estrias", 3500],
+      ["FOTONA- Clareamento Corporal (Axilas e Virilhas)", 3300],
+      ["FOTONA- Melasma / Rejuvenescimento Facial + Exossomos", 4290],
+      ["FOTONA- Manchas das Mãos", 2300],
+      ["FOTONA- Rejuvenescimento Face + Pescoço", 4950],
+      ["FOTONA- Rejuvenescimento Pescoço + Colo", 4400],
+      ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5500],
     ]
   },
 
   {
     titulo: "ELETRODERME",
     itens: [
-      ["FACE", 2750],
-      ["+ PDRN", 3300],
-      ["+ Exossomos", 3850],
+      ["ELETRODERME- FACE", 2750],
+      ["ELETRODERME + PDRN", 3300],
+      ["ELETRODERME + Exossomos", 3850],
     ]
   },
 
-  {
-    titulo: "LASER CO2 FRACIONADO",
-    itens: [
-      ["Face / Colo / Pescoço", 3000],
-      ["Face + Pescoço", 3150],
-      ["Face + Pescoço + Colo", 4070],
-      ["Face + Pescoço + Colo + Mãos", 3900],
-      ["Mãos", 2090],
-      ["Estrias / Cicatriz – Grande Quantidade", 2200],
-      ["Estrias / Cicatriz – Pequena Quantidade", 1850],
-    ]
-  },
-
-  {
+    {
     titulo: "LASER INTIMO",
     itens: [
-      ["1 sessão", 2090],
-      ["2 sessões", 3630],
-    ]
-  },
-
-  {
-    titulo: "POWER SHAPE",
-    itens: [
-      ["Corporal (5 sessões)", 2850],
-      ["Unidade / Região", 650],
+      ["LASER INTIMO- 1 sessão", 2090],
+      ["LASER INTIMO- 2 sessões", 3630],
+      ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador", 3500],
     ]
   },
 
@@ -238,41 +228,82 @@ const secoes = [
     itens: [
       ["LIP – Face / Colo / Pescoço", 2300],
       ["LIP – Face + Colo", 2640],
-      ["Laser NDYAG – Face Vasos", 1650],
+      ["NDYAG – Face Vasos", 1650],
       ["NDYAG (1 vasinho)", 820],
       ["Laser Pixel – Face", 3080],
       ["Laser Pixel – Colo", 2530],
       ["Laser Pixel – Face + Colo", 3630],
       ["Laser Pixel – Costas", 2640],
       ["Laser Pixel – Mãos", 2090],
+      ["LASER FRACIONADO - Face / Colo / Pescoço", 3000],
+      ["LASER FRACIONADO- Face + Pescoço", 3150],
+      ["LASER FRACIONADO- Face + Pescoço + Colo", 4070],
+      ["LASER FRACIONADO- Face + Pescoço + Colo + Mãos", 3900],
+      ["LASER FRACIONADO- Mãos", 2090],
+      ["Pro Collagen Body (estrias/cicatriz G) — laser fracionado + LIP + peeling químico", 2200],      
+      ["Pro Collagen Body (estrias/cicatriz P) — laser fracionado + LIP + peeling químico", 1850],
+    ]
+  },
+
+   {
+    titulo: "PROTOCOLOS SOLON",
+    itens: [
+      ["VOLUMA LIPS — Intra-oral + Resurfacing + Volumizador + LIP BALM", 1200],
+      ["RESURFACING LIPS JOVEM (40)— Volnewmer + Intra-oral + Resurfacing + Volumizador", 2590],
+      ["RESURFACING LIPS MADURO (150)— Volnewmer + Intra-oral + Resurfacing + Volumizador", 3800],
+      ["Lumi Eyes Soft — LIP + protocolo para pálpebras (sem downtime, 2 sessões)", 2500],
+      ["Lumi Eyes Pro — LIP + Fracionado coagulativo (2 sessões)", 2500],
+      ["ACNE RESET — Laser fracionado coagulativo + Eletroderme (pacote com 2 sessões)", 4950],
+      ["Pro Collagen FACE— Intra-oral + Biocompactação + Bioestímulo de colágeno + Fracionado coagulativo", 3500],
+      ["Pro Collagen Body (estrias/cicatriz P) — laser fracionado + LIP + peeling químico", 1850],   
+      ["Pro Collagen Body (estrias/cicatriz G) — laser fracionado + LIP + peeling químico", 2200],
+    ]
+  },
+
+
+  {
+    titulo: "POWER SHAPE",
+    itens: [
+      ["POWER SHAPE- Corporal (5 sessões)", 2850],
+      ["POWER SHAPE- Unidade/Região", 650],
     ]
   },
 
   {
-    titulo: "PROTOCOLOS",
+    titulo: "PROTOCOLOS GLUTEOS",
     itens: [
-      ["Beautiful Mommy", 7480],
-      ["Glow Up", 4850],
       ["Praia Brava Plus", 17600],
       ["Praia Brava 1 Harmonização com Hialuronico e Bioestimulador Radiesse", 11550],
       ["Praia Brava 2 Harmonização + Power Shape", 14300],
       ["Praia Brava 3 Harmonização + Atria", 16000],
-      ["PREENCHIMENTO DE GLÚTEO Ácido Hialuronico", 14850],
-      ["Bye Bye", 7150],
-      ["Body Sculpt", 7150],
-      ["V Lift", 11680],
+      ["PREENCHIMENTO DE GLÚTEO", 14850],
+         
+    ]
+  },
+
+   {
+    titulo: "PROTOCOLOS OLHOS",
+    itens: [
       ["Olhar Intenso- Atria + Fios PDO + Eletroderme/Laser", 6820],
       ["Ultra Olhos- Volnewmer + Atria + Eletroderme + Exossomos", 11580],
       ["Ultra Neck- Volnewmer + Profhilo", 7150],
-      ["Melasma Recovery", 8800],
-      ["PROTOCOLO LIPODEMA 2 Power shape + Morpheus", 9350],
-      ["PROTOCOLO LIPODEMA 1 Power shape + Atria", 5040],
-      ["SOFT LIFT Botox + Preenchedor", 5470],
-      ["LIFT UP Radiesse Plus + Duo", 5820],
+      ["Lumi Eyes Soft — LIP + protocolo para pálpebras (sem downtime, 2 sessões)", 2500],
+      ["Lumi Eyes Pro — LIP + Fracionado coagulativo (2 sessões)", 2500],
+      
+      
+    ]
+  },
+
+  {
+    titulo: "PROTOCOLOS CORPORAIS",
+    itens: [
+      ["PROTOCOLO LIPEDEMA 2 Power shape + Morpheus", 9350],
+      ["PROTOCOLO LIPEDEMA 1 Power shape + Atria", 5040],
       ["HD ABDOMEN Atria + Radiesse 1", 6820],
       ["Atria + Radiesse 2", 9400],
-      ["BoosterBotox", 2980],
-      ["PROTOCOLO 40+ - 4 Radiesse", 11400],
+      ["Pro Collagen Body (estrias/cicatriz P) — laser fracionado + LIP + peeling químico", 1850],   
+      ["Pro Collagen Body (estrias/cicatriz G) — laser fracionado + LIP + peeling químico", 2200]
+      
     ]
   },
 
