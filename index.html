@@ -1,60 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Emi Di Domenico De Leon</title>
+<meta charset="UTF-8">
+<title>Orçamentos</title>
+<link rel="stylesheet" href="style.css">
 
-  <link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
 
-  <main class="container" id="conteudo">
+<div id="conteudo">
 
-    <h1>
-      Dra. Emi Di Domenico De Leon<br>
-      <span>Clínica Médica Di Domenico – Advanced Medicine</span>
-    </h1>
+<h1>Orçamento</h1>
 
-    <section id="procedimentos"></section>
-
-    <section class="resultado">
-
-      <h2>Orçamento</h2>
-
-      <div class="acoes">
-  <button id="btnApresentacao" type="button">Modo apresentação</button>
-  <button id="btnPDF" type="button">Exportar PDF</button>
+<div class="acoes">
+<button id="btnApresentacao" type="button">Modo apresentação</button>
+<button id="btnPDF" type="button">Gerar PDF</button>
 </div>
 
-      <div class="selecionados">
-        <div id="selecionados"></div>
-      </div>
+<div id="procedimentos"></div>
 
-      <div class="linha">
-        <span>Total</span>
-        <strong id="total">R$ 0,00</strong>
-      </div>
+<h2>Selecionados</h2>
+<div id="selecionados"></div>
 
-      <div class="linha destaque">
-        <span>À vista (3% OFF)</span>
-        <strong id="avista">R$ 0,00</strong>
-      </div>
+<div class="resultado">
+<p>Total: <strong id="total">R$ 0,00</strong></p>
+<p>À vista (3% desconto): <strong id="avista">R$ 0,00</strong></p>
+<p id="parcelado"></p>
+</div>
 
-      <div class="linha">
-        <span id="parcelamentoLabel">Parcelamento</span>
-        <strong id="parcelado">R$ 0,00</strong>
-      </div>
+</div>
 
-    </section>
-
-  </main>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
-
-
