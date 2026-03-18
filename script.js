@@ -6,8 +6,8 @@ const secoes = [
       ["Consulta", 880],
       ["Carbox (sessão/região)", 715],
       ["Analgesia Inalatória", 600],
-      ["Equipe de Analgesia (1h)", 2480],
-      ["Equipe de Analgesia (2h)", 2760],
+      ["Equipe de Analgesia (1h)", 2800],
+      ["Equipe de Analgesia (2h)", 3080],
       ["Analgesia Inalatória – Óxido Nitroso", 600],
     ]
   },
@@ -41,11 +41,11 @@ const secoes = [
     itens: [
       ["MD Codes 1", 2100],
       ["MD Codes 2", 4000],
-      ["MD Codes 3", 5900],
-      ["MD Codes 4", 8360],
-      ["MD Codes 5", 9900],
-      ["MD Codes 6", 11770],
-      ["MD Codes 7 ou + (cada)", 1936],
+      ["MD Codes 3", 5990],
+      ["MD Codes 4", 7940],
+      ["MD Codes 5", 9890],
+      ["MD Codes 6", 11790],
+      ["MD Codes 7 ou + (cada)", 1950],
       ["Preenchimento labial", 2100],
       ["Produto / RETOQUE", 1400],
       ["SOFT LIFT Botox + Preenchedor", 5470],
@@ -164,6 +164,7 @@ const secoes = [
     itens: [
       ["VOLNEWMER Face", 11100],
       ["VOLNEWMER Pescoço", 5170],
+      ["VOLNEWMER GORDURA Pescoço", 2200],
       ["VOLNEWMER Olhos 1", 3300],
       ["VOLNEWMER Olhos 2", 3740],
       ["VOLNEWMER Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
@@ -219,7 +220,9 @@ const secoes = [
     itens: [
       ["LASER INTIMO- 1 sessão", 2090],
       ["LASER INTIMO- 2 sessões", 3630],
-      ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador", 3500],
+      ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador (2 SESSÕES)", 4800],
+      ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador (4 SESSÕES)", 5040],
+    ]
     ]
   },
 
