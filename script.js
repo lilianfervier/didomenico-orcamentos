@@ -223,7 +223,6 @@ const secoes = [
       ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador (2 SESSÕES)", 4800],
       ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador (4 SESSÕES)", 5040],
     ]
-    ]
   },
 
   {
