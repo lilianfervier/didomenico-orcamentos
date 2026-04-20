@@ -317,6 +317,26 @@ const secoes = [
       ["MMP CAPILAR + EXOSSOMOS", 1200],
       ["Eletroderme Capilar", 1750],
     ]
+  },
+
+  {
+    titulo: "REGENERA SKIN/HAIR",
+    itens: [
+      ["REGENERA SKIN - 1 Sessão", 2500],
+      ["REGENERA SKIN - 2 Sessões", 4100],
+      ["REGENERA HAIR - 1 Sessão", 1700],
+      ["REGENERA HAIR - 2 Sessões", 3000],
+    ]
+  },
+
+    {
+    titulo: "REGENERA SKIN/HAIR +",
+    itens: [
+      ["REGENERA SKIN + - 1 Sessão", ],
+      ["REGENERA SKIN + - 2 Sessões", ],
+      ["REGENERA HAIR + - 1 Sessão", ],
+      ["REGENERA HAIR + - 2 Sessões", ],
+    ]
   }
 ];
 
