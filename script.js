@@ -332,10 +332,10 @@ const secoes = [
     {
     titulo: "REGENERA SKIN/HAIR +",
     itens: [
-      ["REGENERA SKIN + - 1 Sessão", ],
-      ["REGENERA SKIN + - 2 Sessões", ],
-      ["REGENERA HAIR + - 1 Sessão", ],
-      ["REGENERA HAIR + - 2 Sessões", ],
+      ["REGENERA SKIN + - 1 Sessão", 0],
+      ["REGENERA SKIN + - 2 Sessões", 0],
+      ["REGENERA HAIR + - 1 Sessão", 0],
+      ["REGENERA HAIR + - 2 Sessões", 0],
     ]
   }
 ];
