@@ -3,7 +3,7 @@ const secoes = [
     titulo: "Taxas e anestesias",
     itens: [
       ["Taxa de Sala", 550],
-      ["Consulta", 880],
+      ["Consulta", 900],
       ["Carbox (sessão/região)", 715],
       ["Analgesia Inalatória", 600],
       ["Equipe de Analgesia (1h)", 2800],
@@ -323,19 +323,16 @@ const secoes = [
     titulo: "REGENERA SKIN/HAIR",
     itens: [
       ["REGENERA SKIN - 1 Sessão", 2500],
-      ["REGENERA SKIN - 2 Sessões", 4100],
+      ["REGENERA SKIN - 2 Sessões", 4300],
       ["REGENERA HAIR - 1 Sessão", 1700],
-      ["REGENERA HAIR - 2 Sessões", 3000],
+      ["REGENERA HAIR - 2 Sessões", 3200],
     ]
   },
 
     {
-    titulo: "REGENERA SKIN/HAIR +",
+    titulo: "REGENERA EXOSKIN & HAIR",
     itens: [
-      ["REGENERA SKIN + - 1 Sessão", 0],
-      ["REGENERA SKIN + - 2 Sessões", 0],
-      ["REGENERA HAIR + - 1 Sessão", 0],
-      ["REGENERA HAIR + - 2 Sessões", 0],
+      ["FOTONA + MCT: 01 sessão", 4000],
     ]
   }
 ];
