@@ -4,8 +4,6 @@ const secoes = [
     itens: [
       ["Taxa de Sala", 550],
       ["Consulta", 900],
-      ["Carbox (sessão/região)", 715],
-      ["Analgesia Inalatória", 600],
       ["Equipe de Analgesia (1h)", 2800],
       ["Equipe de Analgesia (2h)", 3080],
       ["Analgesia Inalatória – Óxido Nitroso", 600],
@@ -48,7 +46,6 @@ const secoes = [
       ["MD Codes 7 ou + (cada)", 1950],
       ["Preenchimento labial", 2100],
       ["Produto / RETOQUE", 1400],
-      ["SOFT LIFT Botox + Preenchedor", 5470],
     ]
   },
 
@@ -72,16 +69,16 @@ const secoes = [
       ["Radiesse Duo", 3000],
       ["Radiesse Duo (2 seringas)", 5830],
       ["Radiesse Duo (3 seringas)", 8690],
+      ["Radiesse Duo (4 seringas)", 11800],
       ["Radiesse Plus", 3000],
       ["Radiesse Plus (2 seringas)", 6000],
-      ["Radiesse Ultra", 5300],
       ["Radiesse Prime Blend Face", 4000],
       ["Sculptra (1 frasco)", 3150],
       ["Sculptra (2 frascos)", 5900],
+      ["Sculptra (3 frasco)", 8850],
+      ["Sculptra (4 frasco)", 11800],
       ["PROTOCOLO 40+ - 4 Radiesse", 11400],
       ["V Lift", 11680],
-      ["Beautiful Mommy", 7480],
-      ["LIFT UP Radiesse Plus + Duo", 5820],
     ]
   },
 
@@ -103,7 +100,6 @@ const secoes = [
       ["Toxina Botulínica Buço", 950],
       ["Toxina Botulínica Mãos", 2620],
       ["Toxina Botulínica Rosácea", 1160],
-      ["SOFT LIFT Botox + Preenchedor", 5470],
       ["BoosterBotox", 2980],
     ]
   },
@@ -125,6 +121,7 @@ const secoes = [
       ["ATRIA 2 Infraxilar – frente e atrás", 3520],
       ["ATRIA 2 Abdômen 1 – Flacidez", 4300],
       ["ATRIA 2 Abdômen 2 – Gordura", 4500],
+      ["ATRIA 2 Abdômen JAQUE", 6100],
     ]
   },
 
@@ -135,7 +132,7 @@ const secoes = [
       ["MORPHEUS Face / Lateral de Coxa / Flancos / Abdômen / Costas", 7150],
       ["MORPHEUS Braço / Infraxilar / Bananinha / Joelho / Pescoço ou Papada", 4950],
       ["MORPHEUS Adicional + 1 região", 2750],
-      ["MORPHEUS 2ª sessão (até 3 meses-ESTERELIZAR PONTEIRA)", 4400],
+      ["MORPHEUS 2ª sessão (até 3 meses)", 4400],
     ]
   },
 
@@ -162,7 +159,7 @@ const secoes = [
   {
     titulo: "VOLNEWMER",
     itens: [
-      ["VOLNEWMER Face", 11100],
+      ["VOLNEWMER Face", 10200],
       ["VOLNEWMER Pescoço", 5170],
       ["VOLNEWMER GORDURA Pescoço", 2200],
       ["VOLNEWMER Olhos 1", 3300],
@@ -185,8 +182,8 @@ const secoes = [
   {
     titulo: "VOLFORMER",
     itens: [
-      ["VOLFORMER Face + Pescoço", 19800],
-      ["VOLFORMER Face", 15400],
+      ["VOLFORMER Face + Pescoço", 15400],
+      ["VOLFORMER Face", 13300],
       ["VOLFORMER Olhos", 4950],
       ["VOLFORMER Pescoço", 7700],
     ]
@@ -195,14 +192,18 @@ const secoes = [
   {
     titulo: "FOTONA STARWALKER",
     itens: [
-      ["FOTONA - Vasos / Acne / Código de Barras / Tatuagem / Cicatriz / Rosácea / Melanoses / Olheiras", 3200],
-      ["FOTONA- Estrias", 3500],
-      ["FOTONA- Clareamento Corporal (Axilas e Virilhas)", 3300],
+      ["FOTONA - Vasos / Acne / Código de Barras / Cicatriz / Rosácea / Melanoses / Olheiras", 4200],
+      ["FOTONA- Estrias (GRANDE QUANTIDADE)", 3200],
+      ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 2200],
+      ["FOTONA- Tatuagem / Pigmento (2 sessões)", 3.200,00],
+      ["FOTONA- Clareamento Corporal (Axilas e Virilhas- Duas sessões)", 3300],
       ["FOTONA- Melasma / Rejuvenescimento Facial + Exossomos", 4290],
       ["FOTONA- Manchas das Mãos", 2300],
       ["FOTONA- Rejuvenescimento Face + Pescoço", 4950],
       ["FOTONA- Rejuvenescimento Pescoço + Colo", 4400],
       ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5500],
+      ["FOTONA- MELASMA RECOVERY", 8800],
+      
     ]
   },
 
@@ -278,35 +279,8 @@ const secoes = [
       ["Praia Brava 1 Harmonização com Hialuronico e Bioestimulador Radiesse", 11550],
       ["Praia Brava 2 Harmonização + Power Shape", 14300],
       ["Praia Brava 3 Harmonização + Atria", 16000],
-      ["PREENCHIMENTO DE GLÚTEO", 14850],
-         
-    ]
-  },
-
-   {
-    titulo: "PROTOCOLOS OLHOS",
-    itens: [
-      ["Olhar Intenso- Atria + Fios PDO + Eletroderme/Laser", 6820],
-      ["Ultra Olhos- Volnewmer + Atria + Eletroderme + Exossomos", 11580],
-      ["Ultra Neck- Volnewmer + Profhilo", 7150],
-      ["Lumi Eyes Soft — LIP + protocolo para pálpebras (sem downtime, 2 sessões)", 2500],
-      ["Lumi Eyes Pro — LIP + Fracionado coagulativo (2 sessões)", 2500],
-      
-      
-    ]
-  },
-
-  {
-    titulo: "PROTOCOLOS CORPORAIS",
-    itens: [
-      ["PROTOCOLO LIPEDEMA 2 Power shape + Morpheus", 9350],
-      ["PROTOCOLO LIPEDEMA 1 Power shape + Atria", 5040],
-      ["HD ABDOMEN Atria + Radiesse 1", 6820],
-      ["Atria + Radiesse 2", 9400],
-      ["Pro Collagen Body (estrias/cicatriz P) — laser fracionado + LIP + peeling químico", 1850],   
-      ["Pro Collagen Body (estrias/cicatriz G) — laser fracionado + LIP + peeling químico", 2200]
-      
-    ]
+      ["PREENCHIMENTO DE GLÚTEO", 14850], 
+   ]
   },
 
   {
@@ -316,6 +290,9 @@ const secoes = [
       ["MMP- sessão", 770],
       ["MMP CAPILAR + EXOSSOMOS", 1200],
       ["Eletroderme Capilar", 1750],
+      ["REGENERA EXOHAIR", 3900],
+      ["REGENERA HAIR", 1700],
+      ["REGENERA HAIR- Duas sessões", 3000],
     ]
   },
 
@@ -325,14 +302,15 @@ const secoes = [
       ["REGENERA SKIN - 1 Sessão", 2500],
       ["REGENERA SKIN - 2 Sessões", 4300],
       ["REGENERA HAIR - 1 Sessão", 1700],
-      ["REGENERA HAIR - 2 Sessões", 3200],
+      ["REGENERA HAIR - 2 Sessões", 3000],
     ]
   },
 
     {
     titulo: "REGENERA EXOSKIN & HAIR",
     itens: [
-      ["FOTONA + MCT: 01 sessão", 4000],
+      ["FOTONA + MCT: 01 sessão", 4500],
+      ["FOTONA + MCT: TRATAMENTO MELASMA", 6800],
     ]
   }
 ];
