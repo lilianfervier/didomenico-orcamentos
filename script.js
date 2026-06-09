@@ -210,7 +210,7 @@ const secoes = [
    {
     titulo: "FOTONA DYNAMIS",
     itens: [
-      ["FOTONA- 4D", 4200],
+      ["FOTONA- 4D", 4800],
       
     ]
   },
