@@ -207,6 +207,14 @@ const secoes = [
     ]
   },
 
+   {
+    titulo: "FOTONA DYNAMIS",
+    itens: [
+      ["FOTONA- 4D", 2750],
+      
+    ]
+  },
+
   {
     titulo: "ELETRODERME",
     itens: [
