@@ -105,7 +105,7 @@ const secoes = [
   },
 
   {
-    titulo: "ATRIA 2",
+    titulo: "ATRIA",
     itens: [
       ["ATRIA 2 Face", 5720],
       ["ATRIA 2 Papada / Pescoço / Colo", 3630],
@@ -162,7 +162,7 @@ const secoes = [
       ["VOLNEWMER Face", 10200],
       ["VOLNEWMER Pescoço", 5170],
       ["VOLNEWMER GORDURA Pescoço", 2200],
-      ["VOLNEWMER Olhos", 3300],
+      ["VOLNEWMER Olhos BASIC", 3300],
       ["VOLNEWMER Olhos PRIME", 3740],
       ["VOLNEWMER Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
       ["VOLNEWMER Terço Médio – Pálpebras + Lateral Olhos", 4290],
@@ -192,87 +192,75 @@ const secoes = [
   {
     titulo: "FOTONA STARWALKER",
     itens: [
-      ["FOTONA - Vasos / Acne / Código de Barras / Cicatriz / Rosácea / Melanoses / Olheiras", 4200],
+      ["FOTONA Facial (Acne/ Melanoses", 3200],
+      ["FOTONA Melasma + MCT", 6800],
       ["FOTONA- Estrias (GRANDE QUANTIDADE)", 3200],
       ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 2200],
-      ["FOTONA- Tatuagem / Pigmento (2 sessões)", 3.200,00],
-      ["FOTONA- Clareamento Corporal (Axilas e Virilhas- Duas sessões)", 3300],
-      ["FOTONA- Melasma / Rejuvenescimento Facial + Exossomos", 4290],
-      ["FOTONA- Manchas das Mãos", 2300],
+      ["FOTONA- Remoção de Pigmento (2 sessões)", 3200],
+      ["FOTONA- Clareamento Corporal (Axilas/Virilhas- Duas sessões)", 3300],
+      ["FOTONA- Melasma/Rejuvenescimento Facial + Exossomos", 4290],
+      ["FOTONA- Manchas das Mãos", 2500],
       ["FOTONA- Rejuvenescimento Face + Pescoço", 4950],
-      ["FOTONA- Rejuvenescimento Pescoço + Colo", 4400],
+      ["FOTONA- Rejuvenescimento INTIMO (Duas sessões)", 3540],
       ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5500],
       ["FOTONA- MELASMA RECOVERY", 8800],
-      
     ]
-  },
+    },
 
-   {
+  {
     titulo: "FOTONA DYNAMIS",
     itens: [
-      ["FOTONA- 4D", 4800],
+      ["FOTONA- XRestart + EXOSSOMOS", 3980],
+      ["FOTONA- Cicatriz Acne", 3200],
+      ["FOTONA- LineLise (GRANDE QUANTIDADE)", 3500],
+      ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 3200],
+      ["FOTONA- OrangeLase (01 sessão)", 2400],
+      ["FOTONA- OrangeLase (02 sessões)", 4320],
+      ["FOTONA- 8D", 7000],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2600],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 4680],
+      ["FOTONA- BODY LIFT", 3900],
+      ["FOTONA- BODY LIFT PRIME", 6700],
+      ["FOTONA- FACE LIFT", 2900],
+      ["FOTONA- FACE LIFT PRIME (+ volnewmer TM)", 5460],
+      ["FOTONA- LipLase (VOLUMA LIPS)", 1800],
+      ["FOTONA- LipLase (VOLUMA LIPS)", 3000],
+      ["FOTONA- LUMI EYES (MICROCORING) ", 2300],
+      ["FOTONA- Véu de noiva", 1800],
+      ["FOTONA- Rosácea / Acne", 3900],
+    ]
+  },
+
+  titulo: "FOTONA DYNAMIS- HAIR REMOVAL",
+    itens: [
+      ["FOTONA- FACIAL", 300],
+      ["FOTONA- AXILA", 300],
+      ["FOTONA- VIRILHA COMPLETA", 500],
+      ["FOTONA- PERNA COMPLETA", 650],
+      ["FOTONA- BRAÇOS", 300],
+      ["FOTONA- ABDOMEN", 300],
+    ]
+  },
+
+
+  {
+    titulo: "LASER INTIMO",
+    itens: [
+      ["LASER INTIMO- INTIMA LASE + 04 Starformer", 3100],
+      ["LASER INTIMO- INTIMA LASE (02 sessões + 08 Starformer)", 5490],
+      
+    ]
+
+    {
+    titulo: "STARFORMER",
+    itens: [
+      ["Poltrona STARFORMER", 750],
+      ["Poltrona STARFORMER (02 Sessões)", 1400],
       
     ]
   },
 
-  {
-    titulo: "ELETRODERME",
-    itens: [
-      ["ELETRODERME- FACE", 2750],
-      ["ELETRODERME + PDRN", 3300],
-      ["ELETRODERME + Exossomos", 3850],
-    ]
-  },
-
-    {
-    titulo: "LASER INTIMO",
-    itens: [
-      ["LASER INTIMO- 1 sessão", 2090],
-      ["LASER INTIMO- 2 sessões", 3630],
-      ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador (2 SESSÕES)", 4800],
-      ["Pro Collagen Intimo — Laser íntimo para estímulo da musculatura e lubrificação + rejuvenescimento íntimo com resurfacing + volumizador (4 SESSÕES)", 5040],
-    ]
-  },
-
-  {
-    titulo: "SOLON",
-    itens: [
-      ["LIP – Face / Colo / Pescoço", 2300],
-      ["LIP – Face + Colo", 2640],
-      ["NDYAG – Face Vasos", 1650],
-      ["NDYAG (1 vasinho)", 820],
-      ["Laser Pixel – Face", 3080],
-      ["Laser Pixel – Colo", 2530],
-      ["Laser Pixel – Face + Colo", 3630],
-      ["Laser Pixel – Costas", 2640],
-      ["Laser Pixel – Mãos", 2090],
-      ["LASER FRACIONADO - Face / Colo / Pescoço", 3000],
-      ["LASER FRACIONADO- Face + Pescoço", 3150],
-      ["LASER FRACIONADO- Face + Pescoço + Colo", 4070],
-      ["LASER FRACIONADO- Face + Pescoço + Colo + Mãos", 3900],
-      ["LASER FRACIONADO- Mãos", 2090],
-      ["Pro Collagen Body (estrias/cicatriz G) — laser fracionado + LIP + peeling químico", 2200],      
-      ["Pro Collagen Body (estrias/cicatriz P) — laser fracionado + LIP + peeling químico", 1850],
-    ]
-  },
-
    {
-    titulo: "PROTOCOLOS SOLON",
-    itens: [
-      ["VOLUMA LIPS — Intra-oral + Resurfacing + Volumizador + LIP BALM", 1200],
-      ["RESURFACING LIPS JOVEM (40)— Volnewmer + Intra-oral + Resurfacing + Volumizador", 2590],
-      ["RESURFACING LIPS MADURO (150)— Volnewmer + Intra-oral + Resurfacing + Volumizador", 3800],
-      ["Lumi Eyes Soft — LIP + protocolo para pálpebras (sem downtime, 2 sessões)", 2500],
-      ["Lumi Eyes Pro — LIP + Fracionado coagulativo (2 sessões)", 2500],
-      ["ACNE RESET — Laser fracionado coagulativo + Eletroderme (pacote com 2 sessões)", 4950],
-      ["Pro Collagen FACE— Intra-oral + Biocompactação + Bioestímulo de colágeno + Fracionado coagulativo", 3500],
-      ["Pro Collagen Body (estrias/cicatriz P) — laser fracionado + LIP + peeling químico", 1850],   
-      ["Pro Collagen Body (estrias/cicatriz G) — laser fracionado + LIP + peeling químico", 2200],
-    ]
-  },
-
-
-  {
     titulo: "POWER SHAPE",
     itens: [
       ["POWER SHAPE- Corporal (5 sessões)", 2850],
