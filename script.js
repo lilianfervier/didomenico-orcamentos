@@ -212,25 +212,38 @@ const secoes = [
     itens: [
       ["FOTONA- XRestart + EXOSSOMOS", 3980],
       ["FOTONA- Cicatriz Acne", 3200],
+      ["FOTONA- Mãos (Laser + peeling quimico", 3100],
       ["FOTONA- LineLise (GRANDE QUANTIDADE)", 3500],
       ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 3200],
-      ["FOTONA- OrangeLase (01 sessão)", 2400],
-      ["FOTONA- OrangeLase (02 sessões)", 4320],
+      ["FOTONA- OrangeLase (01 sessão)", 2500],
+      ["FOTONA- OrangeLase (02 sessões)", 3500],
       ["FOTONA- 8D", 7000],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2600],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 4680],
+      ["FOTONA- 4D GLOW", 4900],
+      ["FOTONA- 4D Face Lift", 4900],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
+      ["FOTONA- TENSOR BODY", 3900],
       ["FOTONA- BODY LIFT", 3900],
-      ["FOTONA- BODY LIFT PRIME", 6700],
+      ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
+      ["FOTONA- FACIAL (VectorLift), 2900],
       ["FOTONA- FACE LIFT", 2900],
-      ["FOTONA- FACE LIFT PRIME (+ volnewmer TM)", 5460],
+      ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5460],
+      ["FOTONA- NECK LIFT", 2300],
+      ["FOTONA- Poiquilodermia (pescoço e colo)", 2900],
       ["FOTONA- LipLase (VOLUMA LIPS)", 1800],
-      ["FOTONA- LipLase (VOLUMA LIPS)", 3000],
+      ["FOTONA- LipLase (VOLUMA LIPS- 02 sessões)", 3000],
       ["FOTONA- LUMI EYES (MICROCORING) ", 2300],
+      ["FOTONA- MICROCORING FACE ", 3900],
+      ["FOTONA- UltraLight (peeling médio)", 2500],
       ["FOTONA- Véu de noiva", 1800],
       ["FOTONA- Rosácea / Acne", 3900],
+      ["FOTONA- Vasinhos Pontual", 700],
+      ["FOTONA- Vasinhos Facial", 1500],
+      ["FOTONA- Night Lase", 1000],
     ]
   },
-
+  
+{
   titulo: "FOTONA DYNAMIS- HAIR REMOVAL",
     itens: [
       ["FOTONA- FACIAL", 300],
@@ -248,8 +261,9 @@ const secoes = [
     itens: [
       ["LASER INTIMO- INTIMA LASE + 04 Starformer", 3100],
       ["LASER INTIMO- INTIMA LASE (02 sessões + 08 Starformer)", 5490],
-      
+      ["LASER INTIMO- 01 sessão", 2500],
     ]
+  },
 
     {
     titulo: "STARFORMER",
