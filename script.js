@@ -401,7 +401,7 @@ function renderResumo() {
         style: "currency",
         currency: "BRL"
       });
-  } else if (total > 2000) {
+  } else if (total >= 2000) {
     parcelamentoTexto =
       "6x de " +
       (total / 6).toLocaleString("pt-BR", {
@@ -434,9 +434,10 @@ document.getElementById("btnPDF").onclick = () => {
     filename: "orcamento.pdf",
     image: { type: "jpeg", quality: 1 },
     html2canvas: {
-      scale: 2,
-      scrollY: 0,
-      windowHeight: document.body.scrollHeight
+  scale: 3,
+  useCORS: true,
+  scrollY: 0
+}
     },
     pagebreak: { mode: ["css", "legacy"] },
     jsPDF: {
@@ -446,11 +447,20 @@ document.getElementById("btnPDF").onclick = () => {
     }
   };
 
-  setTimeout(() => {
-    html2pdf().set(opt).from(element).save().then(() => {
-      document.body.classList.remove("pdf");
-      document.body.classList.remove("apresentacao");
-    });
+  requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    html2pdf()
+  .set(opt)
+  .from(element)
+  .save()
+  .catch(err => {
+    console.error("Erro ao gerar PDF:", err);
+    alert("Não foi possível gerar o PDF.");
+  })
+  .finally(() => {
+    document.body.classList.remove("pdf");
+    document.body.classList.remove("apresentacao");
+  });
   }, 300);
 };
 
