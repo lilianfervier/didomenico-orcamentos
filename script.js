@@ -471,7 +471,5 @@ document.getElementById("btnPDF").onclick = () => {
     });
   });
 };
-  });
-};
 
 renderResumo();
