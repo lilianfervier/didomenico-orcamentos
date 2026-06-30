@@ -210,7 +210,7 @@ const secoes = [
   {
     titulo: "FOTONA DYNAMIS",
     itens: [
-      ["FOTONA- XRestart + EXOSSOMOS", 3980],
+      ["FOTONA- XRestart + DRUG DELIVERY", 1000],
       ["FOTONA- Cicatriz Acne", 3200],
       ["FOTONA- Mãos (Laser + peeling quimico)", 3100],
       ["FOTONA- LineLise (GRANDE QUANTIDADE)", 3500],
@@ -303,6 +303,8 @@ const secoes = [
       ["REGENERA EXOHAIR", 3900],
       ["REGENERA HAIR", 1700],
       ["REGENERA HAIR- Duas sessões", 3000],
+      ["FOTONA- XRestart + EXOSSOMOS", 1000],
+      
     ]
   },
 
