@@ -429,39 +429,47 @@ document.getElementById("btnPDF").onclick = () => {
 
   const element = document.getElementById("conteudo");
 
-  const opt = {
-    margin: 10,
-    filename: "orcamento.pdf",
-    image: { type: "jpeg", quality: 1 },
-    html2canvas: {
-  scale: 3,
-  useCORS: true,
-  scrollY: 0
-}
-    },
-    pagebreak: { mode: ["css", "legacy"] },
-    jsPDF: {
-      unit: "mm",
-      format: "a4",
-      orientation: "portrait"
-    }
+const opt = {
+  margin: 10,
+  filename: "orcamento.pdf",
+  image: {
+    type: "jpeg",
+    quality: 1
+  },
+  html2canvas: {
+    scale: 3,
+    useCORS: true,
+    scrollY: 0,
+    windowWidth: document.body.scrollWidth,
+    windowHeight: document.body.scrollHeight
+  },
+  pagebreak: {
+    mode: ["avoid-all", "css", "legacy"]
+  },
+  jsPDF: {
+    unit: "mm",
+    format: "a4",
+    orientation: "portrait",
+    compress: true
+  }
+};
   };
 
-  requestAnimationFrame(() => {
+requestAnimationFrame(() => {
   requestAnimationFrame(() => {
     html2pdf()
-  .set(opt)
-  .from(element)
-  .save()
-  .catch(err => {
-    console.error("Erro ao gerar PDF:", err);
-    alert("Não foi possível gerar o PDF.");
-  })
-  .finally(() => {
-    document.body.classList.remove("pdf");
-    document.body.classList.remove("apresentacao");
+      .set(opt)
+      .from(element)
+      .save()
+      .catch(err => {
+        console.error("Erro ao gerar PDF:", err);
+        alert("Não foi possível gerar o PDF.");
+      })
+      .finally(() => {
+        document.body.classList.remove("pdf");
+        document.body.classList.remove("apresentacao");
+      });
   });
-  }, 300);
 };
 
 renderResumo();
