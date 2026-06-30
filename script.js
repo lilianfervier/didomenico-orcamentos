@@ -186,7 +186,7 @@ const secoes = [
       ["VOLFORMER Face", 13300],
       ["VOLFORMER Olhos", 4950],
       ["VOLFORMER Pescoço", 7700],
-    ]
+  ]
   },
 
   {
