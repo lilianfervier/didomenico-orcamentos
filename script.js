@@ -92,8 +92,11 @@ const secoes = [
       ["Toxina Botulínica Olhos (F)", 940],
       ["Toxina Botulínica Olhos (M)", 990],
       ["Toxina Botulínica Glabela", 1360],
-      ["Toxina Botulínica Glabela + Testa", 1680],
-      ["Toxina Botulínica Glabela + Olhos", 1580],
+      ["Toxina Botulínica Glabela + Testa F", 1680],
+      ["Toxina Botulínica Glabela + Testa M", 1890],
+      ["Toxina Botulínica Glabela + Olhos F", 1580],
+      ["Toxina Botulínica Glabela + Olhos M", 1790],
+      ["Botox Frontal", 1150],
       ["Toxina Botulínica Axila", 2730],
       ["Toxina Botulínica Pescoço / Nefertiti", 1940],
       ["Toxina Botulínica Masseter / Bruxismo", 1370],
@@ -101,6 +104,8 @@ const secoes = [
       ["Toxina Botulínica Mãos", 2620],
       ["Toxina Botulínica Rosácea", 1160],
       ["BoosterBotox", 2980],
+      ["Botox Lift F", 2200],
+      ["Botox Lift M", 2420],
     ]
   },
 
@@ -131,6 +136,7 @@ const secoes = [
       ["MORPHEUS Face + Pescoço", 7590],
       ["MORPHEUS Face / Lateral de Coxa / Flancos / Abdômen / Costas", 7150],
       ["MORPHEUS Braço / Infraxilar / Bananinha / Joelho / Pescoço ou Papada", 4950],
+      ["MORPHEUS Coxa completa (Interno, joelho e posterior)", 8250],
       ["MORPHEUS Adicional + 1 região", 2750],
       ["MORPHEUS 2ª sessão (até 3 meses)", 4400],
     ]
@@ -162,6 +168,7 @@ const secoes = [
       ["VOLNEWMER Face", 10200],
       ["VOLNEWMER Pescoço", 5170],
       ["VOLNEWMER GORDURA Pescoço", 2200],
+      ["VOLNEWMER UltraNeck (Volnewmer + PROFHILO)", 7150],
       ["VOLNEWMER Olhos BASIC", 3300],
       ["VOLNEWMER Olhos PRIME", 3740],
       ["VOLNEWMER Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
@@ -211,22 +218,25 @@ const secoes = [
     titulo: "FOTONA DYNAMIS",
     itens: [
       ["FOTONA- XRestart + DRUG DELIVERY", 1000],
-      ["FOTONA- Cicatriz Acne", 3200],
+      ["FOTONA- Cicatriz Acne full face", 3500],
+      ["FOTONA- Cicatriz Acne Pontual", 3200],
       ["FOTONA- Mãos (Laser + peeling quimico)", 3100],
       ["FOTONA- LineLise (GRANDE QUANTIDADE)", 3500],
       ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 3200],
       ["FOTONA- OrangeLase (01 sessão)", 2500],
       ["FOTONA- OrangeLase (02 sessões)", 3500],
       ["FOTONA- 8D", 7000],
-      ["FOTONA- 4D GLOW", 4900],
-      ["FOTONA- 4D Face Lift", 4900],
+      ["FOTONA- 6D", 5950],
+      ["FOTONA- 4D GLOW / Face Lift", 4900],
+      ["FOTONA- 2D", 3000],
+      ["FOTONA- 1D", 2000],
       ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
       ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
       ["FOTONA- TENSOR BODY", 3900],
-      ["FOTONA- BODY LIFT", 3900],
+      ["FOTONA- TENSOR BODY (02 sessões)", 7000],
       ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
       ["FOTONA- FACIAL (VectorLift)", 2900],
-      ["FOTONA- FACE LIFT", 2900],
+      ["FOTONA- FACIAL (VectorLift- 02 sessões)", 5500],
       ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5460],
       ["FOTONA- NECK LIFT", 2300],
       ["FOTONA- Poiquilodermia (pescoço e colo)", 2900],
@@ -296,8 +306,8 @@ const secoes = [
   {
     titulo: "PROTOCOLOS CAPILARES",
     itens: [
-      ["Toxina capilar", 1890],
-      ["MMP- sessão", 770],
+      ["Toxina capilar", 2500],
+      ["MMP- sessão", 700],
       ["MMP CAPILAR + EXOSSOMOS", 1200],
       ["Eletroderme Capilar", 1750],
       ["REGENERA EXOHAIR", 3900],
@@ -311,8 +321,8 @@ const secoes = [
   {
     titulo: "REGENERA SKIN/HAIR",
     itens: [
-      ["REGENERA SKIN - 1 Sessão", 2500],
-      ["REGENERA SKIN - 2 Sessões", 4300],
+      ["REGENERA SKIN - 1 Sessão", 3500],
+      ["REGENERA SKIN - 2 Sessões", 5100],
       ["REGENERA HAIR - 1 Sessão", 1700],
       ["REGENERA HAIR - 2 Sessões", 3000],
     ]
@@ -321,7 +331,7 @@ const secoes = [
     {
     titulo: "REGENERA EXOSKIN & HAIR",
     itens: [
-      ["FOTONA + MCT: 01 sessão", 4500],
+      ["FOTONA + MCT: 01 sessão", 5900],
       ["FOTONA + MCT: TRATAMENTO MELASMA", 6800],
     ]
   }
