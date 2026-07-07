@@ -196,45 +196,51 @@ const secoes = [
   ]
   },
 
-  {
-    titulo: "FOTONA STARWALKER",
+ {
+    titulo: "FOTONA STARWALKER-",
     itens: [
       ["FOTONA Facial (Acne/ Melanoses)", 3200],
       ["FOTONA Melasma + MCT", 6800],
-      ["FOTONA- Estrias (GRANDE QUANTIDADE)", 3200],
-      ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 2200],
-      ["FOTONA- Remoção de Pigmento (2 sessões)", 3200],
       ["FOTONA- Clareamento Corporal (Axilas/Virilhas- Duas sessões)", 3300],
       ["FOTONA- Melasma/Rejuvenescimento Facial + Exossomos", 4290],
       ["FOTONA- Manchas das Mãos", 2500],
       ["FOTONA- Rejuvenescimento Face + Pescoço", 4950],
-      ["FOTONA- Rejuvenescimento INTIMO (Duas sessões)", 3540],
       ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5500],
       ["FOTONA- MELASMA RECOVERY", 8800],
     ]
     },
 
+   {
+    titulo: "FOTONA STARWALKER- Remoção de Pigmento",
+    itens: [
+      ["Remoção de Pigmento (2 sessões)", 3200],
+      ["Remoção de Pigmento (4 sessões)", 4100],
+      
+    ]
+    },
+
+   {
+    titulo: "FOTONA Dynamis e StarWalker- Estrias",
+    itens: [
+      ["FOTONA- Estrias (GRANDE QUANTIDADE)", 2800],
+      ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 2100],
+      ["FOTONA- LineLise (GRANDE QUANTIDADE)", 2800],
+      ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 2100],
+      
+    ]
+    },
+
   {
-    titulo: "FOTONA DYNAMIS",
+    titulo: "FOTONA DYNAMIS Face, pescoço e colo",
     itens: [
       ["FOTONA- XRestart + DRUG DELIVERY", 1000],
       ["FOTONA- Cicatriz Acne full face", 3500],
       ["FOTONA- Cicatriz Acne Pontual", 3200],
-      ["FOTONA- Mãos (Laser + peeling quimico)", 3100],
-      ["FOTONA- LineLise (GRANDE QUANTIDADE)", 3500],
-      ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 3200],
-      ["FOTONA- OrangeLase (01 sessão)", 2500],
-      ["FOTONA- OrangeLase (02 sessões)", 3500],
       ["FOTONA- 8D", 7000],
       ["FOTONA- 6D", 5950],
       ["FOTONA- 4D GLOW / Face Lift", 4900],
       ["FOTONA- 2D", 3000],
       ["FOTONA- 1D", 2000],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
-      ["FOTONA- TENSOR BODY", 3900],
-      ["FOTONA- TENSOR BODY (02 sessões)", 7000],
-      ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
       ["FOTONA- FACIAL (VectorLift)", 2900],
       ["FOTONA- FACIAL (VectorLift- 02 sessões)", 5500],
       ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5460],
@@ -252,8 +258,22 @@ const secoes = [
       ["FOTONA- Night Lase", 1000],
     ]
   },
-  
-{
+
+   {
+    titulo: "FOTONA DYNAMIS- Corporal",
+    itens: [
+      ["FOTONA- Mãos (Laser + peeling quimico)", 3100],
+      ["FOTONA- OrangeLase (01 sessão)", 2500],
+      ["FOTONA- OrangeLase (02 sessões)", 3500],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
+      ["FOTONA- TENSOR BODY", 3900],
+      ["FOTONA- TENSOR BODY (02 sessões)", 7000],
+      ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
+    ]
+  }, 
+
+  {
   titulo: "FOTONA DYNAMIS- HAIR REMOVAL",
     itens: [
       ["FOTONA- FACIAL", 300],
@@ -267,11 +287,12 @@ const secoes = [
 
 
   {
-    titulo: "LASER INTIMO",
+    titulo: "FOTONA Protocolos Intimos",
     itens: [
       ["LASER INTIMO- INTIMA LASE + 04 Starformer", 3100],
       ["LASER INTIMO- INTIMA LASE (02 sessões + 08 Starformer)", 5490],
       ["LASER INTIMO- 01 sessão", 2500],
+      ["FOTONA- Rejuvenescimento INTIMO (Duas sessões)", 3540],
     ]
   },
 
@@ -485,3 +506,4 @@ document.getElementById("btnPDF").onclick = () => {
 };
 
 renderResumo();
+
