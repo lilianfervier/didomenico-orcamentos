@@ -220,7 +220,7 @@ const secoes = [
     },
 
    {
-    titulo: "FOTONA Dynamis e StarWalker- Estrias",
+    titulo: "FOTONA DYNAMIS e STARWALKER- Estrias",
     itens: [
       ["FOTONA- Estrias (GRANDE QUANTIDADE)", 2800],
       ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 2100],
@@ -239,10 +239,13 @@ const secoes = [
       ["FOTONA- 8D", 7000],
       ["FOTONA- 6D", 5950],
       ["FOTONA- 4D GLOW / Face Lift", 4900],
+      ["FOTONA- 4D GLOW- Associação do StarWalker", 4900],
       ["FOTONA- 2D", 3000],
       ["FOTONA- 1D", 2000],
-      ["FOTONA- FACIAL (VectorLift)", 2900],
-      ["FOTONA- FACIAL (VectorLift- 02 sessões)", 5500],
+      ["FOTONA- VectorLift", 2900],
+      ["FOTONA- VectorLift- 02 sessões", 5500],
+      ["FOTONA- Face Lift", 2900],
+      ["FOTONA- Face Lift (02 sessões)", 5500],
       ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5460],
       ["FOTONA- NECK LIFT", 2300],
       ["FOTONA- Poiquilodermia (pescoço e colo)", 2900],
@@ -267,8 +270,10 @@ const secoes = [
       ["FOTONA- OrangeLase (02 sessões)", 3500],
       ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
       ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
-      ["FOTONA- TENSOR BODY", 3900],
-      ["FOTONA- TENSOR BODY (02 sessões)", 7000],
+      ["FOTONA- TENSOR BODY 1D", 2500],
+      ["FOTONA- TENSOR BODY 1D (02 sessões)", 4900],
+      ["FOTONA- TENSOR BODY 2D", 3700],
+      ["FOTONA- TENSOR BODY 1D (02 sessões)", 6900],      
       ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
     ]
   }, 
@@ -293,6 +298,9 @@ const secoes = [
       ["LASER INTIMO- INTIMA LASE (02 sessões + 08 Starformer)", 5490],
       ["LASER INTIMO- 01 sessão", 2500],
       ["FOTONA- Rejuvenescimento INTIMO (Duas sessões)", 3540],
+      ["FOTONA- Clareamento Corporal (Axilas/Virilhas- Duas sessões)", 3300],
+      
+      
     ]
   },
 
