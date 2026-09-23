@@ -151,46 +151,31 @@ const secoes = [
   },
 
   {
-    titulo: "ULTRAFORMER MPT",
-    itens: [
-      ["ULTRAFORMER MPT - Face / Lateral Coxa / Flancos / Costas", 6710],
-      ["ULTRAFORMER MPT - Abdômen / Bananinha / Braços", 5110],
-      ["ULTRAFORMER MPT- Papada e/ou Pescoço / Colo", 3630],
-      ["ULTRAFORMER MPT - Joelho / Infraxilar", 3790],
-      ["ULTRAFORMER MPT- Pálpebras", 2750],
-      ["ULTRAFORMER MPT- Face + Papada + Pescoço", 7700],
-    ]
-  },
-
-  {
     titulo: "VOLNEWMER",
     itens: [
-      ["VOLNEWMER Face", 10200],
+      ["VOLNEWMER Face", 9500],
       ["VOLNEWMER Pescoço", 5170],
-      ["VOLNEWMER GORDURA Pescoço", 2200],
-      ["VOLNEWMER UltraNeck (Volnewmer + PROFHILO)", 7150],
+      ["VOLNEWMER GORDURA/SUBMENTO", 2200],
       ["VOLNEWMER Olhos BASIC", 3300],
       ["VOLNEWMER Olhos PRIME", 3740],
       ["VOLNEWMER Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
       ["VOLNEWMER Terço Médio – Pálpebras + Lateral Olhos", 4290],
+      ["VOLNEWMER Terço Médio – Pálpebras + Lateral Olhos + olhos", 5900],
       ["VOLNEWMER Testa", 1980],
-      ["VOLNEWMER Código de Barras – (40) Jovem", 2090],
-      ["VOLNEWMER Código de Barras – (150) Maduro", 3300],
-      ["RESURFACING LIPS JOVEM (40) — Volnewmer + Intra-oral + Resurfacing + Volumizador", 2590],
-      ["RESURFACING LIPS MADURO (150)— Volnewmer + Intra-oral + Resurfacing + Volumizador", 3800],
-      ["VOLNEWMER Terço Inferior – Contorno", 6600],
-      ["VOLNEWMER Terço Inferior – Lateral Boca", 4950],
-      ["VOLNEWMER- Submento", 2200],
+      ["VOLNEWMER Código de Barras – (40) BASIC", 2090],
+      ["VOLNEWMER Código de Barras – (150) PRIME", 2900],
+      ["VOLNEWMER Contorno", 6600],
+      ["VOLNEWMER Lateral Boca", 4950],
       ["VOLNEWMER Joelho – Flacidez", 7150],
-      ["VOLNEWMER Abdômen / Braços – Flacidez", 5900],
+      ["VOLNEWMER Corporal – Flacidez", 5900],
     ]
   },
 
   {
     titulo: "VOLFORMER",
     itens: [
-      ["VOLFORMER Face + Pescoço", 15400],
-      ["VOLFORMER Face", 13300],
+      ["VOLFORMER Face + Pescoço", 13950],
+      ["VOLFORMER Face", 12100],
       ["VOLFORMER Olhos", 4950],
       ["VOLFORMER Pescoço", 7700],
   ]
@@ -199,13 +184,13 @@ const secoes = [
  {
     titulo: "FOTONA STARWALKER-",
     itens: [
-      ["FOTONA Facial (Acne/ Melanoses)", 3200],
+      ["FOTONA Facial (FRACTAT e TONING)", 3200],
       ["FOTONA Melasma + MCT", 6800],
-      ["FOTONA- Clareamento Corporal (Axilas/Virilhas- Duas sessões)", 3600],
-      ["FOTONA- Melasma/Rejuvenescimento Facial + Exossomos", 5100],
+      ["FOTONA- Clareamento (Axilas/Virilhas/Olheiras- Duas sessões)", 3600],
+      ["FOTONA- Melasma + Exossomos", 5100],
       ["FOTONA- Manchas das Mãos", 2500],
       ["FOTONA- Rejuvenescimento Face + Pescoço", 4950],
-      ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5500],
+      ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5700],
       ["FOTONA- MELASMA RECOVERY", 8800],
     ]
     },
@@ -252,7 +237,7 @@ const secoes = [
       ["FOTONA- LipLase (VOLUMA LIPS- 02 sessões)", 3000],
       ["FOTONA- LUMI EYES (MICROCORING)", 2300],
       ["FOTONA- MICROCORING FACE ", 3900],
-      ["FOTONA- UltraLight (peeling médio)", 2500],
+      ["FOTONA- LiftPeel (ultralight peel)", 2500],
       ["FOTONA- Véu de noiva", 1800],
       ["FOTONA- Rosácea / Acne- 02 Sessões", 4.400],
       ["FOTONA- Vasinhos Pontual", 700],
@@ -265,12 +250,12 @@ const secoes = [
     titulo: "FOTONA DYNAMIS- Corporal",
     itens: [
       ["FOTONA- Mãos (Laser + peeling quimico)", 3100],
-      ["FOTONA- OrangeLase (01 sessão)", 2500],
-      ["FOTONA- OrangeLase (02 sessões)", 3500],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
-      ["FOTONA- TENSOR BODY 1D", 2500],
-      ["FOTONA- TENSOR BODY 1D (02 sessões)", 4900],
+      ["FOTONA- OrangeLase (01 sessão)", 2900],
+      ["FOTONA- OrangeLase (02 sessões)", 5300],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2900],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 5300],
+      ["FOTONA- TENSOR BODY 1D", 2600],
+      ["FOTONA- TENSOR BODY 1D (02 sessões)", 5000],
       ["FOTONA- TENSOR BODY 2D", 3700],
       ["FOTONA- TENSOR BODY 1D (02 sessões)", 6900],      
       ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
@@ -282,7 +267,7 @@ const secoes = [
     itens: [
       ["FOTONA- FACIAL", 300],
       ["FOTONA- AXILA", 300],
-      ["FOTONA- VIRILHA COMPLETA", 500],
+      ["FOTONA- VIRILHA COMPLETA", 600],
       ["FOTONA- PERNA COMPLETA", 900],
       ["FOTONA- BRAÇOS", 300],
       ["FOTONA- ABDOMEN", 300],
@@ -337,7 +322,6 @@ const secoes = [
       ["Toxina capilar", 2500],
       ["MMP- sessão", 700],
       ["MMP CAPILAR + EXOSSOMOS", 1200],
-      ["Eletroderme Capilar", 1750],
       ["REGENERA EXOHAIR", 3900],
       ["REGENERA HAIR", 1700],
       ["REGENERA HAIR- Duas sessões", 3000],
@@ -351,6 +335,8 @@ const secoes = [
     itens: [
       ["REGENERA SKIN - 1 Sessão", 3500],
       ["REGENERA SKIN - 2 Sessões", 5100],
+      ["REGENERA SKIN & HAIR - 1 Sessão", 3900],
+      ["REGENERA SKIN & HAIR - 2 Sessões", 7300],
       ["REGENERA HAIR - 1 Sessão", 1700],
       ["REGENERA HAIR - 2 Sessões", 3000],
     ]
