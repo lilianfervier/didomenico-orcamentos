@@ -257,7 +257,7 @@ const secoes = [
       ["FOTONA- TENSOR BODY 1D", 2600],
       ["FOTONA- TENSOR BODY 1D (02 sessões)", 5000],
       ["FOTONA- TENSOR BODY 2D", 3700],
-      ["FOTONA- TENSOR BODY 1D (02 sessões)", 6900],      
+      ["FOTONA- TENSOR BODY 2D (02 sessões)", 6900],      
       ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
     ]
   }, 
