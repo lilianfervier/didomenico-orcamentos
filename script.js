@@ -185,20 +185,21 @@ const secoes = [
     titulo: "FOTONA STARWALKER-",
     itens: [
       ["FOTONA Facial (FRACTAT e TONING)", 3200],
-      ["FOTONA Melasma + MCT", 6800],
       ["FOTONA- Clareamento (Axilas/Virilhas/Olheiras- Duas sessões)", 3600],
-      ["FOTONA- Melasma + Exossomos", 5100],
       ["FOTONA- Manchas das Mãos", 2500],
       ["FOTONA- Rejuvenescimento Face + Pescoço", 4950],
       ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5700],
-      ["FOTONA- MELASMA RECOVERY", 8800],
+      ["FOTONA- Melasma + Exossomos", 4200],
+      ["FOTONA- Melasma + Exossomos (02 sessões)", 7000],
+      ["FOTONA- MELASMA RECOVERY (03 sessões)", 8800],
+      ["FOTONA Melasma + MCT", 6800],
     ]
     },
 
    {
     titulo: "FOTONA STARWALKER- Remoção de Pigmento",
     itens: [
-      ["Remoção de Pigmento (2 sessões)", 3200],
+      ["Remoção de Pigmento (2 sessões)", 2300],
       ["Remoção de Pigmento (4 sessões)", 4100],
       
     ]
@@ -224,7 +225,7 @@ const secoes = [
       ["FOTONA- 8D", 7000],
       ["FOTONA- 6D", 5950],
       ["FOTONA- 4D GLOW / Face Lift", 5300],
-      ["FOTONA- 4D GLOW / Face Lift + NeckLift", 5900],
+      ["FOTONA- 4D GLOW / Face Lift + NeckLift", 5600],
       ["FOTONA- 4D GLOW- Associação do StarWalker", 5300],
       ["FOTONA- 2D", 3000],
       ["FOTONA- 1D", 2000],
@@ -256,8 +257,8 @@ const secoes = [
       ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 5300],
       ["FOTONA- TENSOR BODY 1D", 2600],
       ["FOTONA- TENSOR BODY 1D (02 sessões)", 5000],
-      ["FOTONA- TENSOR BODY 2D", 3700],
-      ["FOTONA- TENSOR BODY 2D (02 sessões)", 6900],      
+      ["FOTONA- TENSOR BODY 2D", 3300],
+      ["FOTONA- TENSOR BODY 2D (02 sessões)", 6300],      
       ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
     ]
   }, 
@@ -267,7 +268,7 @@ const secoes = [
     itens: [
       ["FOTONA- FACIAL", 300],
       ["FOTONA- AXILA", 300],
-      ["FOTONA- VIRILHA COMPLETA", 600],
+      ["FOTONA- VIRILHA COMPLETA", 700],
       ["FOTONA- PERNA COMPLETA", 900],
       ["FOTONA- BRAÇOS", 300],
       ["FOTONA- ABDOMEN", 300],
