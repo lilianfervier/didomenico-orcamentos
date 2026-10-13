@@ -206,12 +206,15 @@ const secoes = [
     },
 
    {
-    titulo: "FOTONA DYNAMIS e STARWALKER- Estrias",
+    titulo: "FOTONA DYNAMIS e STARWALKER- Estrias e Cicatriz",
     itens: [
-      ["FOTONA- Estrias (GRANDE QUANTIDADE)", 2800],
-      ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 2100],
-      ["FOTONA- LineLise (GRANDE QUANTIDADE)", 2800],
-      ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 2100],
+      ["FOTONA- Estrias (GRANDE QUANTIDADE)", 2500],
+      ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 1500],
+      ["FOTONA- LineLise (GRANDE QUANTIDADE)", 2500],
+      ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 1500],
+      ["FOTONA- Cicatriz (PEQUENA)", 1500],
+      ["FOTONA- Cicatriz (GRANDE)", 2000],
+      
       
     ]
     },
@@ -234,16 +237,16 @@ const secoes = [
       ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5460],
       ["FOTONA- NECK LIFT", 2300],
       ["FOTONA- Poiquilodermia (pescoço e colo)", 2900],
-      ["FOTONA- LipLase (VOLUMA LIPS)", 1800],
+      ["FOTONA- LipLase (VOLUMA LIPS)", 1600],
       ["FOTONA- LipLase (VOLUMA LIPS- 02 sessões)", 3000],
-      ["FOTONA- LUMI EYES (MICROCORING)", 2300],
-      ["FOTONA- MICROCORING FACE ", 3900],
-      ["FOTONA- LiftPeel (ultralight peel)", 2500],
+      ["FOTONA- LUMI EYES (MICROCORING)", 1900],
+      ["FOTONA- MICROCORING FACE ", 3500],
+      ["FOTONA- LiftPeel (ultralight)", 2500],
       ["FOTONA- Véu de noiva", 1800],
-      ["FOTONA- Rosácea / Acne- 02 Sessões", 4.400],
-      ["FOTONA- Vasinhos Pontual", 700],
-      ["FOTONA- Vasinhos Facial", 1500],
-      ["FOTONA- Night Lase", 1000],
+      ["FOTONA- Rosácea / Acne- 02 Sessões", 4.100],
+      ["FOTONA- Vasinhos Pontuais", 700],
+      ["FOTONA- Vasinhos Faciais", 1500],
+      ["FOTONA- Night Lase (RONCO)", 1000],
     ]
   },
 
@@ -310,9 +313,9 @@ const secoes = [
     titulo: "PROTOCOLOS GLUTEOS",
     itens: [
       ["Praia Brava Plus", 17600],
-      ["Praia Brava 1 Harmonização com Hialuronico e Bioestimulador Radiesse", 11550],
-      ["Praia Brava 2 Harmonização + Power Shape", 14300],
-      ["Praia Brava 3 Harmonização + Atria", 16000],
+      ["Praia Brava 1", 11550],
+      ["Praia Brava 2", 14300],
+      ["Praia Brava 3", 16000],
       ["PREENCHIMENTO DE GLÚTEO", 14850], 
    ]
   },
