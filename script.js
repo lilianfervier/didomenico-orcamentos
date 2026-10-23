@@ -253,16 +253,16 @@ const secoes = [
    {
     titulo: "FOTONA DYNAMIS- Corporal",
     itens: [
-      ["FOTONA- Mãos (Laser + peeling quimico)", 3100],
-      ["FOTONA- OrangeLase (01 sessão)", 2900],
-      ["FOTONA- OrangeLase (02 sessões)", 5300],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2900],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 5300],
-      ["FOTONA- TENSOR BODY 1D", 2600],
-      ["FOTONA- TENSOR BODY 1D (02 sessões)", 5000],
-      ["FOTONA- TENSOR BODY 2D", 3300],
-      ["FOTONA- TENSOR BODY 2D (02 sessões)", 6300],      
-      ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 6700],
+      ["FOTONA- Mãos (Laser + peeling quimico)", 2800],
+      ["FOTONA- OrangeLase (01 sessão)", 2500],
+      ["FOTONA- OrangeLase (02 sessões)", 3500],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
+      ["FOTONA- TENSOR BODY 1D", 2500],
+      ["FOTONA- TENSOR BODY 1D (02 sessões)", 4900],
+      ["FOTONA- TENSOR BODY 2D", 3100],
+      ["FOTONA- TENSOR BODY 2D (02 sessões)", 6000],      
+      ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 7200],
     ]
   }, 
 
