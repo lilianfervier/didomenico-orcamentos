@@ -35,7 +35,7 @@ const secoes = [
   },
 
   {
-    titulo: "MD Codes e Injetáveis",
+    titulo: "MD Codes",
     itens: [
       ["MD Codes 1", 2100],
       ["MD Codes 2", 4000],
@@ -44,7 +44,6 @@ const secoes = [
       ["MD Codes 5", 9890],
       ["MD Codes 6", 11790],
       ["MD Codes 7 ou + (cada)", 1950],
-      ["Preenchimento labial", 2100],
       ["Produto / RETOQUE", 1400],
     ]
   },
@@ -58,7 +57,7 @@ const secoes = [
       ["Rinomodelação", 2650],
       ["Skinvive / Skinbooster", 2100],
       ["BoosterBotox", 2980],
-      ["MESO CORPORAL", 820],
+      ["MESOTERAPIA CORPORAL", 820],
     ]
   },
 
@@ -70,6 +69,8 @@ const secoes = [
       ["Radiesse Duo (2 seringas)", 5830],
       ["Radiesse Duo (3 seringas)", 8690],
       ["Radiesse Duo (4 seringas)", 11800],
+      ["PROTOCOLO 40+ - 4 Radiesse", 11400],
+      ["V Lift", 11680],
       ["Radiesse Plus", 3000],
       ["Radiesse Plus (2 seringas)", 6000],
       ["Radiesse Prime Blend Face", 4000],
@@ -77,8 +78,6 @@ const secoes = [
       ["Sculptra (2 frascos)", 5900],
       ["Sculptra (3 frascos)", 8850],
       ["Sculptra (4 frascos)", 11800],
-      ["PROTOCOLO 40+ - 4 Radiesse", 11400],
-      ["V Lift", 11680],
     ]
   },
 
@@ -103,7 +102,6 @@ const secoes = [
       ["Toxina Botulínica Buço", 950],
       ["Toxina Botulínica Mãos", 2620],
       ["Toxina Botulínica Rosácea", 1160],
-      ["BoosterBotox", 2980],
       ["Botox Lift F", 2200],
       ["Botox Lift M", 2420],
     ]
@@ -156,18 +154,21 @@ const secoes = [
       ["VOLNEWMER Face", 9500],
       ["VOLNEWMER Pescoço", 5170],
       ["VOLNEWMER GORDURA/SUBMENTO", 2200],
+      ["VOLNEWMER Palpebras superiores", 2500],
       ["VOLNEWMER Olhos BASIC", 3300],
       ["VOLNEWMER Olhos PRIME", 3740],
-      ["VOLNEWMER Terço Médio 1 - apenas bochechas (200 disparos)", 3960],
-      ["VOLNEWMER Terço Médio – Pálpebras + Lateral Olhos", 4290],
-      ["VOLNEWMER Terço Médio – Pálpebras + Lateral Olhos + olhos", 5900],
+      ["VOLNEWMER Testa", 1980],
+      ["VOLNEWMER Terço Médio- Bochechas (Rugas de aspas-200)", 3600],
+      ["VOLNEWMER Terço Médio BASIC (300)", 4950],
+      ["VOLNEWMER Terço Médio + Inferior PRIME (400)", 6600],
       ["VOLNEWMER Testa", 1980],
       ["VOLNEWMER Código de Barras – (40) BASIC", 2090],
-      ["VOLNEWMER Código de Barras – (150) PRIME", 2900],
-      ["VOLNEWMER Contorno", 6600],
-      ["VOLNEWMER Lateral Boca", 4950],
-      ["VOLNEWMER Joelho – Flacidez", 7150],
-      ["VOLNEWMER Corporal – Flacidez", 5900],
+      ["VOLNEWMER Código de Barras – (150) PRIME", 3300],
+      ["VOLNEWMER Joelhos (300)", 5300],
+      ["VOLNEWMER Braços (3000", 5300],
+      ["VOLNEWMER Abdomen BASIC (150)", 4200],
+      ["VOLNEWMER Abdomen PRIME (300)", 5500],
+      
     ]
   },
 
