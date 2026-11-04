@@ -23,7 +23,8 @@ const secoes = [
   {
     titulo: "Fios de tração e PDO",
     itens: [
-      ["Fios PDO Eye Bag (2 pacotes)", 2900],
+      ["Fios PDO Eye Bag (3 pacotes)", 4350],
+      ["Fios PDO Eye Bag (2 pacotes)", 3100],
       ["Fios PDO Eye Bag (1 pacote)", 1450],
       ["Fios PDO Pescoço", 3575],
       ["Fios Filler", 2200],
