@@ -125,7 +125,7 @@ const secoes = [
       ["ATRIA 2 Infraxilar – frente e atrás", 3520],
       ["ATRIA 2 Abdômen 1 – Flacidez", 4300],
       ["ATRIA 2 Abdômen 2 – Gordura", 4500],
-      ["ATRIA 2 Abdômen JAQUE", 6100],
+      ["ATRIA 2 Abdômen JAQUE", 5800],
     ]
   },
 
@@ -164,7 +164,7 @@ const secoes = [
       ["VOLNEWMER Terço Médio + Inferior PRIME (400)", 6600],
       ["VOLNEWMER Testa", 1980],
       ["VOLNEWMER Código de Barras – (40) BASIC", 2090],
-      ["VOLNEWMER Código de Barras – (150) PRIME", 3300],
+      ["VOLNEWMER Código de Barras – (150) PRIME", 2900],
       ["VOLNEWMER Joelhos (300)", 5300],
       ["VOLNEWMER Braços (3000", 5300],
       ["VOLNEWMER Abdomen BASIC (150)", 4200],
@@ -191,18 +191,18 @@ const secoes = [
       ["FOTONA- Manchas das Mãos", 2500],
       ["FOTONA- Rejuvenescimento Face + Pescoço", 4950],
       ["FOTONA- Rejuvenescimento Face + Pescoço + Colo", 5700],
-      ["FOTONA- Melasma + Exossomos", 4200],
-      ["FOTONA- Melasma + Exossomos (02 sessões)", 7000],
-      ["FOTONA- MELASMA RECOVERY (03 sessões)", 8800],
-      ["FOTONA Melasma + MCT", 6800],
+      ["FOTONA- Melasma + Exossomos", 4100],
+      ["FOTONA- Melasma + Exossomos (02 sessões)", 6900],
+      ["FOTONA- MELASMA RECOVERY (03 sessões)", 8100],
+      ["FOTONA Melasma + MCT", 6100],
     ]
     },
 
    {
     titulo: "FOTONA STARWALKER- Remoção de Pigmento",
     itens: [
-      ["Remoção de Pigmento (2 sessões)", 2300],
-      ["Remoção de Pigmento (4 sessões)", 4100],
+      ["Remoção de Pigmento (2 sessões)", 2100],
+      ["Remoção de Pigmento (4 sessões)", 4000],
       
     ]
     },
@@ -210,12 +210,10 @@ const secoes = [
    {
     titulo: "FOTONA DYNAMIS e STARWALKER- Estrias e Cicatriz",
     itens: [
-      ["FOTONA- Estrias (GRANDE QUANTIDADE)", 2500],
-      ["FOTONA- Estrias (PEQUENA QUANTIDADE)", 1500],
-      ["FOTONA- LineLise (GRANDE QUANTIDADE)", 2500],
-      ["FOTONA- LineLise (PEQUENA QUANTIDADE)", 1500],
-      ["FOTONA- Cicatriz (PEQUENA)", 1500],
-      ["FOTONA- Cicatriz (GRANDE)", 2000],
+      ["FOTONA- LineLise / Estrias (GRANDE QUANTIDADE)", 1900],
+      ["FOTONA- LineLise / Estrias(PEQUENA QUANTIDADE)", 1300],
+      ["FOTONA- Cicatriz (PEQUENA)", 1300],
+      ["FOTONA- Cicatriz (GRANDE)", 1900],
       
       
     ]
@@ -225,48 +223,48 @@ const secoes = [
     titulo: "FOTONA DYNAMIS Face, pescoço e colo",
     itens: [
       ["FOTONA- XRestart + DRUG DELIVERY", 1000],
-      ["FOTONA- Cicatriz Acne full face", 3500],
-      ["FOTONA- Cicatriz Acne Pontual", 3200],
-      ["FOTONA- 8D", 7000],
-      ["FOTONA- 6D", 5950],
-      ["FOTONA- 4D GLOW", 5300],
-      ["FOTONA- Face Lift", 5300],
-      ["FOTONA- Face Lift + NeckLift", 5600],
-      ["FOTONA- 2D", 3000],
-      ["FOTONA- 1D", 2000],
-      ["FOTONA- VectorLift", 2900],
-      ["FOTONA- VectorLift- 02 Sessões", 5500],
-      ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5460],
+      ["FOTONA- Cicatriz Acne full face", 3100],
+      ["FOTONA- Cicatriz Acne Pontual", 1800],
+      ["FOTONA- 8D", 5900],
+      ["FOTONA- 6D", 5400],
+      ["FOTONA- 4D GLOW", 4800],
+      ["FOTONA- Face Lift", 4800],
+      ["FOTONA- Face Lift + NeckLift", 5000],
+      ["FOTONA- 2D", 2200],
+      ["FOTONA- 1D", 1500],
+      ["FOTONA- VectorLift", 2300],
+      ["FOTONA- VectorLift- 02 Sessões", 4300],
+      ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5100],
       ["FOTONA- NECK LIFT", 2300],
-      ["FOTONA- NECK LIFT (02 Sessões)", 4400],
-      ["FOTONA- Poiquilodermia (pescoço e colo-02 Sessões)", 5600],
+      ["FOTONA- NECK LIFT (02 Sessões)", 4100],
+      ["FOTONA- Poiquilodermia (pescoço e colo-02 Sessões)", 4900],
       ["FOTONA- Poiquilodermia (pescoço e colo)", 2900],
-      ["FOTONA- LipLase (VOLUMA LIPS)", 1400],
-      ["FOTONA- LipLase (VOLUMA LIPS- 02 sessões)", 2600],
+      ["FOTONA- LipLase (VOLUMA LIPS)", 1000],
+      ["FOTONA- LipLase (VOLUMA LIPS- 02 sessões)", 1800],
       ["FOTONA- LUMI EYES (MICROCORING)", 1900],
-      ["FOTONA- MICROCORING FACE ", 3500],
-      ["FOTONA- LiftPeel (peeling técnologico)", 2500],
-      ["FOTONA- Véu de noiva", 1500],
+      ["FOTONA- MICROCORING FACE ", 3100],
+      ["FOTONA- LiftPeel (peeling técnologico)", 2100],
+      ["FOTONA- Véu de noiva", 1000],
       ["FOTONA- Rosácea / Acne- 02 Sessões", 4.000],
       ["FOTONA- Vasinhos Pontuais", 700],
-      ["FOTONA- Vasinhos Faciais", 1500],
-      ["FOTONA- Night Lase (RONCO)", 1000],
+      ["FOTONA- Vasinhos Faciais", 1200],
+      ["FOTONA- Night Lase (RONCO)", 900],
     ]
   },
 
    {
     titulo: "FOTONA DYNAMIS- Corporal",
     itens: [
-      ["FOTONA- Mãos (Laser + peeling quimico)", 2600],
-      ["FOTONA- OrangeLase (01 sessão)", 2500],
-      ["FOTONA- OrangeLase (02 sessões)", 3500],
+      ["FOTONA- Mãos (Laser + peeling quimico)", 2000],
+      ["FOTONA- OrangeLase (01 sessão)", 2100],
+      ["FOTONA- OrangeLase (02 sessões)", 4000],
       ["FOTONA- LIPEDEMA EVOLUTION 4D", 2500],
-      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3700],
-      ["FOTONA- TENSOR BODY 1D", 2500],
-      ["FOTONA- TENSOR BODY 1D (02 sessões)", 4900],
-      ["FOTONA- TENSOR BODY 2D", 2700],
-      ["FOTONA- TENSOR BODY 2D (02 sessões)", 5000],      
-      ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 7200],
+      ["FOTONA- LIPEDEMA EVOLUTION 4D (02 sessões)", 3500],
+      ["FOTONA- TENSOR BODY 1D", 2100],
+      ["FOTONA- TENSOR BODY 1D (02 sessões)", 4000],
+      ["FOTONA- TENSOR BODY 2D", 2500],
+      ["FOTONA- TENSOR BODY 2D (02 sessões)", 4900],      
+      ["FOTONA- BODY LIFT PRIME (02 sessões + 1 ATRIA)", 5900],
     ]
   }, 
 
@@ -329,7 +327,7 @@ const secoes = [
     itens: [
       ["Toxina capilar", 2500],
       ["MMP- sessão", 700],
-      ["MMP CAPILAR + EXOSSOMOS", 1200],
+      ["MMP CAPILAR + EXOSSOMOS", 1000],
       ["REGENERA EXOHAIR", 3900],
       ["REGENERA HAIR", 1700],
       ["REGENERA HAIR- Duas sessões", 3000],
@@ -343,8 +341,8 @@ const secoes = [
     itens: [
       ["REGENERA SKIN - 1 Sessão", 3500],
       ["REGENERA SKIN - 2 Sessões", 5100],
-      ["REGENERA SKIN & HAIR - 1 Sessão", 3900],
-      ["REGENERA SKIN & HAIR - 2 Sessões", 7300],
+      ["REGENERA SKIN & HAIR - 1 Sessão", 3700],
+      ["REGENERA SKIN & HAIR - 2 Sessões", 5300],
       ["REGENERA HAIR - 1 Sessão", 1700],
       ["REGENERA HAIR - 2 Sessões", 3000],
     ]
@@ -354,7 +352,7 @@ const secoes = [
     titulo: "REGENERA EXOSKIN & HAIR",
     itens: [
       ["FOTONA + MCT: 01 sessão", 5900],
-      ["FOTONA + MCT: TRATAMENTO MELASMA", 6800],
+      ["FOTONA + MCT: TRATAMENTO MELASMA", 6100],
     ]
   }
 ];
