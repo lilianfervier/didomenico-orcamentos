@@ -195,6 +195,7 @@ const secoes = [
       ["FOTONA- Melasma + Exossomos (02 sessões)", 6900],
       ["FOTONA- MELASMA RECOVERY (03 sessões)", 8100],
       ["FOTONA Melasma + MCT", 6100],
+      ["FOTONA GlowUP + RegeneraSkin", 2300],
     ]
     },
 
@@ -227,6 +228,7 @@ const secoes = [
       ["FOTONA- Cicatriz Acne Pontual", 1800],
       ["FOTONA- 8D", 5900],
       ["FOTONA- 6D", 5400],
+      ["FOTONA GlowUP + RegeneraSkin", 2300],
       ["FOTONA- 4D GLOW", 4800],
       ["FOTONA- Face Lift", 4800],
       ["FOTONA- Face Lift + NeckLift", 5000],
@@ -237,8 +239,9 @@ const secoes = [
       ["FOTONA- DUAL LIFT (+ volnewmer TM)", 5100],
       ["FOTONA- NECK LIFT", 2300],
       ["FOTONA- NECK LIFT (02 Sessões)", 4100],
-      ["FOTONA- Poiquilodermia (pescoço e colo-02 Sessões)", 4900],
-      ["FOTONA- Poiquilodermia (pescoço e colo)", 2900],
+      ["FOTONA- Poiquilodermia (pescoço e colo-02 Sessões)", 4200],
+      ["FOTONA- Poiquilodermia (pescoço e colo)", 2100],
+      ["FOTONA- MICROCORING Colo ", 2000],
       ["FOTONA- LipLase (VOLUMA LIPS)", 1000],
       ["FOTONA- LipLase (VOLUMA LIPS- 02 sessões)", 1800],
       ["FOTONA- LUMI EYES (MICROCORING)", 1900],
